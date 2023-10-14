@@ -1,0 +1,47 @@
+{
+  "main": [
+    {
+      "link": "/developer",
+      "title": "Front-end Developer",
+      "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+      "years": "2023~",
+      "mobile": "hands.png",
+      "tablet": "",
+      "font_color": "white",
+      "top": "",
+      "left": "",
+      "right": "15",
+      "bottom": "50",
+      "align": "flex-end",
+      "text_align": "right"
+    },
+    {
+      "link": "/photographer",
+      "title": "Photographer",
+      "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+      "years": "2022~2023",
+      "mobile": "mobile_old_man.png",
+      "tablet": "old_man.png",
+      "font_color": "white",
+      "top": "30",
+      "left": "15",
+      "right": "",
+      "bottom": "",
+      "align": "flex-start",
+      "text_align": "left"
+    },
+    {
+      "link": "/director",
+      "title": "Puppet Theatre Director",
+      "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+      "years": "2014~2022",
+      "font_color": "white",
+      "mobile": "mobile_dog.png",
+      "tablet": "dog.jpg",
+      "top": "30",
+      "left": "10",
+      "right": "",
+      "bottom": ""
+    }
+  ]
+}
