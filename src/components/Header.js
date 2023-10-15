@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
 
 const Background = styled.div`
@@ -33,12 +34,12 @@ const Right_Wrap = styled.div``;
 const Title = styled.div`
   letter-spacing: 1px;
   font-size: 20px;
-  font-weight: 300;
+  font-weight: 400;
   margin-bottom: 5px;
 `;
 
 const Desc = styled.div`
-  margin-top: 15px;
+  margin-top: 10px;
   font-weight: 200;
   font-size: 13px;
   line-height: 20px;

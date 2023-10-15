@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import data from "../../data/data.json";
 import { NavLink } from "react-router-dom";
-
+import { useSelector, useDispatch } from "react-redux";
+import { setLanguage } from "../../store";
 const Wrap = styled.ul`
   margin-top: 200px;
   width: 100%;
@@ -28,7 +29,7 @@ const Card = styled.li`
   filter: grayscale(1) brightness(1.2) contrast(1.1);
   &:hover {
     transform: rotate(-2deg);
-    &>.circle{
+    & > .circle {
       background-color: white;
     }
   }
@@ -87,24 +88,33 @@ const Circle = styled.div`
   left: 20px;
   bottom: 20px;
   position: absolute;
-`
-
+`;
 
 function Horizon() {
-  const [isActive, setIsActive] = useState(false)
+  const [isActive, setIsActive] = useState(false);
   const [sources, setSources] = useState([]);
+  const language = useSelector((state) => state.language);
 
   useEffect(() => {
     setSources(data.main);
   }, []);
+
   return (
     <>
       <Wrap>
         {sources.map((e, i) => {
           return (
             <NavLink key={i} to={e.link}>
-              <Card onMouseEnter={()=>{setIsActive(true)}}  onMouseOut={()=>{setIsActive(false)}} mobile={e.mobile}>
-                <Circle className="circle"/>
+              <Card
+                onMouseEnter={() => {
+                  setIsActive(true);
+                }}
+                onMouseOut={() => {
+                  setIsActive(false);
+                }}
+                mobile={e.mobile}
+              >
+                <Circle className="circle" />
                 <Inner_Wrap
                   top={`${e.top}px`}
                   left={`${e.left}px`}
@@ -113,8 +123,16 @@ function Horizon() {
                   align={e.align}
                 >
                   <Years>{e.years}</Years>
-                  <Title font_color={e.font_color}>{e.eng_title}</Title>
-                  <Desc text_align={e.text_align}>{e.desc}</Desc>
+                  <Title font_color={e.font_color}>
+                    {language === "ko" && e.ko_title}
+                    {language === "en" && e.en_title}
+                    {language === "ru" && e.ru_title}
+                  </Title>
+                  <Desc text_align={e.text_align}>
+                    {language === "ko" && e.ko_desc}
+                    {language === "en" && e.en_desc}
+                    {language === "ru" && e.ru_desc}
+                  </Desc>
                 </Inner_Wrap>
               </Card>
             </NavLink>

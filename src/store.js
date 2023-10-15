@@ -1,47 +1,57 @@
+import {configureStore, createSlice} from "@reduxjs/toolkit";
 
-import {configureStore, createSlice} from "@reduxjs/toolkit" ;
+const isOpenSlice = createSlice({
+  name: 'isOpen',
+  initialState: false,
+  reducers: {
+    setIsOpen: (state, action) => action.payload
+  }
+});
 
-const SET_IS_OPEN = 'SET_IS_OPEN';
-const SET_SELECTED_VALUE = 'SET_SELECTED_VALUE';
-const SET_SELECTED_VIEW = 'SET_SELECTED_VIEW';
+const selectedValueSlice = createSlice({
+  name: 'selectedValue',
+  initialState: 'Project',
+  reducers: {
+    setSelectedValue: (state, action) => action.payload
+  }
+});
 
-const isOpenReducer = (state = false, action) => {
-    switch (action.type) {
-      case SET_IS_OPEN:
-        return action.payload;
-      default:
-        return state;
-    }
-  };
-  const selectedViewReducer = (state = 'Gallery', action) => {
-    switch (action.type) {
-      case SET_SELECTED_VIEW:
-        return action.payload;
-      default:
-        return state;
-    }
-  };
+const selectedViewSlice = createSlice({
+  name: 'selectedView',
+  initialState: 'Gallery',
+  reducers: {
+    setSelectedView: (state, action) => action.payload
+  }
+});
 
+const languageSlice = createSlice({
+  name: 'language',
+  initialState: 'ko', // 기본 언어를 한국어로 설정
+  reducers: {
+    setLanguage: (state, action) => action.payload
+  }
+});
 
-  const selectedValueReducer = (state = 'Project', action) => {
-    switch (action.type) {
-      case SET_SELECTED_VALUE:
-        return action.payload;
-      default:
-        return state;
-    }
-  };
+const selectedLanguageSlice = createSlice({
+  name: 'selectedLanguage',
+  initialState: 1,
+  reducers: {
+    setSelectedLanguage: (state, action) => action.payload
+  }
+});
 
-export const setIsOpen = (isOpen) => ({ type: SET_IS_OPEN, payload: isOpen });
-export const setSelectedValue = (selectedValue) => ({ type: SET_SELECTED_VALUE, payload: selectedValue });
-export const setSelectedView= (selectedView) => ({ type: SET_SELECTED_VIEW, payload: selectedView });
-
+export const { setIsOpen } = isOpenSlice.actions;
+export const { setSelectedValue } = selectedValueSlice.actions;
+export const { setSelectedView } = selectedViewSlice.actions;
+export const { setLanguage } = languageSlice.actions;
+export const { setSelectedLanguage } = selectedLanguageSlice.actions;
 
 export default configureStore({
-    reducer:{
-        isOpen: isOpenReducer,
-        selectedValue: selectedValueReducer,
-        selectedView: selectedViewReducer
-    }
-})
-
+  reducer:{
+    isOpen: isOpenSlice.reducer,
+    selectedValue: selectedValueSlice.reducer,
+    selectedView: selectedViewSlice.reducer,
+    language: languageSlice.reducer,
+    selectedLanguage: selectedLanguageSlice.reducer
+  }
+});

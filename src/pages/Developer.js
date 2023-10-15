@@ -3,18 +3,10 @@ import Header from "../components/Header";
 import Nav from "../components/Nav";
 import View from "../components/developer/View";
 import Gallery from "../components/developer/Gallery";
-import { setIsOpen, setSelectedValue } from '../store'; 
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 function Developer() {
-  const selectedValue = useSelector(state => state.selectedValue);
-  const dispatch = useDispatch();
-
-
-  const handleValueChange = (value) => {
-    dispatch(setSelectedValue(value));
-  };
-
+  const language = useSelector((state) => state.language);
   return (
     <>
       <Nav
@@ -25,9 +17,17 @@ function Developer() {
       />
       <Header
         bg_img={"../images/main/hands.png"}
-        title={"Front-end Developer"}
+        title={
+          language === "ko" ? "프론트엔드 개발자" :
+          language === "en" ? "Front-end Developer" :
+          language === "ru" ? "Фронтенд-разработчик" :
+          "프론트엔드 개발자" 
+        }
         desc={
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam nesciunt voluptatum, vel sequi delectus laborum!"
+          language === "ko" ? "고통이 고통이라는 이유로 그 자체를 사랑하고 소유하려는 자는 없다." :
+          language === "en" ? "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam." :
+          language === "ru" ? "Внезапно, ключевые особенности структуры проекта, инициированные исключительно синтетически." :
+          "고통이 고통이라는 이유로 그 자체를 사랑하고 소유하려는 자는 없다." 
         }
       />
       <View />

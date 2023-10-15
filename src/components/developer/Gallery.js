@@ -76,18 +76,27 @@ const Option = styled.p`
   font-weight: 300;
 `;
 
-function GalleryView({ json }) {
+function GalleryView({ json, language }) {
   return json.map((e, i) => {
     return (
       <Inner_Wrap key={i}>
         <Image bg_img={e.mobile} />
         <Card bg_color={e.bg_color}>
           <Card_Top_Wrap>
-            <Title color={e.font_color}>{e.eng_title}</Title>
+            <Title color={e.font_color}>
+              {" "}
+              {language === "ko" && e.ko_title}
+              {language === "en" && e.en_title}
+              {language === "ru" && e.ru_title}
+            </Title>
             <Days color={e.font_color}>{e.days}</Days>
           </Card_Top_Wrap>
           <Skills color={e.font_color}>{e.skills}</Skills>
-          <Desc color={e.font_color}>{e.kor_desc}</Desc>
+          <Desc color={e.font_color}>
+            {language === "ko" && e.ko_desc}
+            {language === "en" && e.en_desc}
+            {language === "ru" && e.ru_desc}
+          </Desc>
         </Card>
         <Option color={e.font_color}>{e.option}</Option>
       </Inner_Wrap>
@@ -95,12 +104,12 @@ function GalleryView({ json }) {
   });
 }
 
-function RenderComponent({ json, selectedView }) {
+function RenderComponent({ json, selectedView, language }) {
   switch (selectedView) {
     case "List":
       return;
     case "Gallery":
-      return <GalleryView json={json} />;
+      return <GalleryView json={json} language={language} />;
 
     case "Slide":
       return;
@@ -111,9 +120,8 @@ function RenderComponent({ json, selectedView }) {
 
 function Gallery() {
   const [json, setJson] = useState([]);
-
+  const language = useSelector((state) => state.language);
   const selectedView = useSelector((state) => state.selectedView);
-  const dispatch = useDispatch();
 
   useEffect(() => {
     setJson(data.developer);
@@ -126,6 +134,7 @@ function Gallery() {
           json={json}
           setJson={setJson}
           selectedView={selectedView}
+          language={language}
         />
       </Wrap>
     </>
