@@ -28,6 +28,9 @@ const Card = styled.li`
   filter: grayscale(1) brightness(1.2) contrast(1.1);
   &:hover {
     transform: rotate(-2deg);
+    &>.circle{
+      background-color: white;
+    }
   }
   @media screen and (min-width: 1024px) {
     width: 590px;
@@ -77,7 +80,18 @@ const Desc = styled.p`
   font-weight: 300;
 `;
 
+const Circle = styled.div`
+  width: 5px;
+  height: 5px;
+  background-color: gray;
+  left: 20px;
+  bottom: 20px;
+  position: absolute;
+`
+
+
 function Horizon() {
+  const [isActive, setIsActive] = useState(false)
   const [sources, setSources] = useState([]);
 
   useEffect(() => {
@@ -88,8 +102,9 @@ function Horizon() {
       <Wrap>
         {sources.map((e, i) => {
           return (
-            <NavLink to={e.link}>
-              <Card mobile={e.mobile}>
+            <NavLink key={i} to={e.link}>
+              <Card onMouseEnter={()=>{setIsActive(true)}}  onMouseOut={()=>{setIsActive(false)}} mobile={e.mobile}>
+                <Circle className="circle"/>
                 <Inner_Wrap
                   top={`${e.top}px`}
                   left={`${e.left}px`}
@@ -98,7 +113,7 @@ function Horizon() {
                   align={e.align}
                 >
                   <Years>{e.years}</Years>
-                  <Title font_color={e.font_color}>{e.title}</Title>
+                  <Title font_color={e.font_color}>{e.eng_title}</Title>
                   <Desc text_align={e.text_align}>{e.desc}</Desc>
                 </Inner_Wrap>
               </Card>

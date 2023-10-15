@@ -9,14 +9,14 @@ import Developer from "./pages/Developer";
 import Director from "./pages/Director";
 import Photographer from "./pages/Photographer";
 import "./fonts.css";
-import Global_Navigator from "./components/Global_Navigator";
+import Navigator from "./components/Navigator";
 
 function App() {
   return (
     <>
       <Provider store={store}>
         <GlobalStyles />
-        <Global_Navigator/>
+        <Navigator/>
         <Routes>
           <Route path="/" element={<Main />}></Route>
           <Route path="/developer" element={<Developer />}></Route>

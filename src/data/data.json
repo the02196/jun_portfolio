@@ -2,7 +2,9 @@
   "main": [
     {
       "link": "/developer",
-      "title": "Front-end Developer",
+      "kor_title": "프론트엔드 개발자",
+      "eng_title": "Front-end Developer",
+      "rus_title": "Фронтенд-разработчик",
       "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
       "years": "2023~",
       "mobile": "hands.png",
@@ -17,7 +19,9 @@
     },
     {
       "link": "/photographer",
-      "title": "Photographer",
+      "kor_title": "다큐멘터리 사진작가",
+      "eng_title": "Photographer",
+      "rus_title": "Документальный фотограф",
       "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
       "years": "2022~2023",
       "mobile": "mobile_old_man.png",
@@ -32,7 +36,9 @@
     },
     {
       "link": "/director",
-      "title": "Puppet Theatre Director",
+      "kor_title": "인형극장 연출가",
+      "eng_title": "Puppet Theatre Director",
+      "rus_title" : "Режиссер кукольного театра",
       "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
       "years": "2014~2022",
       "font_color": "white",
@@ -42,6 +48,50 @@
       "left": "10",
       "right": "",
       "bottom": ""
+    }
+  ],
+  "developer": [
+    {
+      "option" : "Project",
+      "kor_title": "헬로우 바닐라",
+      "eng_title": "Hello Vanilla",
+      "rus_title": "Привет, Vanilla",
+      "skills": "React | Node.js | Styled-component | Firebase",
+      "kor_desc" : "초보 개발자들이 재미있고 간편하게 바닐라 스크립트를 학습할 수 있도록 지원하는 교육 커뮤니티 플랫폼입니다.",
+      "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+      "days": "30 days",
+      "mobile": "Hello_Vanilla.png",
+      "tablet": "",
+      "bg_color": "black",
+      "font_color": "white"
+    },
+    {
+      "option" : "Clone Coding",
+      "kor_title": "애플 코리아",
+      "eng_title": "Apple Korea",
+      "rus_title": "Эппл Корея",
+      "skills": "Html5 | Scss | Java-script",
+      "kor_desc" : "반응형 웹과 자바 스크립트를 활용한 인터랙션이 구현되어 있습니다.",
+      "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+      "days": "10 days",
+      "mobile": "Apple_Korea.png",
+      "tablet": "",
+      "bg_color": "white",
+      "font_color": "black"
+    },
+    {
+      "option" : "Clone Coding",
+      "kor_title": "네이버 테크",
+      "eng_title": "Naver Tech",
+      "rus_title": "Навер Тех",
+      "skills": "Html5 | Scss | Java-script",
+      "kor_desc" : "반응형 웹과 자바 스크립트를 활용한 인터랙션이 구현되어 있습니다.",
+      "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+      "days": "10 days",
+      "mobile": "Naver_Tech.png",
+      "tablet": "",
+      "bg_color": "white",
+      "font_color": "black"
     }
   ]
 }
