@@ -103,7 +103,7 @@ const Skills = styled.p`
 const Desc = styled.p`
   margin-top: 18px;
   color: ${(props) => props.color};
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 200;
   @media screen and (min-width: 763px) {
     font-size: 16px;
@@ -149,23 +149,10 @@ function GalleryView({ json, language }) {
   });
 }
 
-function RenderComponent({ json, selectedView, language }) {
-  switch (selectedView) {
-    case "List":
-      return;
-    case "Gallery":
-      return <GalleryView json={json} language={language} />;
-    case "Slide":
-      return;
-    default:
-      return <GalleryView />;
-  }
-}
 
 function Gallery() {
   const [json, setJson] = useState([]);
   const language = useSelector((state) => state.language);
-  const selectedView = useSelector((state) => state.selectedView);
 
   useEffect(() => {
     setJson(data.developer);
@@ -175,10 +162,8 @@ function Gallery() {
     <>
       <Wrap>
         <FlexWrap>
-          <RenderComponent
+          <GalleryView
             json={json}
-            setJson={setJson}
-            selectedView={selectedView}
             language={language}
           />
         </FlexWrap>

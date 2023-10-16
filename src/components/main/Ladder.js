@@ -18,8 +18,7 @@ const Wrap = styled.div`
    width: 800px;
   }
   @media screen and (min-width: 2200px) {
-    width: 1100px;
-    
+    width: 1100px; 
   }
 `;
 

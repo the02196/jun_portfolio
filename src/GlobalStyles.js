@@ -24,6 +24,25 @@ ol, ul, li {list-style:none}
 ol, ul, li {margin:0;padding:0}
 input {font-size:14px}
 em {font-weight:bold;font-style:normal}
+.swiper-button-next,
+.swiper-button-prev {
+  background-color: white;
+  border: 1px solid #ccc;
+  color: white;
+  width: 30px;
+  height: 50px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  color: black;
+  font-weight: bold;
+  font-size: 30px;
+}
 `;
 
 export default GlobalStyles;

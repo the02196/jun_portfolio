@@ -68,6 +68,7 @@
       "ru_desc": "Внезапно, ключевые особенности структуры проекта, инициированные исключительно синтетически.",
       "days": "30 days",
       "mobile": "Hello_Vanilla.png",
+      "list_bg_img" : "Vanilla_List.png",
       "tablet": "",
       "bg_color": "black",
       "font_color": "white"
@@ -83,6 +84,7 @@
       "ru_desc": "Внезапно, ключевые особенности структуры проекта, инициированные исключительно синтетически.",
       "days": "10 days",
       "mobile": "Apple_Korea.png",
+      "list_bg_img" : "Apple.jpeg",
       "tablet": "",
       "bg_color": "white",
       "font_color": "black"
@@ -98,6 +100,7 @@
       "ru_desc": "Внезапно, ключевые особенности структуры проекта, инициированные исключительно синтетически.",
       "days": "10 days",
       "mobile": "Naver_Tech.png",
+      "list_bg_img" : "Channel_Tech.gif",
       "tablet": "",
       "bg_color": "white",
       "font_color": "black"
@@ -113,6 +116,39 @@
       "ru_desc": "Внезапно, ключевые особенности структуры проекта, инициированные исключительно синтетически.",
       "days": "3 days",
       "mobile": "Feed_Me.gif",
+      "list_bg_img" : "Feed_Me_List.png",
+      "tablet": "",
+      "bg_color": "white",
+      "font_color": "black"
+    },
+    {
+      "option" : "Toy Project",
+      "ko_title": "로렘",
+      "en_title": "Lorem",
+      "ru_title": "Рыба Текст",
+      "skills": "lorem | lorem | lorem | lorem",
+      "ko_desc" : "고통이 고통이라는 이유로 그 자체를 사랑하고 소유하려는 자는 없다.",
+      "en_desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+      "ru_desc": "Внезапно, ключевые особенности структуры проекта, инициированные исключительно синтетически.",
+      "days": "3 days",
+      "mobile": "Placeholder.png",
+      "list_bg_img" : "Placeholder.png",
+      "tablet": "",
+      "bg_color": "white",
+      "font_color": "black"
+    },
+    {
+      "option" : "Toy Project",
+      "ko_title": "로렘",
+      "en_title": "Lorem",
+      "ru_title": "Рыба Текст",
+      "skills": "lorem | lorem | lorem | lorem",
+      "ko_desc" : "고통이 고통이라는 이유로 그 자체를 사랑하고 소유하려는 자는 없다.",
+      "en_desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+      "ru_desc": "Внезапно, ключевые особенности структуры проекта, инициированные исключительно синтетически.",
+      "days": "3 days",
+      "mobile": "Placeholder.png",
+      "list_bg_img" : "Placeholder.png",
       "tablet": "",
       "bg_color": "white",
       "font_color": "black"

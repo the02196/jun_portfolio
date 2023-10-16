@@ -26,7 +26,7 @@ const selectedViewSlice = createSlice({
 
 const languageSlice = createSlice({
   name: 'language',
-  initialState: 'ko', // 기본 언어를 한국어로 설정
+  initialState: 'ko',
   reducers: {
     setLanguage: (state, action) => action.payload
   }

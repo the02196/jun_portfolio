@@ -16,7 +16,7 @@ function App() {
     <>
       <Provider store={store}>
         <GlobalStyles />
-        <Navigator/>
+        {/* <Navigator/> */}
         <Routes>
           <Route path="/" element={<Main />}></Route>
           <Route path="/developer" element={<Developer />}></Route>

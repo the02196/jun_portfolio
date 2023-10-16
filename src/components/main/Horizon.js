@@ -47,7 +47,7 @@ const Card = styled.li`
   }
   @media screen and (min-width: 2200px) {
     width: 1090px;
-    height: 600px;
+    height: 640px;
   }
 `;
 

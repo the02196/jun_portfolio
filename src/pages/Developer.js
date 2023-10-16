@@ -4,8 +4,25 @@ import Nav from "../components/Nav";
 import View from "../components/developer/View";
 import Gallery from "../components/developer/Gallery";
 import { useSelector } from "react-redux";
+import List from "../components/developer/List";
+import Slide from "../components/developer/Slide";
 
 function Developer() {
+
+  const selectedView = useSelector((state) => state.selectedView);
+  function RenderComponent({ selectedView }) {
+    switch (selectedView) {
+      case "List":
+        return <List />;
+      case "Gallery":
+        return <Gallery/>;
+      case "Slide":
+        return <Slide/>;
+      default:
+        return <Gallery />;
+    }
+  }
+
   const language = useSelector((state) => state.language);
   return (
     <>
@@ -31,7 +48,8 @@ function Developer() {
         }
       />
       <View />
-      <Gallery />
+      
+      <RenderComponent selectedView={selectedView}/>
     </>
   );
 }

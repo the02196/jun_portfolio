@@ -31,16 +31,16 @@ const Ul = styled.ul`
   }
 `;
 
-const Slide_Wrap = styled.li`
-  div {
-    width: 55%;
-    height: 4px;
-    background-color: black;
-    &:not(:last-child) {
-      margin-bottom: 3px;
-    }
-  }
-`;
+// const List_Wrap = styled.li`
+//   div {
+//     width: 55%;
+//     height: 4px;
+//     background-color: black;
+//     &:not(:last-child) {
+//       margin-bottom: 3px;
+//     }
+//   }
+// `;
 const List_Wrap = styled.li`
   div {
     width: 55%;
@@ -60,6 +60,19 @@ const List_Wrap = styled.li`
       &.long {
         width: 68%;
       }
+    }
+  }
+`;
+
+const Slide_Wrap = styled.li`
+  display: flex;
+  flex-direction: row !important;
+  div {
+    width: 4px;
+    height: 55%;
+    background-color: black;
+    &:not(:last-child) {
+      margin-right: 3px;
     }
   }
 `;
@@ -91,16 +104,7 @@ function View() {
       <Wrap>
         <Filter />
         <Ul>
-          <Slide_Wrap
-            onClick={() => {
-              handleViewChange("Slide");
-            }}
-          >
-            <div></div>
-            <div></div>
-            <div></div>
-          </Slide_Wrap>
-          <List_Wrap
+        <List_Wrap
             onClick={() => {
               handleViewChange("List");
             }}
@@ -118,6 +122,25 @@ function View() {
               <div className="long"></div>
             </div>
           </List_Wrap>
+          <Slide_Wrap
+            onClick={() => {
+              handleViewChange("Slide");
+            }}
+          >
+            <div></div>
+            <div></div>
+            <div></div>
+          </Slide_Wrap>
+
+          {/* <Slide_Wrap
+            onClick={() => {
+              handleViewChange("slide");
+            }}
+          >
+            <div></div>
+            <div></div>
+            <div></div>
+          </Slide_Wrap> */}
           <Gallery_Wrap
             onClick={() => {
               handleViewChange("Gallery");
