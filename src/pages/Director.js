@@ -7,7 +7,7 @@ function Director() {
   return (
     <>
       <Header
-        bg_img={"../images/director/header.jpg"}
+        bg_img={"../images/director/header2.jpg"}
         title={language === "ko" ? "인형극장 연출가" :
         language === "en" ? "Puppet Theatre Director" :
         language === "ru" ? "Режиссер кукольного театра" :

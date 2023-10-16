@@ -25,7 +25,7 @@ function Languages() {
   const selectedLanguage = useSelector(state => state.selectedLanguage); 
   
 
-  const handleBoldChange = (languageIndex) => {
+  const handleSelectedLanguageChange = (languageIndex) => {
     dispatch(setSelectedLanguage(languageIndex)); 
   };
 
@@ -38,7 +38,7 @@ function Languages() {
         <Kor style={{ fontWeight: selectedLanguage === 1 ? 'bold' : 'normal' }}
           onClick={() => {
             handleLanguageChange("ko");
-            handleBoldChange(1);
+            handleSelectedLanguageChange(1);
           }}
         >
           Ko
@@ -46,7 +46,7 @@ function Languages() {
         <Eng style={{ fontWeight: selectedLanguage === 2 ? 'bold' : 'normal' }}
           onClick={() => {
             handleLanguageChange("en");
-            handleBoldChange(2);
+            handleSelectedLanguageChange(2);
           }}
         >
           En
@@ -54,7 +54,7 @@ function Languages() {
         <Rus style={{ fontWeight: selectedLanguage === 3 ? 'bold' : 'normal' }}
           onClick={() => {
             handleLanguageChange("ru");
-            handleBoldChange(3);
+            handleSelectedLanguageChange(3);
           }}
         >
           Ru

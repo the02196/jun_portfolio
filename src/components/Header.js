@@ -13,8 +13,9 @@ const Background = styled.div`
   @media screen and (min-width: 768px) {
     height: 700px;
   }
-  @media screen and (min-width: 1024px) {
-    background-size: contain;
+  @media screen and (min-width: 1440px) {
+    height: 900px;
+    background-position:0 -10px;
   }
 `;
 
