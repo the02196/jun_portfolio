@@ -45,6 +45,10 @@ const Card = styled.li`
     background-position: 0 -35px;
     background-size: cover;
   }
+  @media screen and (min-width: 2200px) {
+    width: 1090px;
+    height: 600px;
+  }
 `;
 
 const Inner_Wrap = styled.div`

@@ -17,6 +17,10 @@ const Wrap = styled.div`
   @media screen and (min-width: 1440px) {
    width: 800px;
   }
+  @media screen and (min-width: 2200px) {
+    width: 1100px;
+    
+  }
 `;
 
 const Thin_Bar_Left = styled.div`

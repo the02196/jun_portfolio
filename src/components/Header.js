@@ -17,6 +17,9 @@ const Background = styled.div`
     height: 900px;
     background-position:0 -10px;
   }
+  @media screen and (min-width: 2400px) {
+    height: 1300px
+  }
 `;
 
 const Wrap = styled.div`

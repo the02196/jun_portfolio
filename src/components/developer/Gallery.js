@@ -4,18 +4,43 @@ import data from "../../data/data.json";
 import { setIsOpen, setSelectedValue } from "../../store";
 import { useDispatch, useSelector } from "react-redux";
 
-const Wrap = styled.ul`
+const Wrap = styled.div`
   width: 100%;
+`;
+
+const FlexWrap = styled.ul`
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  @media screen and (min-width: 1024px) {
+    max-width: 1100px;
+  }
+  @media screen and (min-width: 1550px) {
+    max-width: 1700px;
+  }
+  @media screen and (min-width: 2400px) {
+    max-width: 2400px;
+  }
 `;
 
 const Inner_Wrap = styled.li`
+  display: inline-block;
   width: 400px;
   height: 600px;
   margin: 30px auto;
   cursor: pointer;
   position: relative;
+  @media screen and (min-width: 763px) {
+    width: 590px;
+    height: 900px;
+  }
+  @media screen and (min-width: 1024px) {
+    width: 500px;
+    height: 750px;
+  }
+
+  @media screen and (min-width: 1440px) {
+  }
 `;
 
 const Image = styled.div`
@@ -49,22 +74,42 @@ const Title = styled.h2`
   color: ${(props) => props.color};
   font-size: 20px;
   font-weight: 400;
+  @media screen and (min-width: 763px) {
+    font-size: 24px;
+  }
+  @media screen and (min-width: 1440px) {
+  }
 `;
 const Days = styled.span`
   color: ${(props) => props.color};
   font-size: 15px;
   font-weight: 200;
+  @media screen and (min-width: 763px) {
+    font-size: 17px;
+  }
+  @media screen and (min-width: 1440px) {
+  }
 `;
 const Skills = styled.p`
   color: ${(props) => props.color};
   font-size: 15px;
   font-weight: 200;
+  @media screen and (min-width: 763px) {
+    font-size: 17px;
+  }
+  @media screen and (min-width: 1440px) {
+  }
 `;
 const Desc = styled.p`
   margin-top: 18px;
   color: ${(props) => props.color};
   font-size: 13px;
   font-weight: 200;
+  @media screen and (min-width: 763px) {
+    font-size: 16px;
+  }
+  @media screen and (min-width: 1440px) {
+  }
 `;
 
 const Option = styled.p`
@@ -110,7 +155,6 @@ function RenderComponent({ json, selectedView, language }) {
       return;
     case "Gallery":
       return <GalleryView json={json} language={language} />;
-
     case "Slide":
       return;
     default:
@@ -130,12 +174,14 @@ function Gallery() {
   return (
     <>
       <Wrap>
-        <RenderComponent
-          json={json}
-          setJson={setJson}
-          selectedView={selectedView}
-          language={language}
-        />
+        <FlexWrap>
+          <RenderComponent
+            json={json}
+            setJson={setJson}
+            selectedView={selectedView}
+            language={language}
+          />
+        </FlexWrap>
       </Wrap>
     </>
   );
