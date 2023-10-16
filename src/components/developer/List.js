@@ -27,7 +27,7 @@ const InnerWrap = styled.li`
   display: flex;
 
   width: 100%;
-height: 300px;
+height: 100px;
   margin: 10px auto;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
@@ -36,7 +36,7 @@ height: 300px;
   @media screen and (min-width: 763px) {
     
     width: 100%;
-  height: 200px;
+  height: 150px;
   }
   /* @media screen and (min-width: 1024px) {
     width: 500px;
@@ -50,14 +50,14 @@ height: 300px;
 const Image = styled.div`
 
   /* display: none; */
-  width: 620px;
+  width: 120px;
   height: 100%;
   box-sizing: border-box;
   background-image: url(${(props) => `../images/developer/${props.bg_img}`});
   background-size: cover;
   background-position: center;
   @media screen and (min-width: 763px) {
-    width: 250px;
+    width: 180px;
   height: 100%;
   }
 `;
@@ -68,7 +68,7 @@ const Card = styled.div`
   box-sizing: border-box;
   border-left: 1px solid black;
   background-color: ${(props) => props.bg_color};
-  padding: 35px 30px;
+  padding: 10px 10px;
   /* @media screen and (min-width: 763px) {
     display: flex;
     flex-direction: column;
@@ -86,10 +86,10 @@ const Card_Top_Wrap = styled.div`
 const Title = styled.h2`
   margin: 0;
   color: ${(props) => props.color};
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 400;
   @media screen and (min-width: 763px) {
-    font-size: 24px;
+    font-size: 18px;
   }
   @media screen and (min-width: 1440px) {
   }
@@ -98,10 +98,9 @@ const Days = styled.span`
   color: ${(props) => props.color};
   font-size: 15px;
   font-weight: 200;
-  display: none;
   @media screen and (min-width: 763px) {
-    font-size: 17px;
-    display: block;
+    font-size: 15px;
+   
   }
   @media screen and (min-width: 1440px) {
   }
@@ -110,7 +109,7 @@ const Days = styled.span`
 const Days_Mobile = styled.span`
   color: ${(props) => props.color};
   font-size: 15px;
-  margin-top: 10px;
+  margin-top: 5px;
   font-weight:200;
   display: block;
   @media screen and (min-width: 763px) {
@@ -121,10 +120,10 @@ const Days_Mobile = styled.span`
 `;
 const Skills = styled.p`
   color: ${(props) => props.color};
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 200;
   @media screen and (min-width: 763px) {
-    font-size: 17px;
+    font-size: 14px;
   }
   @media screen and (min-width: 1440px) {
   }
@@ -134,8 +133,10 @@ const Desc = styled.p`
   color: ${(props) => props.color};
   font-size: 13px;
   font-weight: 200;
+  display: none;
   @media screen and (min-width: 763px) {
-    font-size: 16px;
+    font-size: 14px;
+      display: block;
   }
   @media screen and (min-width: 1440px) {
   }
@@ -144,10 +145,14 @@ const Desc = styled.p`
 const Option = styled.p`
   color: ${(props) => props.color};
   position: absolute;
-  bottom: 10px;
-  right: 20px;
+  bottom: 0px;
+  right: 10px;
   font-size: 13px;
   font-weight: 300;
+  @media screen and (min-width: 763px) {
+   bottom: 10px;
+  right: 20px;
+  }
 `;
 
 function ListView({ json, language }) {
@@ -164,8 +169,8 @@ function ListView({ json, language }) {
               {language === "ru" && e.ru_title}
             </Title>
             <Days color={e.font_color}>{e.days}</Days>
+          {/* <Days_Mobile color={e.font_color}>{e.days}</Days_Mobile> */}
           </Card_Top_Wrap>
-          <Days_Mobile color={e.font_color}>{e.days}</Days_Mobile>
           <Skills color={e.font_color}>{e.skills}</Skills>
           <Desc color={e.font_color}>
             {language === "ko" && e.ko_desc}

@@ -1,46 +1,58 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 const GlobalNavigation = styled.ul`
   display: none;
-  position: fixed;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-  background-color: white;
-  padding: 2px;
+  position: relative;
+  width: 100%;
   z-index: 999;
+  overflow: hidden;
+  height: 100%;
+  transition: 0.5s;
+  background-color: white;
+  a{
+    text-decoration: none;
+  }
   @media screen and (min-width: 768px) {
     display: block;
   }
 `;
 
 const GlobalNavigationButton = styled.li`
-  width: 80px;
+  width: 100%;
   padding: 10px;
+  box-sizing: border-box;
   font-size: 13px;
-  color: white;
-  background-color: black;
+  color: black;
+  font-weight: 500;
+  border: 1px solid #ccc;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 3px;
   cursor: pointer;
+  &:not(:first-child){
+    border-top: none;
+  }
   &:hover {
-    background-color: white;
-
-    color: black;
+    background-color: black;
+    color: white;
   }
   &:last-child {
     margin-bottom: 0;
   }
 `;
 
+
 function Navigator() {
+
+  
+  const developerMode = useSelector((state) => state.developerMode);
+
   return (
     <>
-      <GlobalNavigation>
+      <GlobalNavigation >
         <NavLink to={"/"}>
           <GlobalNavigationButton>Main</GlobalNavigationButton>
         </NavLink>

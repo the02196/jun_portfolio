@@ -28,9 +28,9 @@
       "en_desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
       "ru_desc": "Внезапно, ключевые особенности структуры проекта, инициированные исключительно синтетически.",
       "years": "2022~2023",
+      "font_color": "white",
       "mobile": "mobile_old_man.png",
       "tablet": "old_man.png",
-      "font_color": "white",
       "top": "30",
       "left": "15",
       "right": "",
@@ -54,6 +54,78 @@
       "left": "10",
       "right": "",
       "bottom": ""
+    }
+  ],
+  "main_vertical": [
+    {
+      "link": "/developer",
+      "mobile": "hands.png",
+      "tablet": ""
+    },
+    {
+      "link": "/photographer",
+      "ko_title": "다큐멘터리 사진작가",
+      "en_title": "Photographer",
+      "ru_title": "Фотограф",
+      "ko_desc": "고통이 고통이라는 이유로 그 자체를 사랑하고 소유하려는 자는 없다.",
+      "en_desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+      "ru_desc": "Внезапно, ключевые особенности структуры проекта, инициированные исключительно синтетически.",
+      "years": "2022~2023",
+      "font_color": "black",
+      "bg_color" : "white",
+      "top": "",
+      "left": "",
+      "right": "20",
+      "bottom": "15",
+      "align": "flex-end",
+      "text_align": "right"
+    },
+    {
+      "link": "/director",
+      "mobile": "mobile_dog.png",
+      "tablet": "dog.jpg"
+
+    },
+    {
+      "link": "/developer",
+      "ko_title": "프론트엔드 개발자",
+      "en_title": "Front-end Developer",
+      "ru_title": "Фронтенд-разработчик",
+      "ko_desc": "고통이 고통이라는 이유로 그 자체를 사랑하고 소유하려는 자는 없다.",
+      "en_desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+      "ru_desc": "Внезапно, ключевые особенности структуры проекта, инициированные исключительно синтетически.",
+      "years": "2023~",
+      "font_color": "black",
+      "bg_color" : "white",
+      "top": "15",
+      "left": "20",
+      "right": "",
+      "bottom": "",
+      "align": "start",
+      "text_align": "left"
+    },
+    {
+      "link": "/photographer",
+      "mobile": "mobile_old_man.png",
+      "tablet": "old_man.png" 
+    },
+    {
+      "link": "/director",
+      "ko_title": "인형극장 연출가",
+      "en_title": "Puppet Theatre Director",
+      "ru_title" : "Режиссер кукольного театра",
+      "ko_desc": "고통이 고통이라는 이유로 그 자체를 사랑하고 소유하려는 자는 없다.",
+      "en_desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+      "ru_desc": "Внезапно, ключевые особенности структуры проекта, инициированные исключительно синтетически.",
+      "years": "2014~2022",
+      "font_color": "black",
+      "bg_color" : "white",
+      "top": "15",
+      "left": "",
+      "right": "20",
+      "bottom": "",
+      "align": "end",
+      "text_align": "right"
     }
   ],
   "developer": [
@@ -117,6 +189,38 @@
       "days": "3 days",
       "mobile": "Feed_Me.gif",
       "list_bg_img" : "Feed_Me_List.png",
+      "tablet": "",
+      "bg_color": "white",
+      "font_color": "black"
+    },
+    {
+      "option" : "Toy Project",
+      "ko_title": "로렘",
+      "en_title": "Lorem",
+      "ru_title": "Рыба Текст",
+      "skills": "lorem | lorem | lorem | lorem",
+      "ko_desc" : "고통이 고통이라는 이유로 그 자체를 사랑하고 소유하려는 자는 없다.",
+      "en_desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+      "ru_desc": "Внезапно, ключевые особенности структуры проекта, инициированные исключительно синтетически.",
+      "days": "3 days",
+      "mobile": "Placeholder.png",
+      "list_bg_img" : "Placeholder.png",
+      "tablet": "",
+      "bg_color": "white",
+      "font_color": "black"
+    },
+    {
+      "option" : "Toy Project",
+      "ko_title": "로렘",
+      "en_title": "Lorem",
+      "ru_title": "Рыба Текст",
+      "skills": "lorem | lorem | lorem | lorem",
+      "ko_desc" : "고통이 고통이라는 이유로 그 자체를 사랑하고 소유하려는 자는 없다.",
+      "en_desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+      "ru_desc": "Внезапно, ключевые особенности структуры проекта, инициированные исключительно синтетически.",
+      "days": "3 days",
+      "mobile": "Placeholder.png",
+      "list_bg_img" : "Placeholder.png",
       "tablet": "",
       "bg_color": "white",
       "font_color": "black"

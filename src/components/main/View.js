@@ -1,5 +1,7 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
+import { setHorizonAndVertical } from "../../store";
 
 const Wrap = styled.div`
   display: none;
@@ -32,12 +34,14 @@ const Vertical_Box = styled.div`
   height: 16px;
   margin: 1px;
   border: 1px solid black;
+  background-color: ${(props) => props.HorizonAndVertical ? "white" : "black"};
 `;
 const Vertical_long_Box = styled.div`
   width: 56px;
   height: 16px;
   margin: 1px;
   border: 1px solid black;
+  background-color: ${(props) => props.HorizonAndVertical ? "white" : "black"};
 `;
 
 const Horizon_box = styled.div`
@@ -45,24 +49,32 @@ const Horizon_box = styled.div`
   height: 16px;
   margin: 2px;
   border: 1px solid black;
-  background-color: black;
+  background-color:  ${(props) => props.HorizonAndVertical ? "black" : "white"};
 `;
 
 function View({hide}) {
+  const dispatch = useDispatch();
+  const HorizonAndVertical = useSelector((state) => state.HorizonAndVertical);
+
+  const handleHorizonAndVertical = (trueOrFalse) => {
+    dispatch(setHorizonAndVertical(trueOrFalse)); 
+  };
+
   return (
     <>
       <Wrap style={{display: `${hide}`}}>
-        <Horizon_Wrap>
-          <Horizon_box />
-          <Horizon_box />
-          <Horizon_box />
+        <Horizon_Wrap onClick={()=>{handleHorizonAndVertical(true)}}>
+          <Horizon_box HorizonAndVertical={HorizonAndVertical} />
+          <Horizon_box HorizonAndVertical={HorizonAndVertical} />
+          <Horizon_box HorizonAndVertical={HorizonAndVertical} />
         </Horizon_Wrap>
-        <Vertical_Wrap>
-          <Vertical_long_Box />
-          <Vertical_Box />
-          <Vertical_Box />
-          <Vertical_Box />
-          <Vertical_long_Box />
+        <Vertical_Wrap 
+        onClick={()=>{handleHorizonAndVertical(false)}}>
+          <Vertical_long_Box HorizonAndVertical={HorizonAndVertical}/>
+          <Vertical_Box HorizonAndVertical={HorizonAndVertical} />
+          <Vertical_Box HorizonAndVertical={HorizonAndVertical} />
+          <Vertical_Box HorizonAndVertical={HorizonAndVertical} />
+          <Vertical_long_Box HorizonAndVertical={HorizonAndVertical} />
         </Vertical_Wrap>
       </Wrap>
     </>

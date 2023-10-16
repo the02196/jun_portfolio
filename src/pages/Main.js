@@ -5,14 +5,21 @@ import Ladder from "../components/main/Ladder";
 import Horizon from "../components/main/Horizon";
 import Profile from "../components/main/Profile";
 import Footer from "../components/Footer";
+import { useSelector } from "react-redux";
+import Vertical from "../components/main/Vertical";
 
 
 
 function Main() {
+  const HorizonAndVertical = useSelector((state) => state.HorizonAndVertical);
+
+
   return (
     <>
       <Nav />
-      <Ladder /> 
+      {/* {HorizonAndVertical && <Ladder />}  */}
+      {/* {HorizonAndVertical ? <Horizon /> : <Vertical/>} */}
+      <Ladder />
       <Horizon />
       <Footer/>
     </>

@@ -4,6 +4,7 @@ import Star from "./nav/Star";
 import styled from "styled-components";
 import Profile from "./main/Profile";
 import View from "./main/View";
+import DeveloperMode from "./DeveloperMode";
 
 const Wrap = styled.div`
 background-color: white;
@@ -24,15 +25,15 @@ background-color: white;
 `;
 
 
-function Nav({brighteness, grayscale, hide, bg_color}) {
+function Nav() {
   return (
     <>
       <Wrap>
-        <Star brighteness={brighteness} grayscale={grayscale} hide={hide} />
+        <Star />
         <Languages />
       </Wrap>
-        <View hide={hide}  />
-        <Profile hide={hide} />
+        {/* <View /> */}
+        {/* <Profile /> */}
     </>
   );
 }

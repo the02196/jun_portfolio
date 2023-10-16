@@ -10,6 +10,7 @@ import Director from "./pages/Director";
 import Photographer from "./pages/Photographer";
 import "./fonts.css";
 import Navigator from "./components/Navigator";
+import DeveloperMode from "./components/DeveloperMode";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/director" element={<Director />}></Route>
           <Route path="/photographer" element={<Photographer />}></Route>
         </Routes>
+        <DeveloperMode />
       </Provider>
     </>
   );
