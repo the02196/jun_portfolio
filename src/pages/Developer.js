@@ -26,14 +26,9 @@ function Developer() {
   const language = useSelector((state) => state.language);
   return (
     <>
-      <Nav
-        brighteness={"brighteness(1.5)"}
-        grayscale={"grayscale(1)"}
-        hide={"none"}
-        bg_color={"black"}
-      />
+      <Nav />
       <Header
-        bg_img={"../images/main/hands.png"}
+        bg_img={"../images/developer/Magic.jpg"}
         title={
           language === "ko" ? "프론트엔드 개발자" :
           language === "en" ? "Front-end Developer" :
@@ -46,6 +41,8 @@ function Developer() {
           language === "ru" ? "Внезапно, ключевые особенности структуры проекта, инициированные исключительно синтетически." :
           "고통이 고통이라는 이유로 그 자체를 사랑하고 소유하려는 자는 없다." 
         }
+        contrast={"contrast(1.5)"}
+        background-position={"0 -100px"}
       />
       <View />
       

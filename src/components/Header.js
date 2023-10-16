@@ -8,14 +8,15 @@ const Background = styled.div`
   background-image: url(${(props) => `${props.bg_img}`});
   background-size: cover;
   background-position: center;
-  filter: grayscale(1);
+  filter: grayscale(1) ${(props) => `${props.contrast}`} ;
   margin-top: 60px;
   @media screen and (min-width: 768px) {
     height: 700px;
   }
   @media screen and (min-width: 1440px) {
-    height: 900px;
-    background-position:0 -10px;
+    height: 86vh;
+    background-position: ${(props) => `${props.backgroundPosition}`};
+    
   }
   @media screen and (min-width: 2400px) {
     height: 1300px
@@ -57,10 +58,10 @@ const Skill = styled.div`
   margin-bottom: 5px;
 `;
 
-function Header({bg_img, title, desc}) {
+function Header({bg_img, title, desc, contrast, backgroundPosition}) {
   return (
     <>
-      <Background bg_img={bg_img} />
+      <Background backgroundPosition={backgroundPosition} bg_img={bg_img} contrast={contrast} />
       <Wrap>
         <Left_Wrap>
           <Title>{title}</Title>

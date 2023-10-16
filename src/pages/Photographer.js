@@ -27,12 +27,12 @@ function Photographer() {
             ? "Внезапно, ключевые особенности структуры проекта, инициированные исключительно синтетически."
             : "고통이 고통이라는 이유로 그 자체를 사랑하고 소유하려는 자는 없다."
         }
+        contrast={"contrast(1.01)"}
+        backgroundPosition={"0 -35px"}
       />
+      
       <Nav
-        brighteness={"brighteness(1.5)"}
-        grayscale={"grayscale(1)"}
-        hide={"none"}
-        bg_color={"black"}
+      
       />
     </>
   );
