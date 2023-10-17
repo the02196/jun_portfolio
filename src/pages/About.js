@@ -6,7 +6,7 @@ import data from "../data/data.json";
 
 const Wrap = styled.div`
   margin: 130px auto 20px;
-  width: 400px;
+  width: 350px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -14,7 +14,7 @@ const Wrap = styled.div`
 
 const Photo = styled.div`
   width: 100%;
-  height: 500px;
+  height: 430px;
   background-image: url("../images/about/Magic.jpg");
   background-size: cover;
   background-position: center;
@@ -23,7 +23,7 @@ const Photo = styled.div`
 
 const Name = styled.h1`
   font-weight: 500;
-  font-size: 20px;
+  font-size: 18px;
   margin: 20px 0;
 `;
 
