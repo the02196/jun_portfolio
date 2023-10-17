@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
 
 const Wrap = styled.div`
@@ -41,11 +42,21 @@ const Wrap = styled.div`
 
 
 function DropdownMenu() {
+    const dispatch = useDispatch();
     const [isOpen, setIsOpen] = useState(false);
     const [selectedValue, setSelectedValue] = useState('Project');
-  
+    const handleButtonClick = (type) => {
+      dispatch({ type: 'SET_SELECTED_TYPE', payload: type });
+      dispatch({ type: 'REARRANGE_PROJECTS' });
+    };
     const options = ['Project', 'Toy Project', 'Clone Coding'];
-  
+    const methods = [
+      {
+        FilterProject :  handleButtonClick('Project'),
+        FilterToyProject : handleButtonClick('Toy Project'),
+        FilterCloneCoding : handleButtonClick('CloneCoding')
+      }
+    ]
     const getRelatedOptions = () => {
       return options.filter(option => option !== selectedValue);
     };
@@ -66,8 +77,8 @@ function DropdownMenu() {
         </ul>
         {isOpen && (
           <ul>
-            {getRelatedOptions().map((option) => (
-              <li key={option} onClick={() => handleOptionClick(option)}>
+            {getRelatedOptions().map((option, i) => (
+              <li key={option} onClick={() => {handleOptionClick(option)}}>
                 {option}
               </li>
             ))}

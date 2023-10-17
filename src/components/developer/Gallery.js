@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 const Wrap = styled.div`
   width: 100%;
+  margin-bottom: 50px;
 `;
 
 const FlexWrap = styled.ul`

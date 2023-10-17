@@ -4,7 +4,13 @@ import data from "../../data/data.json";
 import { setIsOpen, setSelectedValue } from "../../store";
 import { useDispatch, useSelector } from "react-redux";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Autoplay, Pagination, EffectCoverflow, Mousewheel } from "swiper/modules";
+import {
+  Navigation,
+  Autoplay,
+  Pagination,
+  EffectCoverflow,
+  Mousewheel,
+} from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -15,7 +21,6 @@ import "animate.css";
 
 const Wrap = styled.div`
   width: 100%;
-
 `;
 
 const StyledSlide = styled(SwiperSlide)`
@@ -24,9 +29,8 @@ const StyledSlide = styled(SwiperSlide)`
 const FlexWrap = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  max-width: 100%
-  margin: 100px auto;
-
+  max-width: 100%;
+  margin: 110px auto 50px;
 `;
 
 const Inner_Wrap = styled.li`
@@ -37,15 +41,15 @@ const Inner_Wrap = styled.li`
   cursor: pointer;
   position: relative;
   /* -webkit-box-reflect: below 30px linear-gradient(transparent, rgba(0,0,0,0), rgba(0,0,0,0.3)); */
- 
-  @media screen and (min-width: 763px) {
+
+  @media screen and (min-width: 768px) {
     width: 450px;
     height: 700px;
   }
-  @media screen and (min-width: 1024px) {
+  /* @media screen and (min-width: 1024px) {
     width: 500px;
     height: 750px;
-  }
+  } */
 
   @media screen and (min-width: 1440px) {
   }
@@ -69,7 +73,6 @@ const Card = styled.div`
   border: 1px solid black;
   background-color: ${(props) => props.bg_color};
   padding: 25px 20px;
-
 `;
 
 const Card_Top_Wrap = styled.div`
@@ -168,9 +171,8 @@ function Slide() {
 
   useEffect(() => {
     new WOW.WOW({
-      //공식홈페이지와 코드가 다른이유는 custom 하기 위해서
-      boxClass: "wow", // default
-      animateClass: "animate_animated", //https://animate.style/ 사이트에 있는거
+      boxClass: "wow", 
+      animateClass: "animate_animated",
       live: false,
       mobile: true,
     }).init();
@@ -187,64 +189,68 @@ function Slide() {
     //   </Wrap>
     //   <>
     <>
-    <FlexWrap>
-      <Swiper
-       loop={true}
-        spaceBetween={10}
-        slidesPerView={1.2}
-        centeredSlides={true}
-        // breakpoints={{
-        //   // when window width is >= 320px
-         
-        //   1024: {
-        //     spaceBetween: -100
-        //   }
-        // }}
-        // slidesOffsetAfter={30}
-        // slidesOffsetBefore={30}
-        // grabCursor={true}
+      <FlexWrap>
+        <Swiper
+          loop={true}
+          spaceBetween={10}
+          slidesPerView={1.2}
+          centeredSlides={true}
+          breakpoints={{    
+            768: {
+              slidesPerView: 1.7,
+            },
+            1024: {
+              slidesPerView: 2,
+            },
+            1440: {
+              slidesPerView: 2.5,
+            },
+            1920: {
+              slidesPerView: 3,
+            },
+          }}
+          // slidesOffsetAfter={30}
+          // slidesOffsetBefore={30}
+          // grabCursor={true}
 
-      
-       
-        navigation={{ clickable: true }}
-        modules={[EffectCoverflow, Autoplay, Navigation, Mousewheel]}
-        
-        onSlideChange={() => {
-          //wow는 스크롤에 반응함. 그리고 슬라이드 넘길때마다 animation 효과가 적용되야하므로 onSlideChange를 사용해야함
-          new WOW.WOW({
-            live: false,
-          }).init();
-        }}
-      >
-        {json.map((e, i) => {
-          //e를 안쓰면 언더바로 표시
-          return (
-            <StyledSlide style={{overflow: "hidden"}}>
-              <Inner_Wrap key={i}>
-                <Image bg_img={e.mobile} />
-                <Card bg_color={e.bg_color}>
-                  <Card_Top_Wrap>
-                    <Title color={e.font_color}>
-                      {" "}
-                      {language === "ko" && e.ko_title}
-                      {language === "en" && e.en_title}
-                      {language === "ru" && e.ru_title}
-                    </Title>
-                    <Days color={e.font_color}>{e.days}</Days>
-                  </Card_Top_Wrap>
-                  <Skills color={e.font_color}>{e.skills}</Skills>
-                  <Desc color={e.font_color}>
-                    {language === "ko" && e.ko_desc}
-                    {language === "en" && e.en_desc}
-                    {language === "ru" && e.ru_desc}
-                  </Desc>
-                </Card>
-                <Option color={e.font_color}>{e.option}</Option>
-              </Inner_Wrap>
-            </StyledSlide>
-          );
-        })}
-      </Swiper>
+          navigation={{ clickable: true }}
+          modules={[EffectCoverflow, Autoplay, Navigation, Mousewheel]}
+          onSlideChange={() => {
+            //wow는 스크롤에 반응함. 그리고 슬라이드 넘길때마다 animation 효과가 적용되야하므로 onSlideChange를 사용해야함
+            new WOW.WOW({
+              live: false,
+            }).init();
+          }}
+        >
+          {json.map((e, i) => {
+            //e를 안쓰면 언더바로 표시
+            return (
+              <SwiperSlide style={{ overflow: "hidden" }}>
+                <Inner_Wrap key={i}>
+                  <Image bg_img={e.mobile} />
+                  <Card bg_color={e.bg_color}>
+                    <Card_Top_Wrap>
+                      <Title color={e.font_color}>
+                        {" "}
+                        {language === "ko" && e.ko_title}
+                        {language === "en" && e.en_title}
+                        {language === "ru" && e.ru_title}
+                      </Title>
+                      <Days color={e.font_color}>{e.days}</Days>
+                    </Card_Top_Wrap>
+                    <Skills color={e.font_color}>{e.skills}</Skills>
+                    <Desc color={e.font_color}>
+                      {language === "ko" && e.ko_desc}
+                      {language === "en" && e.en_desc}
+                      {language === "ru" && e.ru_desc}
+                    </Desc>
+                  </Card>
+                  <Option color={e.font_color}>{e.option}</Option>
+                </Inner_Wrap>
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
       </FlexWrap>
     </>
   );

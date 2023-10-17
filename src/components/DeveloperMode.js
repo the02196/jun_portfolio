@@ -49,7 +49,7 @@ function DeveloperMode() {
         >
           Navigation
         </Button> */}
-        <Navigator />
+        {/* <Navigator /> */}
       </Wrap>
     </>
   );

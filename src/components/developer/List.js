@@ -6,7 +6,7 @@ import styled from "styled-components";
 
 const Wrap = styled.div`
   width: 100%;
-  margin-top: 100px;
+  margin: 100px 0 50px;
 `;
 
 const FlexWrap = styled.ul`
@@ -34,7 +34,7 @@ height: 100px;
   border-bottom: 1px solid black;
   cursor: pointer;
   position: relative;
-  @media screen and (min-width: 763px) {
+  @media screen and (min-width: 768px) {
     
     width: 100%;
   height: 150px;
@@ -57,7 +57,7 @@ const Image = styled.div`
   background-image: url(${(props) => `../images/developer/${props.bg_img}`});
   background-size: cover;
   background-position: center;
-  @media screen and (min-width: 763px) {
+  @media screen and (min-width: 768px) {
     width: 180px;
   height: 100%;
   }
@@ -70,7 +70,7 @@ const Card = styled.div`
   border-left: 1px solid black;
   background-color: ${(props) => props.bg_color};
   padding: 10px 10px;
-  /* @media screen and (min-width: 763px) {
+  /* @media screen and (min-width: 768px) {
     display: flex;
     flex-direction: column;
     padding: 35px 30px;
@@ -89,7 +89,7 @@ const Title = styled.h2`
   color: ${(props) => props.color};
   font-size: 16px;
   font-weight: 400;
-  @media screen and (min-width: 763px) {
+  @media screen and (min-width: 768px) {
     font-size: 18px;
   }
   @media screen and (min-width: 1440px) {
