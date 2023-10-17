@@ -9,10 +9,8 @@ import { useSelector } from "react-redux";
 import Vertical from "../components/main/Vertical";
 
 
-
 function Main() {
   const HorizonAndVertical = useSelector((state) => state.HorizonAndVertical);
-
 
   return (
     <>
@@ -21,7 +19,7 @@ function Main() {
       {/* {HorizonAndVertical ? <Horizon /> : <Vertical/>} */}
       <Ladder />
       <Horizon />
-      <Footer/>
+      <Footer />
     </>
   );
 }

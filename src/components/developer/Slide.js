@@ -195,6 +195,8 @@ function Slide() {
           spaceBetween={10}
           slidesPerView={1}
           centeredSlides={true}
+          // pagination={{ clickable: true }}
+          autoplay={{ delay: 3500, disableOnInteraction: false }}
           breakpoints={{    
             768: {
               slidesPerView: 1.7,
@@ -214,7 +216,7 @@ function Slide() {
           // grabCursor={true}
 
           navigation={{ clickable: true }}
-          modules={[EffectCoverflow, Autoplay, Navigation, Mousewheel]}
+          modules={[EffectCoverflow, Pagination, Autoplay, Navigation, Mousewheel]}
           onSlideChange={() => {
             //wow는 스크롤에 반응함. 그리고 슬라이드 넘길때마다 animation 효과가 적용되야하므로 onSlideChange를 사용해야함
             new WOW.WOW({

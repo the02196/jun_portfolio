@@ -11,6 +11,8 @@ import Photographer from "./pages/Photographer";
 import "./fonts.css";
 import Navigator from "./components/Navigator";
 import DeveloperMode from "./components/DeveloperMode";
+import About from "./pages/About";
+
 
 function App() {
   return (
@@ -23,6 +25,7 @@ function App() {
           <Route path="/developer" element={<Developer />}></Route>
           <Route path="/director" element={<Director />}></Route>
           <Route path="/photographer" element={<Photographer />}></Route>
+          <Route path="/about" element={<About />}></Route>
         </Routes>
         <DeveloperMode />
       </Provider>

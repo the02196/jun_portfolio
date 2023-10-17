@@ -27,16 +27,28 @@ input {font-size:14px}
 em {font-weight:bold;font-style:normal}
 .swiper-button-next,
 .swiper-button-prev {
+
   background-color: white;
   border: 1px solid #ccc;
   color: white;
   width: 30px;
   height: 50px;
   padding: 5px;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
+  @media screen and (min-width: 768px) {
+   display: flex;
+  }
 }
+
+.swiper-pagination-bullet { width: 10px; height: 10px; background: white; border-radius: 10px; border: 1px solid #bbb; opacity: 1; 
+  @media screen and (min-width: 768px) {
+   display: none
+  }}
+.swiper-pagination-bullet-active { width: 30px; transition: width .25s; border-radius: 10px; background: white; border: 1px solid #bbb; @media screen and (min-width: 768px) {
+   display: none
+  }}
 
 .swiper-button-next::after,
 .swiper-button-prev::after {

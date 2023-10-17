@@ -5,6 +5,7 @@ import styled from "styled-components";
 import Profile from "./main/Profile";
 import View from "./main/View";
 import DeveloperMode from "./DeveloperMode";
+import GoToMypage from "./mypage/GoToMypage";
 
 const Wrap = styled.div`
 background-color: white;
@@ -31,6 +32,7 @@ function Nav() {
       <Wrap>
         <Star />
         <Languages />
+        <GoToMypage />
       </Wrap>
         {/* <View /> */}
         {/* <Profile /> */}

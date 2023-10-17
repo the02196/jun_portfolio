@@ -50,13 +50,6 @@ function DropdownMenu() {
       dispatch({ type: 'REARRANGE_PROJECTS' });
     };
     const options = ['Project', 'Toy Project', 'Clone Coding'];
-    const methods = [
-      {
-        FilterProject :  handleButtonClick('Project'),
-        FilterToyProject : handleButtonClick('Toy Project'),
-        FilterCloneCoding : handleButtonClick('CloneCoding')
-      }
-    ]
     const getRelatedOptions = () => {
       return options.filter(option => option !== selectedValue);
     };
@@ -78,7 +71,9 @@ function DropdownMenu() {
         {isOpen && (
           <ul>
             {getRelatedOptions().map((option, i) => (
-              <li key={option} onClick={() => {handleOptionClick(option)}}>
+              <li key={option} onClick={() => {
+                handleButtonClick(options[i]) 
+                handleOptionClick(option)}}>
                 {option}
               </li>
             ))}

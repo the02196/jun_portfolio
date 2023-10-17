@@ -96,8 +96,8 @@ const Circle = styled.div`
 
 function Horizon() {
   const [isActive, setIsActive] = useState(false);
-  const [sources, setSources] = useState([]);
   const language = useSelector((state) => state.language);
+  const [sources, setSources] = useState([]);
 
   useEffect(() => {
     setSources(data.main);
