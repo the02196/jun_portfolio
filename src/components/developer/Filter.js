@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
+import { setFilter } from "../../store";
 
 const Wrap = styled.div`
   width: 150px;
@@ -43,13 +44,13 @@ const Wrap = styled.div`
 
 function DropdownMenu() {
     const dispatch = useDispatch();
+    const filter = useSelector((state) => state.filter);
+   
     const [isOpen, setIsOpen] = useState(false);
     const [selectedValue, setSelectedValue] = useState('Project');
-    const handleButtonClick = (type) => {
-      dispatch({ type: 'SET_SELECTED_TYPE', payload: type });
-      dispatch({ type: 'REARRANGE_PROJECTS' });
-    };
-    const options = ['Project', 'Toy Project', 'Clone Coding'];
+
+    const options = ['All', 'Project', 'Toy Project', 'Clone Coding'];
+
     const getRelatedOptions = () => {
       return options.filter(option => option !== selectedValue);
     };
@@ -58,21 +59,26 @@ function DropdownMenu() {
       setIsOpen(!isOpen);
     };
   
+
     const handleOptionClick = (value) => {
       setSelectedValue(value);
       setIsOpen(false);
+      dispatch(setFilter(value))
+      console.log(filter)
+   
     };
   
     return (
       <div>
         <ul>
-            <li style={{borderBottom: isOpen && "none"}} onClick={toggleDropdown}>{selectedValue}</li>
+            <li style={{borderBottom: isOpen && "none"}} onClick={()=>{
+              toggleDropdown()
+            }}>{selectedValue}</li>
         </ul>
         {isOpen && (
           <ul>
             {getRelatedOptions().map((option, i) => (
               <li key={option} onClick={() => {
-                handleButtonClick(options[i]) 
                 handleOptionClick(option)}}>
                 {option}
               </li>

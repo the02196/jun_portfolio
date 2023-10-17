@@ -12,14 +12,14 @@ const Wrap = styled.div`
   justify-content: center;
   @media screen and (min-width: 768px) {
     width: 500px;
-    & .photo{
-        height: 600px;
+    & .photo {
+      height: 600px;
     }
-    & .name{
-        font-size: 23px;
+    & .name {
+      font-size: 23px;
     }
-    & .desc{
-        font-size: 16px;
+    & .desc {
+      font-size: 16px;
     }
   }
 `;
@@ -46,15 +46,24 @@ const Desc = styled.p`
 `;
 const Age = styled.p`
   margin: 0 0 20px;
-  font-size: 14px;
+  font-size: 13px;
+  font-weight: 200;
+  color: #888888;
 `;
 
 const Skills = styled.p`
+  margin: 0 0 20px;
+  font-size: 13px;
+  font-weight: 200;
+  color: #888888;
+`;
+
+const Email = styled.p`
   margin: 0 0 70px;
   font-size: 13px;
   font-weight: 200;
   color: #888888;
-`
+`;
 function About() {
   const language = useSelector((state) => state.language);
   const [sources, setSources] = useState([]);
@@ -72,22 +81,29 @@ function About() {
           <>
             <Name className="name">{sources.ko_name}</Name>
             <Desc className="desc">{sources.ko_desc}</Desc>
-            <Age className="age">{sources.age}</Age>
+            <Age className="age">{sources.ko_age}</Age>
+            <Skills>{sources.skills}</Skills>
+            <Email>{sources.email}</Email>
           </>
         )}
         {language === "en" && (
           <>
             <Name className="name">{sources.en_name}</Name>
             <Desc className="desc">{sources.en_desc}</Desc>
+            <Age className="age">{sources.en_age}</Age>
+            <Skills>{sources.skills}</Skills>
+            <Email>{sources.email}</Email>
           </>
         )}
         {language === "ru" && (
           <>
             <Name className="name">{sources.ru_name}</Name>
             <Desc className="desc">{sources.ru_desc}</Desc>
+            <Age className="age">{sources.ru_age}</Age>
+            <Skills>{sources.skills}</Skills>
+            <Email>{sources.email}</Email>
           </>
         )}
-        <Skills>{sources.skills}</Skills>
       </Wrap>
     </>
   );

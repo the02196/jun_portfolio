@@ -15,7 +15,7 @@ const Background = styled.div`
   }
   @media screen and (min-width: 1440px) {
     height: 86vh;
-    background-position: ${(props) => `${props.backgroundPosition}`};
+    background-position: ${(props) => `${props.background_position}`};
     
   }
   @media screen and (min-width: 2400px) {
@@ -58,10 +58,10 @@ const Skill = styled.div`
   margin-bottom: 5px;
 `;
 
-function Header({bg_img, title, desc, contrast, backgroundPosition}) {
+function Header({bg_img, title, desc, contrast, background_position}) {
   return (
     <>
-      <Background backgroundPosition={backgroundPosition} bg_img={bg_img} contrast={contrast} />
+      <Background background_position={background_position} bg_img={bg_img} contrast={contrast} />
       <Wrap>
         <Left_Wrap>
           <Title>{title}</Title>
@@ -69,14 +69,7 @@ function Header({bg_img, title, desc, contrast, backgroundPosition}) {
          {desc}
           </Desc>
         </Left_Wrap>
-        {/* <Right_Wrap>
-          <Skill>Skills</Skill>
-          <Desc>
-            Html5 | CSS | SCSS | Styled-component | TailwindCSS | JavaScript  |
-            TypeScript | React | Next.js | Node.js | MongoDB | Firebase | GIT |
-            Github | Notion | Slack | Photoshop | Figma | Premium Pro | Dragonframe
-          </Desc>
-        </Right_Wrap> */}
+
       </Wrap>
     </>
   );

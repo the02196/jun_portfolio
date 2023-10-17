@@ -235,12 +235,14 @@
       "ko_name" : "최준형",
       "en_name" : "Jun Choi",
       "ru_name" : "Джун Чой",
-      "age" : "TMI : 반갑게도 자바스크립트가 개발된 해에 태어났습니다.",
       "ko_desc" : "SF 소설의 거장인 아서 C. 클라크는 말했습니다. 고도로 발달한 기술은 마법과 구별할 수 없다. 마법을 부리듯이 개발하고 싶은 준 입니다.",
       "en_desc" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
       "ru_desc" : "Внезапно, ключевые особенности структуры проекта, инициированные исключительно синтетически.",
-      "skills" : "html5 / CSS / SCSS / TailwindCSS / Styled-components / Java-script / React / Redux / Node.js / Firebase / MongoDB / npm / yarn / Git / GitHub / Vercel / Figma / Photoshop / Dragonframe / Korean / Russian / English"
-      
+      "ko_age" : "TMI : 반갑게도 자바스크립트가 개발된 해에 태어났습니다.",
+      "en_age" : "Lorem ipsum dolor sit amet.",
+      "ru_age" : "Инициированные исключительно синтетически.",
+      "skills" : "Skills : html5 / CSS / SCSS / TailwindCSS / Styled-components / Java-script / React / Redux / Node.js / Firebase / MongoDB / npm / yarn / Git / GitHub / Vercel / Figma / Photoshop / Dragonframe / Korean / Russian / English",
+      "email" : "Contact : the02196@gmail.com"
     }
   
 }

@@ -18,7 +18,7 @@ function Director() {
           language === "ru" ? "Внезапно, ключевые особенности структуры проекта, инициированные исключительно синтетически." :
           "고통이 고통이라는 이유로 그 자체를 사랑하고 소유하려는 자는 없다." 
         }
-        backgroundPosition={"top"}
+        background_position={"top"}
       />
       <Nav
       />

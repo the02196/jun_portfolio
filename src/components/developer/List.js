@@ -156,8 +156,21 @@ const Option = styled.p`
   }
 `;
 
-function ListView({ json, language }) {
-  return json.map((e, i) => {
+function ListView() {
+  const language = useSelector((state) => state.language);
+  const filter = useSelector((state) => state.filter);
+  const data = useSelector((state) => state.data);
+  let filteredData = [];
+  let unfilteredData = [];
+  if (filter === 'All') {
+    filteredData = data[0];
+  } else {
+    filteredData = data[0].filter(e => e.option === filter);
+    unfilteredData = data[0].filter(e => e.option !== filter);
+  }
+  const finalData = [...filteredData, ...unfilteredData];
+
+  return finalData.map((e, i) => {
     return (
       <InnerWrap key={i}>
         <Image bg_img={e.list_bg_img} />
@@ -186,18 +199,13 @@ function ListView({ json, language }) {
 }
 
 function List() {
-  const [json, setJson] = useState([]);
-  const language = useSelector((state) => state.language);
 
-  useEffect(() => {
-    setJson(data.developer);
-  }, []);
 
   return (
     <>
       <Wrap>
         <FlexWrap>
-          <ListView json={json} language={language} />
+          <ListView />
         </FlexWrap>
       </Wrap>
     </>

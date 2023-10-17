@@ -1,23 +1,19 @@
 import {configureStore, createSlice} from "@reduxjs/toolkit";
+import data from "../src/data/data.json"
 
-const projectSlice = createSlice({
-  name: 'projects',
-  initialState: {
-    data: [],
-    selectedType: 'Project',
-  },
+const filterSlice = createSlice({
+  name: 'filter',
+  initialState: 'All',
   reducers: {
-    setProjects: (state, action) => {
-      state.data = action.payload;
-    },
-    setSelectedType: (state, action) => {
-      state.selectedType = action.payload;
-    },
-    rearrangeProjects: (state) => {
-      const filteredProjects = state.data.filter(project => project.type === state.selectedType);
-      const otherProjects = state.data.filter(project => project.type !== state.selectedType);
-      state.data = [...filteredProjects, ...otherProjects];
-    }
+    setFilter: (state, action) => action.payload
+  }
+});
+
+const dataSlice = createSlice({
+  name: 'data',
+  initialState: [data.developer], 
+  reducers: {
+    setData: (state, action) => action.payload
   }
 });
 
@@ -77,11 +73,9 @@ const developerMode = createSlice({
   }
 });
 
-export const { 
-  setProjects, 
-  setSelectedType, 
-  rearrangeProjects 
-} = projectSlice.actions;
+
+export const { setFilter } = filterSlice.actions;
+export const { setData } = dataSlice.actions;
 export const { setIsOpen } = isOpenSlice.actions;
 export const { setSelectedValue } = selectedValueSlice.actions;
 export const { setSelectedView } = selectedViewSlice.actions;
@@ -92,13 +86,14 @@ export const { setDeveloperMode } = developerMode.actions;
 
 export default configureStore({
   reducer:{
-    projects: projectSlice.reducer,
     isOpen: isOpenSlice.reducer,
     selectedValue: selectedValueSlice.reducer,
     selectedView: selectedViewSlice.reducer,
     language: languageSlice.reducer,
     selectedLanguage: selectedLanguageSlice.reducer,
     HorizonAndVertical: toggleHorizonAndVertical.reducer,
-    developerMode: developerMode.reducer
+    developerMode: developerMode.reducer,
+    filter: filterSlice.reducer,
+    data: dataSlice.reducer
   }
 });

@@ -122,15 +122,29 @@ const Option = styled.p`
   font-weight: 300;
 `;
 
-function GalleryView({ json, language }) {
-  return json.map((e, i) => {
+function GalleryView() {
+  const language = useSelector((state) => state.language);
+  const filter = useSelector((state) => state.filter);
+  const data = useSelector((state) => state.data);
+  let filteredData = [];
+  let unfilteredData = [];
+  if (filter === 'All') {
+    filteredData = data[0];
+  } else {
+    filteredData = data[0].filter(e => e.option === filter);
+    unfilteredData = data[0].filter(e => e.option !== filter);
+  }
+  const finalData = [...filteredData, ...unfilteredData];
+
+
+
+  return finalData.map((e, i) => {
     return (
       <Inner_Wrap key={i}>
         <Image bg_img={e.mobile} />
         <Card bg_color={e.bg_color}>
           <Card_Top_Wrap>
             <Title color={e.font_color}>
-              {" "}
               {language === "ko" && e.ko_title}
               {language === "en" && e.en_title}
               {language === "ru" && e.ru_title}
@@ -150,23 +164,12 @@ function GalleryView({ json, language }) {
   });
 }
 
-
 function Gallery() {
-  const [json, setJson] = useState([]);
-  const language = useSelector((state) => state.language);
-
-  useEffect(() => {
-    setJson(data.developer);
-  }, []);
-
   return (
     <>
       <Wrap>
         <FlexWrap>
-          <GalleryView
-            json={json}
-            language={language}
-          />
+          <GalleryView />
         </FlexWrap>
       </Wrap>
     </>

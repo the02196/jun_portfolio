@@ -28,7 +28,7 @@ function Photographer() {
             : "고통이 고통이라는 이유로 그 자체를 사랑하고 소유하려는 자는 없다."
         }
         contrast={"contrast(1.01)"}
-        backgroundPosition={"0 -35px"}
+        background_position={"0 -35px"}
       />
       
       <Nav

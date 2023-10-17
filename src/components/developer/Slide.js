@@ -162,12 +162,18 @@ function SlideView({ json, language }) {
 }
 
 function Slide() {
-  const [json, setJson] = useState([]);
   const language = useSelector((state) => state.language);
-
-  useEffect(() => {
-    setJson(data.developer);
-  }, []);
+  const filter = useSelector((state) => state.filter);
+  const data = useSelector((state) => state.data);
+  let filteredData = [];
+  let unfilteredData = [];
+  if (filter === 'All') {
+    filteredData = data[0];
+  } else {
+    filteredData = data[0].filter(e => e.option === filter);
+    unfilteredData = data[0].filter(e => e.option !== filter);
+  }
+  const finalData = [...filteredData, ...unfilteredData];
 
   useEffect(() => {
     new WOW.WOW({
@@ -199,16 +205,16 @@ function Slide() {
           autoplay={{ delay: 3500, disableOnInteraction: false }}
           breakpoints={{    
             768: {
-              slidesPerView: 1.7,
+              slidesPerView: 1.6,
             },
             1024: {
               slidesPerView: 2,
             },
             1440: {
-              slidesPerView: 2.5,
+              slidesPerView: 2.6,
             },
             1920: {
-              slidesPerView: 3,
+              slidesPerView: 3.2,
             },
           }}
           // slidesOffsetAfter={30}
@@ -224,16 +230,15 @@ function Slide() {
             }).init();
           }}
         >
-          {json.map((e, i) => {
+          {finalData.map((e, i) => {
             //e를 안쓰면 언더바로 표시
             return (
-              <SwiperSlide style={{ overflow: "hidden" }}>
-                <Inner_Wrap key={i}>
+              <SwiperSlide key={i} style={{ overflow: "hidden" }}>
+                <Inner_Wrap>
                   <Image bg_img={e.mobile} />
                   <Card bg_color={e.bg_color}>
                     <Card_Top_Wrap>
                       <Title color={e.font_color}>
-                        {" "}
                         {language === "ko" && e.ko_title}
                         {language === "en" && e.en_title}
                         {language === "ru" && e.ru_title}
