@@ -35,9 +35,9 @@ const FlexWrap = styled.ul`
 
 const Inner_Wrap = styled.li`
   display: block;
-  width: 350px;
+  width: 400px;
   margin: 0 auto;
-  height: 550px;
+  height: 600px;
   cursor: pointer;
   position: relative;
   /* -webkit-box-reflect: below 30px linear-gradient(transparent, rgba(0,0,0,0), rgba(0,0,0,0.3)); */
@@ -193,7 +193,7 @@ function Slide() {
         <Swiper
           loop={true}
           spaceBetween={10}
-          slidesPerView={1.3}
+          slidesPerView={1}
           centeredSlides={true}
           breakpoints={{    
             768: {
