@@ -5,16 +5,28 @@ import { useSelector } from "react-redux";
 import data from "../data/data.json";
 
 const Wrap = styled.div`
-  margin: 130px auto 20px;
-  width: 350px;
+  margin: 170px auto 20px;
+  width: 380px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  @media screen and (min-width: 768px) {
+    width: 500px;
+    & .photo{
+        height: 600px;
+    }
+    & .name{
+        font-size: 23px;
+    }
+    & .desc{
+        font-size: 16px;
+    }
+  }
 `;
 
 const Photo = styled.div`
   width: 100%;
-  height: 430px;
+  height: 470px;
   background-image: url("../images/about/Magic.jpg");
   background-size: cover;
   background-position: center;
@@ -23,20 +35,26 @@ const Photo = styled.div`
 
 const Name = styled.h1`
   font-weight: 500;
-  font-size: 18px;
+  font-size: 20px;
   margin: 20px 0;
 `;
 
 const Desc = styled.p`
   margin: 0 0 20px;
   font-size: 14px;
-  color: #444444;
+  /* text-align: justify; */
 `;
 const Age = styled.p`
   margin: 0 0 20px;
   font-size: 14px;
-  color: #444444;
 `;
+
+const Skills = styled.p`
+  margin: 0 0 70px;
+  font-size: 13px;
+  font-weight: 200;
+  color: #888888;
+`
 function About() {
   const language = useSelector((state) => state.language);
   const [sources, setSources] = useState([]);
@@ -49,26 +67,27 @@ function About() {
     <>
       <Nav />
       <Wrap>
-        <Photo />
+        <Photo className="photo" />
         {language === "ko" && (
           <>
-            <Name>{sources.ko_name}</Name>
-            <Desc>{sources.ko_desc}</Desc>
-            <Age>{sources.age}</Age>
+            <Name className="name">{sources.ko_name}</Name>
+            <Desc className="desc">{sources.ko_desc}</Desc>
+            <Age className="age">{sources.age}</Age>
           </>
         )}
         {language === "en" && (
           <>
-            <Name>{sources.en_name}</Name>
-            <Desc>{sources.en_desc}</Desc>
+            <Name className="name">{sources.en_name}</Name>
+            <Desc className="desc">{sources.en_desc}</Desc>
           </>
         )}
         {language === "ru" && (
           <>
-            <Name>{sources.ru_name}</Name>
-            <Desc>{sources.ru_desc}</Desc>
+            <Name className="name">{sources.ru_name}</Name>
+            <Desc className="desc">{sources.ru_desc}</Desc>
           </>
         )}
+        <Skills>{sources.skills}</Skills>
       </Wrap>
     </>
   );
