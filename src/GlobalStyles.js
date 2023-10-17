@@ -4,6 +4,7 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyles = createGlobalStyle`
 *{
     -ms-overflow-style: none;
+    /* cursor: url("/images/cursor.png") 2 2, auto; */
  }
  
 ::-webkit-scrollbar {

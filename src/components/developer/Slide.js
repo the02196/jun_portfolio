@@ -19,34 +19,28 @@ const Wrap = styled.div`
 `;
 
 const StyledSlide = styled(SwiperSlide)`
-  margin: auto;
+  /* margin-left: -30px; */
 `;
 const FlexWrap = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  margin: 0 auto;
-  @media screen and (min-width: 1024px) {
-    max-width: 1100px;
-  }
-  @media screen and (min-width: 1550px) {
-    max-width: 1700px;
-  }
-  @media screen and (min-width: 2400px) {
-    max-width: 2400px;
-  }
+  max-width: 100%
+  margin: 100px auto;
+
 `;
 
 const Inner_Wrap = styled.li`
-  display: inline-block;
+  display: block;
   width: 400px;
+  margin: 0 auto;
   height: 600px;
   cursor: pointer;
   position: relative;
   /* -webkit-box-reflect: below 30px linear-gradient(transparent, rgba(0,0,0,0), rgba(0,0,0,0.3)); */
  
   @media screen and (min-width: 763px) {
-    width: 590px;
-    height: 900px;
+    width: 450px;
+    height: 700px;
   }
   @media screen and (min-width: 1024px) {
     width: 500px;
@@ -89,7 +83,7 @@ const Title = styled.h2`
   color: ${(props) => props.color};
   font-size: 20px;
   font-weight: 400;
-  @media screen and (min-width: 763px) {
+  @media screen and (min-width: 768px) {
     font-size: 24px;
   }
   @media screen and (min-width: 1440px) {
@@ -99,7 +93,7 @@ const Days = styled.span`
   color: ${(props) => props.color};
   font-size: 15px;
   font-weight: 200;
-  @media screen and (min-width: 763px) {
+  @media screen and (min-width: 768px) {
     font-size: 17px;
   }
   @media screen and (min-width: 1440px) {
@@ -109,7 +103,7 @@ const Skills = styled.p`
   color: ${(props) => props.color};
   font-size: 15px;
   font-weight: 200;
-  @media screen and (min-width: 763px) {
+  @media screen and (min-width: 768px) {
     font-size: 17px;
   }
   @media screen and (min-width: 1440px) {
@@ -120,7 +114,7 @@ const Desc = styled.p`
   color: ${(props) => props.color};
   font-size: 14px;
   font-weight: 200;
-  @media screen and (min-width: 763px) {
+  @media screen and (min-width: 768px) {
     font-size: 16px;
   }
   @media screen and (min-width: 1440px) {
@@ -193,13 +187,25 @@ function Slide() {
     //   </Wrap>
     //   <>
     <>
+    <FlexWrap>
       <Swiper
        loop={true}
-        spaceBetween={0}
-        slidesPerView={3}
-        grabCursor={true}
-       
+        spaceBetween={10}
+        slidesPerView={1.2}
         centeredSlides={true}
+        // breakpoints={{
+        //   // when window width is >= 320px
+         
+        //   1024: {
+        //     spaceBetween: -100
+        //   }
+        // }}
+        // slidesOffsetAfter={30}
+        // slidesOffsetBefore={30}
+        // grabCursor={true}
+
+      
+       
         navigation={{ clickable: true }}
         modules={[EffectCoverflow, Autoplay, Navigation, Mousewheel]}
         
@@ -239,6 +245,7 @@ function Slide() {
           );
         })}
       </Swiper>
+      </FlexWrap>
     </>
   );
 }
