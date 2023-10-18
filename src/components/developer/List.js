@@ -6,7 +6,7 @@ import styled from "styled-components";
 
 const Wrap = styled.div`
   width: 100%;
-  margin: 100px 0 50px;
+  margin: 100px 0 70px;
 `;
 
 const FlexWrap = styled.ul`

@@ -30,7 +30,7 @@ const FlexWrap = styled.ul`
   display: flex;
   flex-wrap: wrap;
   max-width: 100%;
-  margin: 110px auto 50px;
+  margin: 110px auto 110px;
 `;
 
 const Inner_Wrap = styled.li`
