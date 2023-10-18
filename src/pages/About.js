@@ -103,7 +103,7 @@ function About() {
             <Age className="age">{sources.ko_age}</Age>
             <Skills>{sources.skills}</Skills>
             <Email>
-              {sources.email}{" "}
+              {sources.email}
               <CopyEmailBtn
                 onClick={() => {
                   handleCopyClipBoard("the02196@gmail.com");
@@ -118,18 +118,38 @@ function About() {
           <>
             <Name className="name">{sources.en_name}</Name>
             <Desc className="desc">{sources.en_desc}</Desc>
-            <Age className="age">{sources.en_age}</Age>
+
             <Skills>{sources.skills}</Skills>
-            <Email>{sources.email}</Email>
+            <Email>
+              {sources.email}
+              <CopyEmailBtn
+                onClick={() => {
+                  handleCopyClipBoard("the02196@gmail.com");
+                }}
+              >
+                copy e-mail
+              </CopyEmailBtn>
+            </Email>
+            
           </>
         )}
         {language === "ru" && (
           <>
             <Name className="name">{sources.ru_name}</Name>
             <Desc className="desc">{sources.ru_desc}</Desc>
-            <Age className="age">{sources.ru_age}</Age>
+
             <Skills>{sources.skills}</Skills>
-            <Email>{sources.email}</Email>
+            
+            <Email>
+              {sources.email}
+              <CopyEmailBtn
+                onClick={() => {
+                  handleCopyClipBoard("the02196@gmail.com");
+                }}
+              >
+                copy e-mail
+              </CopyEmailBtn>
+            </Email>
           </>
         )}
       </Wrap>

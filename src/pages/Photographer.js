@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "../components/Header";
 import Nav from "../components/Nav";
 import { useSelector } from "react-redux";
@@ -8,9 +8,13 @@ import Contents_Desktop from "../components/photographer/Contents_Desktop";
 
 function Photographer() {
   const language = useSelector((state) => state.language);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
-        <Nav />
+      <Nav />
       <Header
         bg_img={"../images/photographer/memorial_desktop.png"}
         title={
@@ -24,7 +28,7 @@ function Photographer() {
         }
         desc={
           language === "ko"
-            ? "이태원 일대에서 실재하는 사건들을 마주하며 타인들의 삶을 탐구했습니다."
+            ? "이태원 일대에서 다양한 사건들을 마주하며 타인들의 삶과 시선을 탐구했습니다."
             : language === "en"
             ? "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
             : language === "ru"

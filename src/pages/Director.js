@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import Nav from "../components/Nav";
 import { useSelector } from "react-redux";
@@ -7,6 +7,10 @@ import Contents_Tablet from "../components/director/Contents_Tablet";
 import Contents_Desktop from "../components/director/Contents_Desktop";
 function Director() {
   const language = useSelector((state) => state.language);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <Nav />
