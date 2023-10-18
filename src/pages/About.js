@@ -64,6 +64,16 @@ const Email = styled.p`
   font-weight: 200;
   color: #888888;
 `;
+
+const CopyEmailBtn = styled.button`
+  margin-left: 10px;
+  background: none;
+  border: 1px solid #aaa;
+  color: #aaa;
+  padding: 2px 8px;
+  cursor: pointer;
+`;
+
 function About() {
   const language = useSelector((state) => state.language);
   const [sources, setSources] = useState([]);
@@ -71,6 +81,15 @@ function About() {
   useEffect(() => {
     setSources(data.about);
   }, []);
+
+  const handleCopyClipBoard = async (text) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      alert("이메일이 복사 되었습니다.");
+    } catch (error) {
+      alert("이메일 복사에 실패하였습니다.");
+    }
+  };
 
   return (
     <>
@@ -83,7 +102,16 @@ function About() {
             <Desc className="desc">{sources.ko_desc}</Desc>
             <Age className="age">{sources.ko_age}</Age>
             <Skills>{sources.skills}</Skills>
-            <Email>{sources.email}</Email>
+            <Email>
+              {sources.email}{" "}
+              <CopyEmailBtn
+                onClick={() => {
+                  handleCopyClipBoard("the02196@gmail.com");
+                }}
+              >
+                copy e-mail
+              </CopyEmailBtn>
+            </Email>
           </>
         )}
         {language === "en" && (

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
-import { setFilter } from "../../store";
+import { setFilter, setIsOpen } from "../../store";
 
 const Wrap = styled.div`
   width: 150px;
@@ -24,7 +24,7 @@ const Wrap = styled.div`
       left: 10px;
       width: 0px;
       height: 0px;
-      border-top: 12px solid #666666;
+      border-top: 12px solid #777777;
       border-left: 7px solid transparent;
       border-right: 7px solid transparent;
     }
@@ -34,67 +34,75 @@ const Wrap = styled.div`
       background-color: white;
       height: 100%;
       border: 1px solid #ccc;
-      &:not(:last-child){
+      &:not(:last-child) {
         border-bottom: none;
       }
     }
   }
 `;
 
-
 function DropdownMenu() {
-    const dispatch = useDispatch();
-    const filter = useSelector((state) => state.filter);
-   
-    const [isOpen, setIsOpen] = useState(false);
-    const [selectedValue, setSelectedValue] = useState('Project');
+  const dispatch = useDispatch();
+  const filter = useSelector((state) => state.filter);
+  const selectedView = useSelector((state) => state.selectedView);
+  const isOpen = useSelector((state) => state.isOpen);
 
-    const options = ['All', 'Project', 'Toy Project', 'Clone Coding'];
+  const options = ["All", "Project", "Toy Project", "Clone Coding"];
 
-    const getRelatedOptions = () => {
-      return options.filter(option => option !== selectedValue);
-    };
-  
-    const toggleDropdown = () => {
-      setIsOpen(!isOpen);
-    };
-  
+  const getRelatedOptions = () => {
+    return options.filter((option) => option !== filter);
+  };
 
-    const handleOptionClick = (value) => {
-      setSelectedValue(value);
-      setIsOpen(false);
-      dispatch(setFilter(value))
-      console.log(filter)
-   
-    };
-  
-    return (
-      <div>
+  const toggleDropdown = () => {
+    dispatch(setIsOpen(!isOpen));
+  };
+
+  const handleOptionClick = (value) => {
+    dispatch(setIsOpen(false));
+    dispatch(setFilter(value));
+  };
+
+  return (
+    <div>
+      <ul selectedView={selectedView}>
+        <li
+          style={{
+            backgroundColor: selectedView === "Slide" && "#eee",
+            color: selectedView === "Slide" && "#bbb",
+            borderBottom: isOpen && "none",
+          }}
+          onClick={() => {
+            selectedView !== "Slide" && toggleDropdown();
+            
+          }}
+        >
+          {filter}
+        </li>
+      </ul>
+      {isOpen && (
         <ul>
-            <li style={{borderBottom: isOpen && "none"}} onClick={()=>{
-              toggleDropdown()
-            }}>{selectedValue}</li>
+          {getRelatedOptions().map((option, i) => (
+            <li
+              key={option}
+              onClick={() => {
+                handleOptionClick(option)
+              }}
+            >
+              {option}
+            </li>
+          ))}
         </ul>
-        {isOpen && (
-          <ul>
-            {getRelatedOptions().map((option, i) => (
-              <li key={option} onClick={() => {
-                handleOptionClick(option)}}>
-                {option}
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
-    );
-  }
-  
+      )}
+    </div>
+  );
+}
 
-function Filter({isOpen, setIsOpen, selectedValue, setSelectedValue}) {
+function Filter() {
   return (
     <>
       <Wrap>
-        <DropdownMenu isOpen={isOpen} setIsOpen={setIsOpen} selectedValue={selectedValue} setSelectedValue={setSelectedValue}  />
+        <DropdownMenu
+        />
       </Wrap>
     </>
   );

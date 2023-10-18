@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Filter from "./Filter";
-import { setSelectedView } from "../../store";
+import { setIsOpen, setSelectedView } from "../../store";
 import { useDispatch, useSelector } from "react-redux";
 
 const Wrap = styled.div`
@@ -107,6 +107,7 @@ function View() {
         <List_Wrap
             onClick={() => {
               handleViewChange("List");
+              dispatch(setIsOpen(false));
             }}
           >
             <div>
@@ -125,6 +126,7 @@ function View() {
           <Slide_Wrap
             onClick={() => {
               handleViewChange("Slide");
+              dispatch(setIsOpen(false));
             }}
           >
             <div></div>
@@ -144,6 +146,7 @@ function View() {
           <Gallery_Wrap
             onClick={() => {
               handleViewChange("Gallery");
+              dispatch(setIsOpen(false));
             }}
           >
             <div>
