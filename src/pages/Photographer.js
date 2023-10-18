@@ -2,13 +2,17 @@ import React from "react";
 import Header from "../components/Header";
 import Nav from "../components/Nav";
 import { useSelector } from "react-redux";
+import Contents_Mobile from "../components/photographer/Contents_Mobile";
+import Contents_Tablet from "../components/photographer/Contents_Tablet";
+import Contents_Desktop from "../components/photographer/Contents_Desktop";
 
 function Photographer() {
   const language = useSelector((state) => state.language);
   return (
     <>
+        <Nav />
       <Header
-        bg_img={"../images/photographer/memorial.png"}
+        bg_img={"../images/photographer/memorial_desktop.png"}
         title={
           language === "ko"
             ? "다큐멘터리 사진작가"
@@ -20,7 +24,7 @@ function Photographer() {
         }
         desc={
           language === "ko"
-            ? "고통이 고통이라는 이유로 그 자체를 사랑하고 소유하려는 자는 없다."
+            ? "이태원 일대에서 실재하는 사건들을 마주하며 타인들의 삶을 탐구했습니다."
             : language === "en"
             ? "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
             : language === "ru"
@@ -30,10 +34,9 @@ function Photographer() {
         contrast={"contrast(1.01)"}
         background_position={"0 -35px"}
       />
-      
-      <Nav
-      
-      />
+      <Contents_Mobile />
+      <Contents_Tablet />
+      <Contents_Desktop />
     </>
   );
 }
