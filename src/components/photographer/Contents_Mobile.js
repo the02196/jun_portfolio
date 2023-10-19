@@ -24,6 +24,7 @@ const CardWrap = styled.div`
   @media screen and (min-width: 2200px) {
   }
 `;
+
 const Title = styled.div`
   margin-top: 10px;
   font-size: 16px;

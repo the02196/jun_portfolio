@@ -28,7 +28,7 @@ function Director() {
         }
         desc={
           language === "ko"
-            ? " 볼쇼이 인형극장과 러시아 알렉산드린스키 국립극장 등, 다양한 규모의 공간에서 상상과 표현의 한계를 시험해 왔습니다."
+            ? " 볼쇼이 인형극장과 러시아 알렉산드린스키 국립극장 등, 다양한 규모의 공간에서 상상과 표현의 한계를 시험해 왔습니다. 또한 8년 간, 100명이 넘는 사람들과 협업하며 소통과 유연함, 설득과 결단력을 배웠습니다."
             : language === "en"
             ? "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
             : language === "ru"

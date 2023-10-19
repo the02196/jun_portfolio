@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import data from "../data/data.json";
 
 const Wrap = styled.div`
-  margin: 170px auto 20px;
+  margin: 130px auto 20px;
   width: 380px;
   display: flex;
   flex-direction: column;
@@ -65,6 +65,13 @@ const Email = styled.p`
   color: #888888;
 `;
 
+const Diploma = styled.p`
+  margin: 0 0 20px;
+  font-size: 13px;
+  font-weight: 200;
+  color: #888888;
+`;
+
 const CopyEmailBtn = styled.button`
   margin-left: 10px;
   background: none;
@@ -101,7 +108,11 @@ function About() {
             <Name className="name">{sources.ko_name}</Name>
             <Desc className="desc">{sources.ko_desc}</Desc>
             <Age className="age">{sources.ko_age}</Age>
+            
             <Skills>{sources.skills}</Skills>
+            <Diploma>
+              {sources.ko_diploma}
+            </Diploma>
             <Email>
               {sources.email}
               <CopyEmailBtn
@@ -118,15 +129,17 @@ function About() {
           <>
             <Name className="name">{sources.en_name}</Name>
             <Desc className="desc">{sources.en_desc}</Desc>
-
             <Skills>{sources.skills}</Skills>
+              <Diploma>
+                {sources.en_diploma}
+              </Diploma>
             <Email>
               {sources.email}
               <CopyEmailBtn
                 onClick={() => {
                   handleCopyClipBoard("the02196@gmail.com");
                 }}
-              >
+                >
                 copy e-mail
               </CopyEmailBtn>
             </Email>
@@ -137,16 +150,17 @@ function About() {
           <>
             <Name className="name">{sources.ru_name}</Name>
             <Desc className="desc">{sources.ru_desc}</Desc>
-
             <Skills>{sources.skills}</Skills>
-            
+              <Diploma>
+                {sources.ru_diploma}
+              </Diploma>
             <Email>
               {sources.email}
               <CopyEmailBtn
                 onClick={() => {
                   handleCopyClipBoard("the02196@gmail.com");
                 }}
-              >
+                >
                 copy e-mail
               </CopyEmailBtn>
             </Email>
