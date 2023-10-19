@@ -29,7 +29,7 @@ function Photographer() {
         }
         desc={
           language === "ko"
-            ? "이태원 일대에서 다양한 사건들을 마주하며 많은 이들의 삶과 시선, 살아내는 방식을 보았습니다. 셔터를 누르던 매 순간, 어떻게 살아야 하는가 라는 질문을 던질 수 있었던 소중한 시간이었습니다."
+            ? "이태원 일대에서 다양한 사건들을 마주하며 다양한 이들의 삶과 시선, 살아내는 방식을 관찰하였습니다."
             : language === "en"
             ? "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
             : language === "ru"

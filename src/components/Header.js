@@ -14,7 +14,7 @@ const Background = styled.div`
     height: 700px;
   }
   @media screen and (min-width: 1440px) {
-    height: 86vh;
+    height: 80vh;
     background-position: ${(props) => `${props.background_position}`};
     
   }
@@ -48,6 +48,13 @@ const Title = styled.div`
   font-size: 20px;
   font-weight: 400;
   margin-bottom: 5px;
+  @media screen and (min-width: 1024px) {
+    font-size: 22px;
+  }
+  @media screen and (min-width: 1440px) {
+  }
+  @media screen and (min-width: 2200px) {
+  }
 `;
 
 const Desc = styled.div`
@@ -55,6 +62,13 @@ const Desc = styled.div`
   font-weight: 200;
   font-size: 13px;
   line-height: 20px;
+  @media screen and (min-width: 1024px) {
+    font-size: 15px;
+  }
+  @media screen and (min-width: 1440px) {
+  }
+  @media screen and (min-width: 2200px) {
+  }
 `;
 
 const Skill = styled.div`
