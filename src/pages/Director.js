@@ -16,6 +16,7 @@ function Director() {
       <Nav />
       <Header
         bg_img={"../images/director/crocodile_desktop.png"}
+        year={"2014~2022"}
         title={
           language === "ko"
             ? "인형극장 연출가"
@@ -27,7 +28,7 @@ function Director() {
         }
         desc={
           language === "ko"
-            ? "극장은 상상력과 표현력의 한계를 시험하기 좋은 공간이었습니다."
+            ? " 볼쇼이 인형극장과 러시아 알렉산드린스키 국립극장 등, 다양한 규모의 공간에서 스스로의 상상과 표현의 한계를 시험해 왔습니다."
             : language === "en"
             ? "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
             : language === "ru"

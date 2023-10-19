@@ -36,6 +36,13 @@ const Wrap = styled.div`
 const Left_Wrap = styled.div``;
 const Right_Wrap = styled.div``;
 
+const Year = styled.div`
+ letter-spacing: 1px;
+  font-size: 12px;
+  font-weight: 200;
+  margin-bottom: 5px;
+`
+
 const Title = styled.div`
   letter-spacing: 1px;
   font-size: 20px;
@@ -58,12 +65,13 @@ const Skill = styled.div`
   margin-bottom: 5px;
 `;
 
-function Header({bg_img, title, desc, contrast, background_position}) {
+function Header({bg_img, title, desc, contrast, background_position, year}) {
   return (
     <>
       <Background background_position={background_position} bg_img={bg_img} contrast={contrast} />
       <Wrap>
         <Left_Wrap>
+          <Year>{year}</Year>
           <Title>{title}</Title>
           <Desc>
          {desc}

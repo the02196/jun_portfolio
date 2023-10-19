@@ -75,14 +75,25 @@ const Title = styled.h1`
   color: ${(props) => props.font_color};
   background-color: black;
   padding: 2px 4px;
+  margin-top: 2px;
+  margin-left: -4px;
+  @media screen and (min-width: 1440px) {
+    font-size: 19px;
+  }
 `;
 
 const Desc = styled.p`
   text-align: ${(props) => props.text_align};
-  width: 130px;
-  font-size: 10px;
-  color: whitesmoke;
-  font-weight: 300;
+  width: 200px;
+  margin: 10px 0 0;
+  padding: 1px;
+  font-size: 12px;
+  color: lightgray;
+  font-weight: 400;
+  text-shadow: 1px 1px 1px #777777; 
+  @media screen and (min-width: 1440px) {
+    font-size: 14px;
+  }
 `;
 
 const Circle = styled.div`
