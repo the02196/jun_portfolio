@@ -74,7 +74,7 @@ const Poster = styled.div`
   }
 `;
 
-const Poster_Crocodile = styled.div`
+const PosterCrocodile = styled.div`
   background-image: url("../images/director/poster_crocodile_mobile.png");
   width: 100%;
   box-sizing: border-box;
@@ -88,7 +88,7 @@ const Poster_Crocodile = styled.div`
   }
 `;
 
-const Jun_with_co_workers = styled.div`
+const JunWithCoWorkers = styled.div`
   background-image: url("../images/director/jun_with_co_workers_mobile.png");
   width: 400px;
   height: 250px;
@@ -129,7 +129,7 @@ const BoyPuppet = styled.div`
   }
 `;
 
-const Jun_director = styled.div`
+const JunDirector = styled.div`
   background-image: url("../images/director/jun_director_mobile.png");
   background-position: center;
   background-size: cover;
@@ -141,9 +141,9 @@ const Jun_director = styled.div`
     height: 500px;
   }
   @media screen and (min-width: 1024px) {
-    background-image: url("../images/photographer/crocodile_desktop.png");
-    width: 1350px;
-    height: 1000px;
+    background-image: url("../images/director/jun_director_desktop.png");
+    width: 800px;
+    height: 540px;
   }
   @media screen and (min-width: 2200px) {
   }
@@ -161,6 +161,37 @@ const Draw = styled.div`
   }
 `;
 
+const Dog = styled.div`
+  background-image: url("../images/director/dog_mobile.png");
+  width: 400px;
+  height: 400px;
+  background-position: center;
+  background-size: cover;
+  filter: grayscale(0.3) contrast(0.9);
+  @media screen and (min-width: 768px) {
+    background-image: url("../images/director/dog_desktop.png");
+    width: 700px;
+    height: 440px;
+  }
+  @media screen and (min-width: 1024px) {
+    width: 1000px;
+    height: 700px;
+  }
+`;
+
+const Cute = styled.div`
+  background-image: url("../images/director/cute_jun.jpg");
+  width: 400px;
+  height: 400px;
+  background-position: center;
+  background-size: cover;
+  filter: saturate(0.85) contrast(1);
+  @media screen and (min-width: 768px) {
+    width: 500px;
+    height: 500px;
+  }
+`;
+
 function Contents_Mobile() {
   return (
     <>
@@ -173,8 +204,9 @@ function Contents_Mobile() {
           </Desc>
         </CardWrap>
       </Wrap>
+      
       <Wrap style={{marginBottom: "0"}} justify={"center"}>
-        <Jun_with_co_workers />
+        <JunWithCoWorkers />
       </Wrap>
       <Wrap justify={"center"}>
         <CardWrap>
@@ -184,9 +216,7 @@ function Contents_Mobile() {
           </Desc>
         </CardWrap>
       </Wrap>
-      {/* <Wrap style={{marginTop: "30px"}} justify={"center"}>
-        <Jun_director />
-      </Wrap> */}
+     
       {/* <Wrap justify={"center"}>
         <CardWrap>
           <Title>Lorem, ipsum dolor.</Title>
@@ -203,7 +233,7 @@ function Contents_Mobile() {
       </Wrap>
       <Wrap style={{ marginTop: "20px" }} justify={"center"}>
         <CardWrap>
-          <Poster_Crocodile></Poster_Crocodile>
+          <PosterCrocodile></PosterCrocodile>
         </CardWrap>
       </Wrap>
       <Wrap justify={"center"}>
@@ -215,6 +245,9 @@ function Contents_Mobile() {
           </Desc>
         </CardWrap>
       </Wrap>
+      {/* <Wrap style={{marginTop: "30px"}} justify={"center"}>
+        <JunDirector  />
+      </Wrap> */}
       <Wrap justify={"center"}>
         <CardWrap style={{ marginRight: "20px" }}>
           <Draw />
@@ -223,11 +256,11 @@ function Contents_Mobile() {
           <Cow />
         </CardWrap>
       </Wrap>
-      {/* <Wrap justify={"center"}>
-        <CardWrap>
-          <BoyPuppet />
-        </CardWrap>
-      </Wrap> */}
+      <Wrap justify={"center"}>
+        
+       <Cute/>
+        
+      </Wrap>
       
     </>
   );

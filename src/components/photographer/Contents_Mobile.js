@@ -194,6 +194,48 @@ const Dance = styled.div`
   }
 `;
 
+const Drag = styled.div`
+  background-image: url("../images/photographer/drag_queen.png");
+  margin: 0 auto;
+  background-position: center;
+  background-size: cover;
+  width: 400px;
+  height: 600px;
+  @media screen and (min-width: 768px) {
+    height: 500px;
+  }
+  @media screen and (min-width: 1024px) {
+    background-image: url("../images/photographer/drag_queen.png");
+    height: 1000px;
+  }
+  @media screen and (min-width: 1440px) {
+  }
+  @media screen and (min-width: 2200px) {
+  }
+`;
+
+const Love = styled.div`
+  background-image: url("../images/photographer/love.jpg");
+  background-position: center;
+  background-size: cover;
+  margin: 0 auto;
+  width: 600px;
+  height: 400px;
+  @media screen and (min-width: 768px) {
+    width: 800px;
+    height: 600px;
+  }
+  @media screen and (min-width: 1024px) {
+    /* background-image: url("../images/photographer/dance_desktop.png"); */
+    width: 1500px;
+    height: 1000px;
+  }
+  @media screen and (min-width: 1440px) {
+  }
+  @media screen and (min-width: 2200px) {
+  }
+`;
+
 function Contents_Mobile() {
   return (
     <>
@@ -257,6 +299,12 @@ function Contents_Mobile() {
       <Wrap justify={"center"}>
         <HappyAndSad />
       </Wrap>
+      <Wrap>
+        <Love/>
+      </Wrap>
+      {/* <Wrap>
+        <Drag/>
+      </Wrap> */}
     </>
   );
 }
