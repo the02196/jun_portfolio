@@ -14,6 +14,7 @@ import DeveloperMode from "./components/DeveloperMode";
 import About from "./pages/About";
 import Footer from "./components/Footer";
 import UpDown from "./components/UpDown";
+import Comments from "./pages/Comments";
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
           <Route path="/director" element={<Director />}></Route>
           <Route path="/photographer" element={<Photographer />}></Route>
           <Route path="/about" element={<About />}></Route>
+          <Route path="/comments" element={<Comments />}></Route>
         </Routes>
         <DeveloperMode />
         <Footer />

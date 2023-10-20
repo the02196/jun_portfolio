@@ -256,11 +256,6 @@ function Contents_Mobile() {
           <Cow />
         </CardWrap>
       </Wrap>
-      <Wrap justify={"center"}>
-        
-       <Cute/>
-        
-      </Wrap>
       
     </>
   );

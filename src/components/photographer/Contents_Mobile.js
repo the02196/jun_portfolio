@@ -54,7 +54,7 @@ const Desc = styled.div`
   @media screen and (min-width: 1024px) {
     font-size: 17px;
   }
-  @media screen and (min-width: 1440px) {  
+  @media screen and (min-width: 1440px) {
   }
   @media screen and (min-width: 2200px) {
   }
@@ -120,6 +120,52 @@ const LittleGirl = styled.div`
   }
 `;
 
+const TwoPoliceman = styled.div`
+  background-image: url("../images/photographer/police_mobile.png");
+  width: 100%;
+  height: 500px;
+  @media screen and (min-width: 768px) {
+    height: 700px;
+  }
+  @media screen and (min-width: 1024px) {
+    background-image: url("../images/photographer/police_desktop.png");
+    height: 900px;
+  }
+  @media screen and (min-width: 2200px) {
+  }
+`;
+
+const Policemans = styled.div`
+  background-image: url("../images/photographer/child_2_mobile.png");
+  width: 100%;
+  height: 500px;
+  @media screen and (min-width: 768px) {
+    height: 700px;
+  }
+  @media screen and (min-width: 1024px) {
+    height: 900px;
+  }
+  @media screen and (min-width: 2200px) {
+  }
+`;
+
+
+const Iran = styled.div`
+  background-image: url("../images/photographer/iran_mobile.png");
+  background-position: center;
+  background-size: cover;
+  width: 600px;
+  height: 500px;
+  filter: grayscale(1) brightness(1.07);
+  @media screen and (min-width: 1024px) {
+    background-image: url("../images/photographer/iran_desktop.png");
+    width: 1350px;
+    height: 1000px;
+  }
+  @media screen and (min-width: 2200px) {
+  }
+`;
+
 const Rain = styled.div`
   background-image: url("../images/photographer/rain_mobile.png");
   width: 100%;
@@ -143,10 +189,6 @@ const OldMan = styled.div`
   background-size: cover;
   width: 600px;
   height: 500px;
-  @media screen and (min-width: 768px) {
-    width: 600px;
-    height: 500px;
-  }
   @media screen and (min-width: 1024px) {
     background-image: url("../images/photographer/old_man_desktop.png");
     width: 1350px;
@@ -215,22 +257,25 @@ const Drag = styled.div`
 `;
 
 const Love = styled.div`
-  background-image: url("../images/photographer/love.jpg");
-  background-position: center;
+  background-image: url("../images/photographer/love_mobile.png");
+  background-position: left;
   background-size: cover;
   margin: 0 auto;
-  width: 600px;
-  height: 400px;
+  width: 400px;
+  height: 700px;
+  filter: grayscale(1) brightness(1.45);
   @media screen and (min-width: 768px) {
-    width: 800px;
-    height: 600px;
+    width: 650px;
+    height: 800px;
   }
   @media screen and (min-width: 1024px) {
-    /* background-image: url("../images/photographer/dance_desktop.png"); */
-    width: 1500px;
-    height: 1000px;
+    background-image: url("../images/photographer/love_desktop.png");
+    width: 1000px;
+    height: 1200px;
   }
   @media screen and (min-width: 1440px) {
+    width: 1500px;
+    height: 1200px;
   }
   @media screen and (min-width: 2200px) {
   }
@@ -241,22 +286,22 @@ function Contents_Mobile() {
     <>
       <Wrap justify={"center"}>
         <CardWrap>
-          <Title>Lorem, ipsum dolor.</Title>
-          <Desc>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, sint?
-            Tempore, enim?
-          </Desc>
+          <Title>"진실이야 말로 최고의 사진이다."</Title>
+          <Desc>헝가리 전쟁 사진가 - 로버트 카퍼</Desc>
         </CardWrap>
       </Wrap>
-      <Wrap justify={"center"}>
-        <CardWrap>
-          <Girl />
-        </CardWrap>
+      <Wrap>
+        <Love />
       </Wrap>
-
       <Wrap justify={"center"}>
         <Dance />
       </Wrap>
+      <Wrap justify={"center"}>
+        <CardWrap>
+          <Desc>Consectetur adipisicing elit. Ab, sint? Tempore, enim?</Desc>
+        </CardWrap>
+      </Wrap>
+
       <Wrap style={{ marginBottom: 0 }} justify={"center"}>
         <CardWrap style={{ marginRight: "30px" }}>
           <LittleBoy />
@@ -267,7 +312,22 @@ function Contents_Mobile() {
       </Wrap>
       <Wrap justify={"center"}>
         <CardWrap>
-          <Title style={{ textAlign: "center" }}>Lorem, ipsum dolor.</Title>
+          <Pray />
+        </CardWrap>
+      </Wrap>
+      <Wrap justify={"center"}>
+        <CardWrap>
+          <Desc style={{ textAlign: "center" }}>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
+            provident eum eaque.
+          </Desc>
+        </CardWrap>
+      </Wrap>
+      <Wrap justify={"center"}>
+        <OldMan />
+      </Wrap>
+      <Wrap justify={"center"}>
+        <CardWrap>
           <Desc style={{ textAlign: "center" }}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
             provident eum eaque.
@@ -276,15 +336,12 @@ function Contents_Mobile() {
       </Wrap>
       <Wrap justify={"center"}>
         <CardWrap>
-          <Pray />
+          <Rain />
         </CardWrap>
       </Wrap>
       <Wrap justify={"center"}>
-        <OldMan />
-      </Wrap>
-      <Wrap justify={"center"}>
         <CardWrap>
-          <Rain />
+          <Girl />
         </CardWrap>
       </Wrap>
       <Wrap justify={"center"}>
@@ -299,9 +356,18 @@ function Contents_Mobile() {
       <Wrap justify={"center"}>
         <HappyAndSad />
       </Wrap>
-      <Wrap>
-        <Love/>
+      <Wrap justify={"center"}>
+        <CardWrap>
+          <Desc>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, sint?
+            Tempore, enim?
+          </Desc>
+        </CardWrap>
       </Wrap>
+      <Wrap justify={"center"}>
+        <Iran />
+      </Wrap>
+
       {/* <Wrap>
         <Drag/>
       </Wrap> */}
