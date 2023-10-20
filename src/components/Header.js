@@ -14,12 +14,12 @@ const Background = styled.div`
     height: 700px;
   }
   @media screen and (min-width: 1440px) {
-    height: 80vh;
+    height: 1080px;
     background-position: ${(props) => `${props.background_position}`};
     
   }
   @media screen and (min-width: 2400px) {
-    height: 1300px
+    height: 1500px
   }
 `;
 

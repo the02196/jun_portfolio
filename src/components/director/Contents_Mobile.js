@@ -81,6 +81,9 @@ const Poster_Crocodile = styled.div`
   height: 560px;
   border: 1px solid #ccc;
   @media screen and (min-width: 768px) {
+    height: 700px;
+  }
+  @media screen and (min-width: 1024px) {
     height: 850px;
   }
 `;
@@ -119,14 +122,18 @@ const BoyPuppet = styled.div`
   background-image: url("../images/director/boy_puppet_mobile.png");
   width: 100%;
   height: 300px;
-  filter: saturate(.9) contrast(0.9);
+  filter: saturate(0) contrast(0.9);
+  @media screen and (min-width: 768px) {
+    background-image: url("../images/director/boy_puppet_desktop.png");
+    height: 400px;
+  }
 `;
 
 const Jun_director = styled.div`
   background-image: url("../images/director/jun_director_mobile.png");
   background-position: center;
   background-size: cover;
-  width: 100%;
+  width: 500px;
   height: 350px;
   filter: saturate(0) contrast(0.9);
   @media screen and (min-width: 768px) {
@@ -166,9 +173,20 @@ function Contents_Mobile() {
           </Desc>
         </CardWrap>
       </Wrap>
-      <Wrap justify={"center"}>
+      <Wrap style={{marginBottom: "0"}} justify={"center"}>
         <Jun_with_co_workers />
       </Wrap>
+      <Wrap justify={"center"}>
+        <CardWrap>
+          <Desc>
+            Consectetur adipisicing elit. Ab, sint?
+            Tempore, enim!
+          </Desc>
+        </CardWrap>
+      </Wrap>
+      {/* <Wrap style={{marginTop: "30px"}} justify={"center"}>
+        <Jun_director />
+      </Wrap> */}
       {/* <Wrap justify={"center"}>
         <CardWrap>
           <Title>Lorem, ipsum dolor.</Title>
@@ -179,12 +197,12 @@ function Contents_Mobile() {
         </CardWrap>
       </Wrap> */}
       <Wrap style={{ marginBottom: "0" }} justify={"center"}>
-        <CardWrap style={{ marginLeft: "50px" }}>
+        <CardWrap>
           <Poster></Poster>
         </CardWrap>
       </Wrap>
       <Wrap style={{ marginTop: "20px" }} justify={"center"}>
-        <CardWrap style={{ marginRight: "50px" }}>
+        <CardWrap>
           <Poster_Crocodile></Poster_Crocodile>
         </CardWrap>
       </Wrap>
@@ -205,14 +223,12 @@ function Contents_Mobile() {
           <Cow />
         </CardWrap>
       </Wrap>
-      <Wrap justify={"center"}>
+      {/* <Wrap justify={"center"}>
         <CardWrap>
           <BoyPuppet />
         </CardWrap>
-      </Wrap>
-      <Wrap justify={"center"}>
-        <Jun_director />
-      </Wrap>
+      </Wrap> */}
+      
     </>
   );
 }

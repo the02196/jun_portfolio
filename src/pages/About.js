@@ -108,11 +108,10 @@ function About() {
             <Name className="name">{sources.ko_name}</Name>
             <Desc className="desc">{sources.ko_desc}</Desc>
             <Age className="age">{sources.ko_age}</Age>
-            
+
             <Skills>{sources.skills}</Skills>
-            <Diploma>
-              {sources.ko_diploma}
-            </Diploma>
+            <Diploma>{sources.ko_academy}</Diploma>
+            <Diploma>{sources.ko_diploma}</Diploma>
             <Email>
               {sources.email}
               <CopyEmailBtn
@@ -130,20 +129,18 @@ function About() {
             <Name className="name">{sources.en_name}</Name>
             <Desc className="desc">{sources.en_desc}</Desc>
             <Skills>{sources.skills}</Skills>
-              <Diploma>
-                {sources.en_diploma}
-              </Diploma>
+            <Diploma>{sources.en_academy}</Diploma>
+            <Diploma>{sources.en_diploma}</Diploma>
             <Email>
               {sources.email}
               <CopyEmailBtn
                 onClick={() => {
                   handleCopyClipBoard("the02196@gmail.com");
                 }}
-                >
+              >
                 copy e-mail
               </CopyEmailBtn>
             </Email>
-            
           </>
         )}
         {language === "ru" && (
@@ -151,16 +148,15 @@ function About() {
             <Name className="name">{sources.ru_name}</Name>
             <Desc className="desc">{sources.ru_desc}</Desc>
             <Skills>{sources.skills}</Skills>
-              <Diploma>
-                {sources.ru_diploma}
-              </Diploma>
+            <Diploma>{sources.en_academy}</Diploma>
+            <Diploma>{sources.ru_diploma}</Diploma>
             <Email>
               {sources.email}
               <CopyEmailBtn
                 onClick={() => {
                   handleCopyClipBoard("the02196@gmail.com");
                 }}
-                >
+              >
                 copy e-mail
               </CopyEmailBtn>
             </Email>

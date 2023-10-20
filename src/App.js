@@ -13,6 +13,7 @@ import Navigator from "./components/Navigator";
 import DeveloperMode from "./components/DeveloperMode";
 import About from "./pages/About";
 import Footer from "./components/Footer";
+import UpDown from "./components/UpDown";
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
         </Routes>
         <DeveloperMode />
         <Footer />
+        <UpDown />
       </Provider>
     </>
   );
