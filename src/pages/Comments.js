@@ -25,6 +25,7 @@ const Button = styled.div`
 
 const Wrap = styled.div`
   width: 100%;
+  margin: 100px 0;
 `;
 
 const InnerWrap = styled.div`
@@ -52,12 +53,12 @@ const BottomWrap = styled.div`
 const LeftWrap = styled.div`
   height: 100%;
   width: 200px;
-  margin-right: 30px;
+  margin-right: 25px;
 `;
 const Profile = styled.div`
   border-radius: 50%;
-  width: 70px;
-  height: 70px;
+  width: 65px;
+  height: 65px;
   background-image: url(${(props) => `${props.profile}`});
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
@@ -102,10 +103,10 @@ function Comments() {
   return (
     <>
       <Nav />
-      <ButtonWrap>
+      {/* <ButtonWrap>
         <Button>개발자 동료들</Button>
         <Button>극장 동료 및 관계자들</Button>
-      </ButtonWrap>
+      </ButtonWrap> */}
 
       <Wrap>
         {sources.map((e, i) => {
@@ -125,9 +126,9 @@ function Comments() {
                   {language === "ru" && <Info>{e.ru_info}</Info>}
                 </TopWrap>
                 <BottomWrap>
-                  {language === "ko" && <Comment>{e.ko_comment}</Comment>}
-                  {language === "en" && <Comment>{e.en_comment}</Comment>}
-                  {language === "ru" && <Comment>{e.ru_comment}</Comment>}
+                  {language === "ko" && <Comment>"{e.ko_comment}"</Comment>}
+                  {language === "en" && <Comment>"{e.en_comment}"</Comment>}
+                  {language === "ru" && <Comment>"{e.ru_comment}"</Comment>}
                   {e.link && <Link href={e.link}>{e.link}</Link>}
                 </BottomWrap>
               </div>

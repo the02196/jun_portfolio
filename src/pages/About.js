@@ -6,17 +6,17 @@ import data from "../data/data.json";
 import { NavLink } from "react-router-dom";
 
 const GoToComments = styled.div`
-  padding: 4px 8px;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 0;
-  z-index: 99;
-  font-size: 10px;
+  margin-top: 15px;
+  margin-bottom: 70px;
+  padding: 10px 0;
+  font-size: 14px;
+  box-sizing: border-box;
   border: 1px solid #aaa;
-  color: #666666;
+  color: #222222;
+  text-align: center;
+  position: relative;
   @media screen and (min-width: 768px) {
-    font-size: 11px;
+    font-size: 16px;
   }
 `;
 
@@ -25,10 +25,17 @@ const Wrap = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-top: 100px;
+  & .photo {
+    background-image: url("../images/about/magic_mobile.png");
+    height: 300px;
+  }
   @media screen and (min-width: 768px) {
-    width: 500px;
+    margin-top: 80px;
+    width: 700px;
     & .photo {
-      height: 600px;
+      background-image: url("../images/about/magic.jpg");
+      height: 500px;
     }
     & .name {
       font-size: 23px;
@@ -43,7 +50,6 @@ const Wrap = styled.div`
 const Photo = styled.div`
   width: 100%;
   height: 470px;
-  background-image: url("../images/about/Magic.jpg");
   background-size: cover;
   background-position: center;
   filter: contrast(2) brightness(0.85) grayscale(1);
@@ -58,42 +64,44 @@ const Name = styled.h1`
 
 const Desc = styled.p`
   margin: 0 0 20px;
-  font-size: 14px;
-  /* text-align: justify; */
+  font-size: 15px;
 `;
 const Age = styled.p`
   margin: 0 0 20px;
-  font-size: 13px;
-  font-weight: 200;
-  color: #666666;
+  font-size: 14px;
+  font-weight: 300;
+  color: #222222;
 `;
 
 const Skills = styled.p`
   margin: 0 0 20px;
-  font-size: 13px;
-  font-weight: 200;
-  color: #666666;
+  font-size: 14px;
+  font-weight: 300;
+  color: #222222;
+  /* text-align: justify; */
 `;
 
 const Email = styled.p`
-  margin: 0 0 70px;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
   font-size: 13px;
-  font-weight: 200;
-  color: #666666;
+  font-weight: 300;
+  color: #222222;
 `;
 
 const Diploma = styled.p`
   margin: 0 0 20px;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 200;
-  color: #666666;
+  color: #222222;
 `;
 
 const CopyEmailBtn = styled.button`
   margin-left: 10px;
   background: none;
   border: 1px solid #aaa;
-  color: #666666;
+  color: #222222;
   padding: 2px 8px;
   cursor: pointer;
 `;
@@ -118,85 +126,65 @@ function About() {
   return (
     <>
       <Nav />
-      <div style={{width: "100%", height: "100vh", display: "flex", alignItems: "center", justifyContent: "center"}}>
+      <div
+        style={{
+          width: "100%",
+          height: "100vh",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
         <Wrap>
           <Photo className="photo" />
-          {language === "ko" && (
-            <>
-              <Name className="name">
-                {sources.ko_name}
-                <NavLink to={"/comments"}>
-                  <GoToComments>
-                    다른 이들이 준에 대해 말하다 &gt;{" "}
-                  </GoToComments>
-                </NavLink>
-              </Name>
-              <Desc className="desc">{sources.ko_desc}</Desc>
-              <Age className="age">{sources.ko_age}</Age>
 
-              <Skills>{sources.skills}</Skills>
-              <Diploma>{sources.ko_academy}</Diploma>
-              <Diploma>{sources.ko_diploma}</Diploma>
-              <Email>
-                {sources.email}
-                <CopyEmailBtn
-                  onClick={() => {
-                    handleCopyClipBoard("the02196@gmail.com");
-                  }}
-                >
-                  copy e-mail
-                </CopyEmailBtn>
-              </Email>
-            </>
-          )}
-          {language === "en" && (
-            <>
-              <Name className="name">
-                {sources.en_name}
-                <NavLink to={"/comments"}>
-                  <GoToComments>Others talk about Jun &gt; </GoToComments>
-                </NavLink>
-              </Name>
+          <>
+            {/* name */}
+            {language === "ko" && (
+              <Name className="name">{sources.ko_name}</Name>
+            )}
+            {language === "en" && (
+              <Name className="name">{sources.en_name}</Name>
+            )}
+            {language === "ru" && (
+              <Name className="name">{sources.ru_name}</Name>
+            )}
+            {/* desc */}
+            {language === "ko" && (
+              <Desc className="desc">{sources.ko_desc}</Desc>
+            )}
+            {language === "en" && (
               <Desc className="desc">{sources.en_desc}</Desc>
-              <Skills>{sources.skills}</Skills>
-              <Diploma>{sources.en_academy}</Diploma>
-              <Diploma>{sources.en_diploma}</Diploma>
-              <Email>
-                {sources.email}
-                <CopyEmailBtn
-                  onClick={() => {
-                    handleCopyClipBoard("the02196@gmail.com");
-                  }}
-                >
-                  copy e-mail
-                </CopyEmailBtn>
-              </Email>
-            </>
-          )}
-          {language === "ru" && (
-            <>
-              <Name className="name">
-                {sources.ru_name}
-                <NavLink to={"/comments"}>
-                  <GoToComments>Другие говорят о Джуне &gt; </GoToComments>
-                </NavLink>
-              </Name>
+            )}
+            {language === "ru" && (
               <Desc className="desc">{sources.ru_desc}</Desc>
-              <Skills>{sources.skills}</Skills>
-              <Diploma>{sources.en_academy}</Diploma>
-              <Diploma>{sources.ru_diploma}</Diploma>
-              <Email>
-                {sources.email}
-                <CopyEmailBtn
-                  onClick={() => {
-                    handleCopyClipBoard("the02196@gmail.com");
-                  }}
-                >
-                  copy e-mail
-                </CopyEmailBtn>
-              </Email>
-            </>
-          )}
+            )}
+            {/* age */}
+            {language === "ko" && <Age className="age">{sources.ko_age}</Age>}
+            {/* skill */}
+            <Skills>{sources.skills}</Skills>
+            {/* academy */}
+            {language === "ko" && <Diploma>{sources.ko_academy}</Diploma>}
+            {language === "en" && <Diploma>{sources.en_academy}</Diploma>}
+            {language === "ru" && <Diploma>{sources.ru_academy}</Diploma>}
+            {/* diploma */}
+            {language === "ko" && <Diploma>{sources.ko_diploma}</Diploma>}
+            {language === "en" && <Diploma>{sources.en_diploma}</Diploma>}
+            {language === "ru" && <Diploma>{sources.ru_diploma}</Diploma>}
+            <Email>
+              {sources.email}
+              <CopyEmailBtn
+                onClick={() => {
+                  handleCopyClipBoard("the02196@gmail.com");
+                }}
+              >
+                copy e-mail
+              </CopyEmailBtn>
+            </Email>
+            <NavLink to={"/comments"}>
+              <GoToComments>다른 이들이 준에 대해 말하다 &gt; </GoToComments>
+            </NavLink>
+          </>
         </Wrap>
       </div>
     </>
@@ -204,5 +192,3 @@ function About() {
 }
 
 export default About;
-
-

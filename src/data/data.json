@@ -237,10 +237,10 @@
       "ru_name" : "Джун Чой",
       "ko_desc" : "SF 소설의 거장인 아서 C. 클라크는 말했습니다. 고도로 발달한 기술은 마법과 구별할 수 없다. 마법을 부리듯이 개발하고 싶은 준 입니다.",
       "en_desc" : "Science fiction master Arthur C. Clarke said, 'Any sufficiently advanced technology is indistinguishable from magic.' I want to be a person who codes like casting spells.",
-      "ko_diploma" : "러시아 국립 무대 예술 대학교, 인형극 연출 학과 스페셜리스트 (학/석사 5년 과정)", 
+      "ko_diploma" : "[졸업] 인형극 연출 학과 스페셜리스트 (학/석사 5년 과정), 러시아 국립 무대 예술 대학교", 
       "en_diploma" : "Russian State Institute of Performing Arts, Puppetry Directing Department Specialist (5-year Bachelor's/Master's program)", 
       "ru_diploma" : "Российский Государственный Институт Сценических Искусств, Специалист по Режиссуре Кукольного Театра (5-летняя программа)", 
-      "ko_academy" : "React를 활용한 프론트엔드 개발자 양성(SPA 프로젝트 개발), 그린 컴퓨터 아트 학원",
+      "ko_academy" : "[재학 중] React를 활용한 프론트엔드 개발자 양성(SPA 프로젝트 개발), 그린 컴퓨터 아트 학원",
       "en_academy" : "Front-end Developer Training using React (SPA Project Development), Green Computer Art School",
       "ru_academy" : "Обучение фронтенд-разработчиков с использованием React (разработка SPA-проектов), Академия Компьютерных Искусств Green",
       "ru_desc" : "Мастер научной фантастики Артур К. Кларк сказал: 'Любая достаточно развитая технология неотличима от магии.' Я хочу стать человеком, который программирует, как колдует.",
@@ -295,18 +295,6 @@
         "en_info" : "Theater critic, director, educator and researcher in the field of puppet theater, candidate of art history",
         "ru_info" : "Театральный критик, режиссер, педагог и исследователь в области театра кукол, кандидат искусствоведения",
         "ko_comment" : "준의 극장은 극작가, 연출가, 미술가인 준에게 현대인의 복잡한 심리적 문제를 탐구하는 수단입니다. 그는 어린 시절을 '모두가 어린 시절에서 왔다'고 하는 것처럼 나이와 시간이 아닌, 우리 각자 안에 있는 고통의 장소로 이해합니다. 무대의 사물과 캐릭터들의 리얼리즘은 허구이며, 실제로는 이면에 감춰진 비밀이 있어 관객이 해결해야 합니다. 준의 연출적 상징주의는 동화적인 설득력을 가지고 있습니다. 이해할 수 없는 것은 주인공들과 이 작품의 저자 모두의 진정성으로 정당화됩니다.",
-        "en_comment" : "The theater for Jun is a means for him, as a playwright, director, and artist, to explore the complex psychological issues of modern people. He understands childhood not as age and time, but as a place of pain within each of us, as if 'we all come from childhood'. The realism of stage objects and characters is fictional, and in reality, there is a hidden secret behind them that the audience must solve. Jun's directorial symbolism has a fairytale-like persuasiveness. What is incomprehensible is justified by the sincerity of both the characters and the author of this work.",
-        "ru_comment" : "Театр для Джун-хюнг Чоя, драматург, режиссер и художник является способом исследования сложных психологических проблем современного человека. Детство (а, как известно, «все мы родом из детства») режиссер понимает не как возраст и время, а как место боли внутри каждого из нас. Реалистичность сценических вещей и персонажей – мнимая; на самом деле за ними скрывается тайна, требующая от зрителя разгадки. Авторский режиссерский символизм Джун-хюнг Чоя обладает сказочной убедительностью – непонятное в спектакле оправдывается неподдельной наивностью и искренностью как героев, так и автора этого произведения. Простота сценических решений должна понравиться современному подростку, который может узнать себя в любом из героев спектакля, независимо от их возраста."
-      },
-      {
-        "profile" : "../images/comments/den.png",
-        "ko_name" : "데니스 예드리쇼프",
-        "en_name" : "Den Edryshov",
-        "ru_name" : "Денис Едрышов",
-        "ko_info" : "예술학 박사, 극장 평론가, 연출가, 교육자, 인형극 연구자",
-        "en_info" : "Theater critic, director, educator and researcher in the field of puppet theater, candidate of art history",
-        "ru_info" : "Театральный критик, режиссер, педагог и исследователь в области театра кукол, кандидат искусствоведения",
-        "ko_comment" : "저는 이런 연극에는 참석해서는 안 됩니다. 하지만 이것은 정말 강렬했습니다. 준과 파벨의 연극 <Don't go>가 끝난 후, 저는 말할 수 없을 정도로 경악했습니다. 나는 40분 동안 정신을 차릴 수 없었고, 지금도 충분한 말을 찾을 수 없습니다. 감사합니다.",
         "en_comment" : "The theater for Jun is a means for him, as a playwright, director, and artist, to explore the complex psychological issues of modern people. He understands childhood not as age and time, but as a place of pain within each of us, as if 'we all come from childhood'. The realism of stage objects and characters is fictional, and in reality, there is a hidden secret behind them that the audience must solve. Jun's directorial symbolism has a fairytale-like persuasiveness. What is incomprehensible is justified by the sincerity of both the characters and the author of this work.",
         "ru_comment" : "Театр для Джун-хюнг Чоя, драматург, режиссер и художник является способом исследования сложных психологических проблем современного человека. Детство (а, как известно, «все мы родом из детства») режиссер понимает не как возраст и время, а как место боли внутри каждого из нас. Реалистичность сценических вещей и персонажей – мнимая; на самом деле за ними скрывается тайна, требующая от зрителя разгадки. Авторский режиссерский символизм Джун-хюнг Чоя обладает сказочной убедительностью – непонятное в спектакле оправдывается неподдельной наивностью и искренностью как героев, так и автора этого произведения. Простота сценических решений должна понравиться современному подростку, который может узнать себя в любом из героев спектакля, независимо от их возраста."
       }

@@ -1,8 +1,8 @@
 import React from "react";
 import { NavLink, Route, Routes, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import store from "./store";
-import { Provider } from "react-redux";
+import store, { stopAnimation } from "./store";
+import { Provider, useDispatch, useSelector } from "react-redux";
 import GlobalStyles from "./GlobalStyles";
 import Main from "./pages/Main";
 import Developer from "./pages/Developer";
@@ -17,7 +17,9 @@ import UpDown from "./components/UpDown";
 import Comments from "./pages/Comments";
 
 
+
 function App() {
+
   return (
     <>
       <Provider store={store}>

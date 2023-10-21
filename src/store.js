@@ -1,6 +1,16 @@
 import {configureStore, createSlice} from "@reduxjs/toolkit";
 import data from "../src/data/data.json"
 
+const animationSlice = createSlice({
+  name: 'animation',
+  initialState: true,
+  reducers: {
+    stopAnimation: (state, action) => action.payload
+  }
+});
+
+
+
 const filterSlice = createSlice({
   name: 'filter',
   initialState: 'All',
@@ -74,6 +84,7 @@ const developerMode = createSlice({
 });
 
 
+export const { stopAnimation } = animationSlice.actions;
 export const { setFilter } = filterSlice.actions;
 export const { setData } = dataSlice.actions;
 export const { setIsOpen } = isOpenSlice.actions;
@@ -86,6 +97,7 @@ export const { setDeveloperMode } = developerMode.actions;
 
 export default configureStore({
   reducer:{
+    animation : animationSlice.reducer,
     isOpen: isOpenSlice.reducer,
     selectedValue: selectedValueSlice.reducer,
     selectedView: selectedViewSlice.reducer,

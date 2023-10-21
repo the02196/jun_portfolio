@@ -4,9 +4,12 @@ import { setIsOpen, setSelectedValue } from "../../store";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 
-const Wrap = styled.div`
+const Wrap = styled.ul`
   width: 100%;
-  margin: 100px 0 70px;
+  margin: 100px auto 70px;
+  @media screen and (min-width: 1600px) {
+    width: 1600px;
+  }
 `;
 
 const FlexWrap = styled.ul`
@@ -28,28 +31,23 @@ const InnerWrap = styled.li`
   display: flex;
 
   width: 100%;
-height: 100px;
+  height: 100px;
   margin: 10px auto;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
   cursor: pointer;
   position: relative;
   @media screen and (min-width: 768px) {
-    
     width: 100%;
-  height: 150px;
+    height: 150px;
   }
-  /* @media screen and (min-width: 1024px) {
-    width: 500px;
-    height: 750px;
+  @media screen and (min-width: 1600px) {
+    border-left: 1px solid black;
+    border-right: 1px solid black;
   }
-
-  @media screen and (min-width: 1440px) {
-  } */
 `;
 
 const Image = styled.div`
-
   /* display: none; */
   width: 120px;
   height: 100%;
@@ -59,7 +57,7 @@ const Image = styled.div`
   background-position: center;
   @media screen and (min-width: 768px) {
     width: 180px;
-  height: 100%;
+    height: 100%;
   }
 `;
 
@@ -101,7 +99,6 @@ const Days = styled.span`
   font-weight: 200;
   @media screen and (min-width: 763px) {
     font-size: 15px;
-   
   }
   @media screen and (min-width: 1440px) {
   }
@@ -111,7 +108,7 @@ const Days_Mobile = styled.span`
   color: ${(props) => props.color};
   font-size: 15px;
   margin-top: 5px;
-  font-weight:200;
+  font-weight: 200;
   display: block;
   @media screen and (min-width: 763px) {
     display: none;
@@ -137,7 +134,7 @@ const Desc = styled.p`
   display: none;
   @media screen and (min-width: 763px) {
     font-size: 14px;
-      display: block;
+    display: block;
   }
   @media screen and (min-width: 1440px) {
   }
@@ -151,8 +148,8 @@ const Option = styled.p`
   font-size: 13px;
   font-weight: 300;
   @media screen and (min-width: 763px) {
-   bottom: 10px;
-  right: 20px;
+    bottom: 10px;
+    right: 20px;
   }
 `;
 
@@ -162,11 +159,11 @@ function ListView() {
   const data = useSelector((state) => state.data);
   let filteredData = [];
   let unfilteredData = [];
-  if (filter === 'All') {
+  if (filter === "All") {
     filteredData = data[0];
   } else {
-    filteredData = data[0].filter(e => e.option === filter);
-    unfilteredData = data[0].filter(e => e.option !== filter);
+    filteredData = data[0].filter((e) => e.option === filter);
+    unfilteredData = data[0].filter((e) => e.option !== filter);
   }
   const finalData = [...filteredData, ...unfilteredData];
 
@@ -183,7 +180,7 @@ function ListView() {
               {language === "ru" && e.ru_title}
             </Title>
             <Days color={e.font_color}>{e.days}</Days>
-          {/* <Days_Mobile color={e.font_color}>{e.days}</Days_Mobile> */}
+            {/* <Days_Mobile color={e.font_color}>{e.days}</Days_Mobile> */}
           </Card_Top_Wrap>
           <Skills color={e.font_color}>{e.skills}</Skills>
           <Desc color={e.font_color}>
@@ -199,8 +196,6 @@ function ListView() {
 }
 
 function List() {
-
-
   return (
     <>
       <Wrap>
