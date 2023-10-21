@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import styled, { css, keyframes } from "styled-components";
-import { stopAnimation } from "../../store";
+import { hideTriangle, stopAnimation } from "../../store";
 
 const ClickMe = keyframes`
   0%{
@@ -102,15 +102,17 @@ function GoToMypage() {
       dispatch(stopAnimation(false));
     }, 2000);
   }, []);
+  const triangle = useSelector((state) => state.triangle);
 
   return (
+   
     <>
       <Btn animation={animation}>
-        <NavLink
+        <NavLink onClick={()=>{dispatch(hideTriangle(false))}}
           style={{ width: "100%", height: "100%" }}
           to={"/about"}
         ></NavLink>
-      <Triangle animation={animation}></Triangle>
+      {triangle && <Triangle animation={animation}></Triangle>}
       </Btn>
       {/* <AboutJun>About Jun</AboutJun> */}
     </>
