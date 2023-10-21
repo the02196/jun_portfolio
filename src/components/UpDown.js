@@ -10,6 +10,7 @@ import {
 
 const UpDownWrap = styled.div`
   position: fixed;
+  z-index: 9999;
   bottom: 50px;
   right: 10px;
   width: 30px;
