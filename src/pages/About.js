@@ -6,22 +6,21 @@ import data from "../data/data.json";
 import { NavLink } from "react-router-dom";
 
 const GoToComments = styled.div`
-  padding: 2px 8px;
+  padding: 4px 8px;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   right: 0;
   z-index: 99;
   font-size: 10px;
-  border: 1px solid #666666;
+  border: 1px solid #aaa;
   color: #666666;
-  @media screen and (min-width: 768px){
+  @media screen and (min-width: 768px) {
     font-size: 11px;
   }
 `;
 
 const Wrap = styled.div`
-  margin: 70px auto 20px;
   width: 380px;
   display: flex;
   flex-direction: column;
@@ -80,7 +79,7 @@ const Email = styled.p`
   margin: 0 0 70px;
   font-size: 13px;
   font-weight: 200;
-  color:#666666;
+  color: #666666;
 `;
 
 const Diploma = styled.p`
@@ -119,88 +118,91 @@ function About() {
   return (
     <>
       <Nav />
-      <Wrap>
-        <Photo className="photo" />
-        {language === "ko" && (
-          <>
-            <Name className="name">{sources.ko_name}
-            <NavLink to={"/comments"}>
-          <GoToComments>
-            다른 이들이 준에 대해 말하다 &gt;{" "}
-          </GoToComments>
-        </NavLink>
-            </Name>
-            <Desc className="desc">{sources.ko_desc}</Desc>
-            <Age className="age">{sources.ko_age}</Age>
+      <div style={{width: "100%", height: "100vh", display: "flex", alignItems: "center", justifyContent: "center"}}>
+        <Wrap>
+          <Photo className="photo" />
+          {language === "ko" && (
+            <>
+              <Name className="name">
+                {sources.ko_name}
+                <NavLink to={"/comments"}>
+                  <GoToComments>
+                    다른 이들이 준에 대해 말하다 &gt;{" "}
+                  </GoToComments>
+                </NavLink>
+              </Name>
+              <Desc className="desc">{sources.ko_desc}</Desc>
+              <Age className="age">{sources.ko_age}</Age>
 
-            <Skills>{sources.skills}</Skills>
-            <Diploma>{sources.ko_academy}</Diploma>
-            <Diploma>{sources.ko_diploma}</Diploma>
-            <Email>
-              {sources.email}
-              <CopyEmailBtn
-                onClick={() => {
-                  handleCopyClipBoard("the02196@gmail.com");
-                }}
-              >
-                copy e-mail
-              </CopyEmailBtn>
-            </Email>
-          </>
-        )}
-        {language === "en" && (
-          <>
-            <Name className="name">{sources.en_name}
-            <NavLink to={"/comments"}>
-          <GoToComments>
-          Others talk about Jun &gt;{" "}
-          </GoToComments>
-        </NavLink>
-            </Name>
-            <Desc className="desc">{sources.en_desc}</Desc>
-            <Skills>{sources.skills}</Skills>
-            <Diploma>{sources.en_academy}</Diploma>
-            <Diploma>{sources.en_diploma}</Diploma>
-            <Email>
-              {sources.email}
-              <CopyEmailBtn
-                onClick={() => {
-                  handleCopyClipBoard("the02196@gmail.com");
-                }}
-              >
-                copy e-mail
-              </CopyEmailBtn>
-            </Email>
-          </>
-        )}
-        {language === "ru" && (
-          <>
-            <Name className="name">{sources.ru_name}
-            <NavLink to={"/comments"}>
-          <GoToComments>
-          Другие говорят о Джуне &gt;{" "}
-          </GoToComments>
-        </NavLink>
-            </Name>
-            <Desc className="desc">{sources.ru_desc}</Desc>
-            <Skills>{sources.skills}</Skills>
-            <Diploma>{sources.en_academy}</Diploma>
-            <Diploma>{sources.ru_diploma}</Diploma>
-            <Email>
-              {sources.email}
-              <CopyEmailBtn
-                onClick={() => {
-                  handleCopyClipBoard("the02196@gmail.com");
-                }}
-              >
-                copy e-mail
-              </CopyEmailBtn>
-            </Email>
-          </>
-        )}
-      </Wrap>
+              <Skills>{sources.skills}</Skills>
+              <Diploma>{sources.ko_academy}</Diploma>
+              <Diploma>{sources.ko_diploma}</Diploma>
+              <Email>
+                {sources.email}
+                <CopyEmailBtn
+                  onClick={() => {
+                    handleCopyClipBoard("the02196@gmail.com");
+                  }}
+                >
+                  copy e-mail
+                </CopyEmailBtn>
+              </Email>
+            </>
+          )}
+          {language === "en" && (
+            <>
+              <Name className="name">
+                {sources.en_name}
+                <NavLink to={"/comments"}>
+                  <GoToComments>Others talk about Jun &gt; </GoToComments>
+                </NavLink>
+              </Name>
+              <Desc className="desc">{sources.en_desc}</Desc>
+              <Skills>{sources.skills}</Skills>
+              <Diploma>{sources.en_academy}</Diploma>
+              <Diploma>{sources.en_diploma}</Diploma>
+              <Email>
+                {sources.email}
+                <CopyEmailBtn
+                  onClick={() => {
+                    handleCopyClipBoard("the02196@gmail.com");
+                  }}
+                >
+                  copy e-mail
+                </CopyEmailBtn>
+              </Email>
+            </>
+          )}
+          {language === "ru" && (
+            <>
+              <Name className="name">
+                {sources.ru_name}
+                <NavLink to={"/comments"}>
+                  <GoToComments>Другие говорят о Джуне &gt; </GoToComments>
+                </NavLink>
+              </Name>
+              <Desc className="desc">{sources.ru_desc}</Desc>
+              <Skills>{sources.skills}</Skills>
+              <Diploma>{sources.en_academy}</Diploma>
+              <Diploma>{sources.ru_diploma}</Diploma>
+              <Email>
+                {sources.email}
+                <CopyEmailBtn
+                  onClick={() => {
+                    handleCopyClipBoard("the02196@gmail.com");
+                  }}
+                >
+                  copy e-mail
+                </CopyEmailBtn>
+              </Email>
+            </>
+          )}
+        </Wrap>
+      </div>
     </>
   );
 }
 
 export default About;
+
+

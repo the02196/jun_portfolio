@@ -6,12 +6,8 @@ import Nav from "../components/Nav";
 
 const ButtonWrap = styled.div`
   width: 400px;
-  margin: 100px auto 30px;
+  margin: 100px auto 0;
   background-color: black;
-  position: fixed;
-  top: -40px;
-  left: 50%;
-  transform: translateX(-50%);
   @media screen and (min-width: 768px) {
     width: 700px;
   }
@@ -29,7 +25,6 @@ const Button = styled.div`
 
 const Wrap = styled.div`
   width: 100%;
-  margin-top: 150px;
 `;
 
 const InnerWrap = styled.div`
@@ -89,6 +84,13 @@ const Comment = styled.div`
   width: 100%;
 `;
 
+const Link = styled.a`
+  padding-top: 10px;
+  font-size: 16px;
+  font-weight: 400;
+  width: 100%;
+`;
+
 function Comments() {
   const language = useSelector((state) => state.language);
   const [sources, setSources] = useState([]);
@@ -96,6 +98,7 @@ function Comments() {
   useEffect(() => {
     setSources(data.comments);
   }, []);
+
   return (
     <>
       <Nav />
@@ -103,6 +106,7 @@ function Comments() {
         <Button>개발자 동료들</Button>
         <Button>극장 동료 및 관계자들</Button>
       </ButtonWrap>
+
       <Wrap>
         {sources.map((e, i) => {
           return (
@@ -112,11 +116,19 @@ function Comments() {
               </LeftWrap>
               <div>
                 <TopWrap>
-                  <Name>{e.ko_name}</Name>
-                  <Info>{e.ko_info}</Info>
+                  {language === "ko" && <Name>{e.ko_name}</Name>}
+                  {language === "en" && <Name>{e.en_name}</Name>}
+                  {language === "ru" && <Name>{e.ru_name}</Name>}
+
+                  {language === "ko" && <Info>{e.ko_info}</Info>}
+                  {language === "en" && <Info>{e.en_info}</Info>}
+                  {language === "ru" && <Info>{e.ru_info}</Info>}
                 </TopWrap>
                 <BottomWrap>
-                  <Comment>{e.ko_comment}</Comment>
+                  {language === "ko" && <Comment>{e.ko_comment}</Comment>}
+                  {language === "en" && <Comment>{e.en_comment}</Comment>}
+                  {language === "ru" && <Comment>{e.ru_comment}</Comment>}
+                  {e.link && <Link href={e.link}>{e.link}</Link>}
                 </BottomWrap>
               </div>
             </InnerWrap>
