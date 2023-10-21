@@ -25,9 +25,9 @@ const Wrap = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 150px;
+  margin-top: 300px;
   @media screen and (min-width: 768px) {
-    margin-top: 80px;
+    margin-top: 200px;
     width: 700px;
     & .photo {
     }
