@@ -53,6 +53,10 @@ const Photo = styled.div`
   background-position: center;
   filter: contrast(2) brightness(0.85) grayscale(1);
   background-image: url("../images/about/magic_mobile.png");
+  @media screen and (min-width: 768px) {
+    background-image: url("../images/about/magic.jpg");
+    height: 500px;
+  }
 `;
 
 const Name = styled.h1`
