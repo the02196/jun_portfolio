@@ -6,29 +6,41 @@ import { stopAnimation } from "../../store";
 
 const ClickMe = keyframes`
   0%{
-    left: 110px;
-  }
-  25%{
-    left: 120px;
+    transform: scale(3);
+    top: 5%;
+    left: 150px;
   }
   50%{
-    left: 110px;
+    transform: scale(3);
+    top: 5%;
+    left: 150px;
   }
-  75%{
-    left: 120px;
+  70%{
+    transform: scale(0.5);
   }
   100%{
-    left: 110px;
+    transform: scale(1);
+  }
+`;
+
+const Show = keyframes`
+  0%{
+    opacity: 0;
+  }
+  80%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
   }
 `;
 
 const Btn = styled.div`
   width: 50px;
   height: 40px;
-  position: absolute;
+  position: fixed;
   border-radius: 50%;
-  top: 50%;
-  transform: translateY(-48%);
+  top: 11px;
   left: 60px;
   z-index: 999;
   background-image: url("../images/main/jun_face.png");
@@ -38,6 +50,7 @@ const Btn = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: ${(props) => props.animation && css`${ClickMe} 1.5s forwards`};
   p {
     margin: 0;
     font-size: 16px;
@@ -60,16 +73,16 @@ const Btn = styled.div`
 
 const Triangle = styled.div`
  position: absolute;
-    top: 25px;
-    left: 110px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 50px;
     width: 0;
     height: 0;
     border-bottom: 6px solid transparent;
     border-top: 6px solid transparent;
     border-left: 10px solid transparent;
     border-right: 10px solid black;
-    animation: ${(props) => props.animation && css`${ClickMe} 1s forwards`};
-    animation-delay: 0.5s;
+    animation: ${(props) => props.animation && css`${Show} 1.5s forwards`};
 `
 
 const AboutJun = styled.div`
@@ -92,13 +105,13 @@ function GoToMypage() {
 
   return (
     <>
-      <Btn>
+      <Btn animation={animation}>
         <NavLink
           style={{ width: "100%", height: "100%" }}
           to={"/about"}
         ></NavLink>
-      </Btn>
       <Triangle animation={animation}></Triangle>
+      </Btn>
       {/* <AboutJun>About Jun</AboutJun> */}
     </>
   );

@@ -78,7 +78,7 @@ const Title = styled.h1`
   margin-top: 2px;
   margin-left: -4px;
   @media screen and (min-width: 1440px) {
-    font-size: 19px;
+    font-size: 20px;
   }
 `;
 

@@ -5,6 +5,12 @@ import { useSelector } from "react-redux";
 import Contents_Mobile from "../components/photographer/Contents_Mobile";
 import Contents_Tablet from "../components/photographer/Contents_Tablet";
 import Contents_Desktop from "../components/photographer/Contents_Desktop";
+import styled from "styled-components";
+
+const BlackBg = styled.div`
+  background-color: black;
+`
+
 
 function Photographer() {
   const language = useSelector((state) => state.language);

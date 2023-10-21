@@ -32,8 +32,8 @@ function Nav() {
       <Wrap>
         <Star />
         <Languages />
-        <GoToMypage />
       </Wrap>
+        <GoToMypage />
         {/* <View /> */}
         {/* <Profile /> */}
     </>
