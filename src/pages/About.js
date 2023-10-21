@@ -26,15 +26,10 @@ const Wrap = styled.div`
   flex-direction: column;
   justify-content: center;
   margin-top: 100px;
-  & .photo {
-    height: 300px;
-  }
   @media screen and (min-width: 768px) {
     margin-top: 80px;
     width: 700px;
     & .photo {
-      background-image: url("../images/about/magic.jpg");
-      height: 500px;
     }
     & .name {
       font-size: 23px;
@@ -48,13 +43,13 @@ const Wrap = styled.div`
 
 const Photo = styled.div`
   width: 100%;
-  height: 470px;
+  height: 300px;
   background-size: cover;
   background-position: center;
   filter: contrast(2) brightness(0.85) grayscale(1);
   background-image: url("../images/about/magic_mobile.png");
   @media screen and (min-width: 768px) {
-    background-image: url("../images/about/magic.jpg");
+    background-image: url("../images/about/magic_desktop.png");
     height: 500px;
   }
 `;
