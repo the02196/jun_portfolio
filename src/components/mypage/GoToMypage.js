@@ -7,12 +7,12 @@ import { stopAnimation } from "../../store";
 const ClickMe = keyframes`
   0%{
     transform: scale(3);
-    top: 5%;
+    top: 7%;
     left: 150px;
   }
   50%{
     transform: scale(3);
-    top: 5%;
+    top: 7%;
     left: 150px;
   }
   70%{

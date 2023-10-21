@@ -62,6 +62,7 @@ const Desc = styled.div`
   font-weight: 200;
   font-size: 13px;
   line-height: 20px;
+  line-height: 20px;
   @media screen and (min-width: 1024px) {
     font-size: 15px;
   }

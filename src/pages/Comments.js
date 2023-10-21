@@ -58,10 +58,8 @@ const LeftWrap = styled.div`
 const Profile = styled.div`
   border-radius: 50%;
   width: 65px;
-  height: 65px;
+  height: 53px;
   background-image: url(${(props) => `${props.profile}`});
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
-    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   background-size: cover;
   background-position: center;
 `;
@@ -77,10 +75,12 @@ const Info = styled.p`
   margin-top: 5px;
   font-size: 13px;
   color: #777777;
+
 `;
 
 const Comment = styled.div`
-  font-size: 16px;
+  font-size: 15px;
+  line-height: 20px;
   font-weight: 400;
   width: 100%;
 `;

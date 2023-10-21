@@ -25,7 +25,7 @@ const Wrap = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 100px;
+  margin-top: 150px;
   @media screen and (min-width: 768px) {
     margin-top: 80px;
     width: 700px;
@@ -64,6 +64,7 @@ const Name = styled.h1`
 const Desc = styled.p`
   margin: 0 0 20px;
   font-size: 15px;
+  line-height: 20px;
 `;
 const Age = styled.p`
   margin: 0 0 20px;
@@ -77,6 +78,7 @@ const Skills = styled.p`
   font-size: 14px;
   font-weight: 300;
   color: #222222;
+  line-height: 20px;
   /* text-align: justify; */
 `;
 
@@ -93,6 +95,7 @@ const Diploma = styled.p`
   margin: 0 0 20px;
   font-size: 14px;
   font-weight: 200;
+  line-height: 20px;
   color: #222222;
 `;
 

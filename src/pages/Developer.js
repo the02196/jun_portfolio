@@ -31,8 +31,7 @@ function Developer() {
     <>
       <Nav />
       <Header
-        bg_img={"../images/developer/Jun_Coding.jpeg"}
-        // bg_img={"../images/main/hands.png"}
+        bg_img={"../images/main/hands.png"}
         year={"2023~"}
         title={
           language === "ko"

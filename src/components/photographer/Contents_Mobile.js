@@ -286,8 +286,8 @@ function Contents_Mobile() {
     <>
       <Wrap justify={"center"}>
         <CardWrap>
-          <Title>"진실이야 말로 최고의 사진이다."</Title>
-          <Desc>헝가리 전쟁 사진가 - 로버트 카퍼</Desc>
+          <Title>Lorem, ipsum dolor.</Title>
+          <Desc>Ipsum dolor sit amet consectetur.</Desc>
         </CardWrap>
       </Wrap>
       <Wrap>
