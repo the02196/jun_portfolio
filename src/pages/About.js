@@ -27,7 +27,6 @@ const Wrap = styled.div`
   justify-content: center;
   margin-top: 100px;
   & .photo {
-    background-image: url("../images/about/magic_mobile.png");
     height: 300px;
   }
   @media screen and (min-width: 768px) {
@@ -53,6 +52,7 @@ const Photo = styled.div`
   background-size: cover;
   background-position: center;
   filter: contrast(2) brightness(0.85) grayscale(1);
+  background-image: url("../images/about/magic_mobile.png");
 `;
 
 const Name = styled.h1`
@@ -182,7 +182,9 @@ function About() {
               </CopyEmailBtn>
             </Email>
             <NavLink to={"/comments"}>
-              <GoToComments>다른 이들이 준에 대해 말하다 &gt; </GoToComments>
+              {language === "ko" && <GoToComments>다른 이들이 준에 대해 말하다 &gt; </GoToComments>}
+              {language === "en" && <GoToComments>Others talk about Jun &gt; </GoToComments>}
+              {language === "ru" && <GoToComments>Другие говорят о Джуне &gt; </GoToComments>}
             </NavLink>
           </>
         </Wrap>
