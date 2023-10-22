@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import SlidePoster from "./SlidePoster";
 const Wrap = styled.div`
   display: flex;
   margin: 100px 0;
@@ -18,6 +19,25 @@ const CardWrap = styled.div`
   }
   @media screen and (min-width: 1024px) {
     width: 600px;
+  }
+  @media screen and (min-width: 1440px) {
+  }
+  @media screen and (min-width: 2200px) {
+  }
+`;
+
+
+const PosterWrap = styled.div`
+  width: 300px;
+  div {
+    background-position: center;
+    background-size: cover;
+  }
+  @media screen and (min-width: 768px) {
+    width: 400px;
+  }
+  @media screen and (min-width: 1024px) {
+    width: 500px;
   }
   @media screen and (min-width: 1440px) {
   }
@@ -78,13 +98,41 @@ const PosterCrocodile = styled.div`
   background-image: url("../images/director/poster_crocodile_mobile.png");
   width: 100%;
   box-sizing: border-box;
-  height: 560px;
+  height: 250px;
   border: 1px solid #ccc;
   @media screen and (min-width: 768px) {
-    height: 700px;
+    height: 460px;
   }
   @media screen and (min-width: 1024px) {
-    height: 850px;
+    height: 710px;
+  }
+`;
+
+const PosterSamurai = styled.div`
+  background-image: url("../images/director/poster_samurai_mobile.png");
+  width: 100%;
+  box-sizing: border-box;
+  height: 250px;
+  background-position: left;
+  @media screen and (min-width: 768px) {
+    height: 460px;
+  }
+  @media screen and (min-width: 1024px) {
+    height: 710px;
+  }
+`;
+
+const PosterSamurai2 = styled.div`
+  background-image: url("../images/director/poster_samurai2_mobile.png");
+  width: 100%;
+  box-sizing: border-box;
+  height: 250px;
+  background-position: left;
+  @media screen and (min-width: 768px) {
+    height: 460px;
+  }
+  @media screen and (min-width: 1024px) {
+    height: 710px;
   }
 `;
 
@@ -101,7 +149,6 @@ const JunWithCoWorkers = styled.div`
     height: 440px;
   }
   @media screen and (min-width: 1024px) {
-  
     width: 800px;
     height: 500px;
   }
@@ -204,19 +251,16 @@ function Contents_Mobile() {
           </Desc>
         </CardWrap>
       </Wrap>
-      
-      <Wrap style={{marginBottom: "0"}} justify={"center"}>
+
+      <Wrap style={{ marginBottom: "0" }} justify={"center"}>
         <JunWithCoWorkers />
       </Wrap>
       <Wrap justify={"center"}>
         <CardWrap>
-          <Desc>
-            Consectetur adipisicing elit. Ab, sint?
-            Tempore, enim!
-          </Desc>
+          <Desc>Consectetur adipisicing elit. Ab, sint? Tempore, enim!</Desc>
         </CardWrap>
       </Wrap>
-     
+
       {/* <Wrap justify={"center"}>
         <CardWrap>
           <Title>Lorem, ipsum dolor.</Title>
@@ -226,16 +270,23 @@ function Contents_Mobile() {
           </Desc>
         </CardWrap>
       </Wrap> */}
-      <Wrap style={{ marginBottom: "0" }} justify={"center"}>
+      {/* <Wrap style={{ marginBottom: "0" }} justify={"center"}>
         <CardWrap>
           <Poster></Poster>
         </CardWrap>
       </Wrap>
       <Wrap style={{ marginTop: "20px" }} justify={"center"}>
-        <CardWrap>
+        <PosterWrap style={{ marginRight: "20px" }}>
           <PosterCrocodile></PosterCrocodile>
-        </CardWrap>
-      </Wrap>
+        </PosterWrap>
+        <PosterWrap style={{ marginRight: "20px" }}>
+          <PosterSamurai2></PosterSamurai2>
+        </PosterWrap>
+        <PosterWrap>
+          <PosterSamurai ></PosterSamurai>
+        </PosterWrap>
+      </Wrap> */}
+      <SlidePoster />
       <Wrap justify={"center"}>
         <CardWrap>
           <Title>Lorem, ipsum dolor.</Title>
@@ -256,7 +307,6 @@ function Contents_Mobile() {
           <Cow />
         </CardWrap>
       </Wrap>
-      
     </>
   );
 }

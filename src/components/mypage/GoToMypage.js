@@ -43,7 +43,7 @@ const Btn = styled.div`
   top: 11px;
   left: 60px;
   z-index: 999;
-  background-image: url("../images/main/jun_face.png");
+  background-image: url("../images/about/jun.png");
   background-position: center;
   background-size: cover;
   cursor: pointer;

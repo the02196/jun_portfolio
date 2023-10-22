@@ -47,7 +47,7 @@ function DropdownMenu() {
   const selectedView = useSelector((state) => state.selectedView);
   const isOpen = useSelector((state) => state.isOpen);
 
-  const options = ["All", "Project", "Toy Project", "Clone Coding"];
+  const options = ["All", "Project", "Toy Project", "Clone Coding", "Portfolio"];
 
   const getRelatedOptions = () => {
     return options.filter((option) => option !== filter);

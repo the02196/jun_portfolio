@@ -301,7 +301,6 @@ function Contents_Mobile() {
           <Desc>Consectetur adipisicing elit. Ab, sint? Tempore, enim?</Desc>
         </CardWrap>
       </Wrap>
-
       <Wrap style={{ marginBottom: 0 }} justify={"center"}>
         <CardWrap style={{ marginRight: "30px" }}>
           <LittleBoy />

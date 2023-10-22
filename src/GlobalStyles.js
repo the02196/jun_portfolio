@@ -27,7 +27,6 @@ input {font-size:14px}
 em {font-weight:bold;font-style:normal}
 .swiper-button-next,
 .swiper-button-prev {
-
   background-color: white;
   border: 1px solid #ccc;
   color: white;
@@ -50,11 +49,13 @@ em {font-weight:bold;font-style:normal}
    display: none
   }}
 
+
 .swiper-button-next::after,
 .swiper-button-prev::after {
   color: black;
   font-weight: bold;
   font-size: 30px;
+  
 }
 `;
 
