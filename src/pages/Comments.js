@@ -52,7 +52,7 @@ const BottomWrap = styled.div`
 `;
 const LeftWrap = styled.div`
   height: 100%;
-  width: 200px;
+  width: 80px;
   margin-right: 25px;
 `;
 const Profile = styled.div`
@@ -115,7 +115,7 @@ function Comments() {
               <LeftWrap>
                 <Profile profile={e.profile} />
               </LeftWrap>
-              <div>
+              <div style={{width: "100%"}}>
                 <TopWrap>
                   {language === "ko" && <Name>{e.ko_name}</Name>}
                   {language === "en" && <Name>{e.en_name}</Name>}
