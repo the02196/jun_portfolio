@@ -3,6 +3,7 @@ import data from "../../data/data.json";
 import { setIsOpen, setSelectedValue } from "../../store";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
 const Wrap = styled.ul`
   width: 100%;
@@ -16,6 +17,12 @@ const FlexWrap = styled.ul`
   display: flex;
   flex-direction: column;
   margin: 0 auto;
+   a{
+    text-decoration: none;
+    &:visited{
+      color: ${props => props.link === "Project" ? "white" : "black"}
+    }
+  }
   /* @media screen and (min-width: 1024px) {
     max-width: 1100px;
   }
@@ -143,12 +150,24 @@ const Desc = styled.p`
 const Option = styled.p`
   color: ${(props) => props.color};
   position: absolute;
-  bottom: 0px;
-  right: 10px;
+  bottom: 5px;
+  right: 15px;
   font-size: 13px;
   font-weight: 300;
   @media screen and (min-width: 763px) {
-    bottom: 10px;
+    bottom: 5px;
+    right: 20px;
+  }
+`;
+
+const Github = styled.p`
+  position: absolute;
+  bottom: 2px;
+  right: 10px;
+  font-size: 13px;
+  font-weight: 400;
+  @media screen and (min-width: 763px) {
+    bottom: 2px;
     right: 20px;
   }
 `;
@@ -169,28 +188,36 @@ function ListView() {
 
   return finalData.map((e, i) => {
     return (
+      
+        <NavLink target="blank" to={e.link}>
       <InnerWrap key={i}>
-        <Image bg_img={e.list_bg_img} />
-        <Card bg_color={e.bg_color}>
-          <Card_Top_Wrap>
-            <Title color={e.font_color}>
-              {" "}
-              {language === "ko" && e.ko_title}
-              {language === "en" && e.en_title}
-              {language === "ru" && e.ru_title}
-            </Title>
-            <Days color={e.font_color}>{e.days}</Days>
-            {/* <Days_Mobile color={e.font_color}>{e.days}</Days_Mobile> */}
-          </Card_Top_Wrap>
-          <Skills color={e.font_color}>{e.skills}</Skills>
-          <Desc color={e.font_color}>
-            {language === "ko" && e.ko_desc}
-            {language === "en" && e.en_desc}
-            {language === "ru" && e.ru_desc}
-          </Desc>
-        </Card>
-        <Option color={e.font_color}>{e.option}</Option>
+          <Image bg_img={e.list_bg_img} />
+          <Card bg_color={e.bg_color}>
+            <Card_Top_Wrap>
+              <Title color={e.font_color}>
+                {" "}
+                {language === "ko" && e.ko_title}
+                {language === "en" && e.en_title}
+                {language === "ru" && e.ru_title}
+              </Title>
+              <Days color={e.font_color}>{e.days}</Days>
+              {/* <Days_Mobile color={e.font_color}>{e.days}</Days_Mobile> */}
+            </Card_Top_Wrap>
+            <Skills color={e.font_color}>{e.skills}</Skills>
+            <Desc color={e.font_color}>
+              {language === "ko" && e.ko_desc}
+              {language === "en" && e.en_desc}
+              {language === "ru" && e.ru_desc}
+            </Desc>
+          </Card>
+          <Option color={e.font_color}>{e.option}</Option>
+          {/* {e.option === "Project" ? (
+            <Github style={{ color: "white" }}>Link to GitHub</Github>
+          ) : (
+            <Github>Link to GitHub</Github>
+          )} */}
       </InnerWrap>
+        </NavLink>
     );
   });
 }

@@ -3,6 +3,8 @@ import styled from "styled-components";
 import data from "../../data/data.json";
 import { setIsOpen, setSelectedValue } from "../../store";
 import { useDispatch, useSelector } from "react-redux";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { NavLink } from "react-router-dom";
 
 const Wrap = styled.div`
   width: 100%;
@@ -31,6 +33,12 @@ const Inner_Wrap = styled.li`
   margin: 30px auto;
   cursor: pointer;
   position: relative;
+  a{
+    text-decoration: none;
+    &:visited{
+      color: ${props => props.link === "Project" ? "white" : "black"}
+    }
+  }
   @media screen and (min-width: 763px) {
     width: 590px;
     height: 900px;
@@ -122,25 +130,31 @@ const Option = styled.p`
   font-weight: 300;
 `;
 
+const Github = styled.p`
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+  font-weight: 400;
+`;
+
 function GalleryView() {
   const language = useSelector((state) => state.language);
   const filter = useSelector((state) => state.filter);
   const data = useSelector((state) => state.data);
   let filteredData = [];
   let unfilteredData = [];
-  if (filter === 'All') {
+  if (filter === "All") {
     filteredData = data[0];
   } else {
-    filteredData = data[0].filter(e => e.option === filter);
-    unfilteredData = data[0].filter(e => e.option !== filter);
+    filteredData = data[0].filter((e) => e.option === filter);
+    unfilteredData = data[0].filter((e) => e.option !== filter);
   }
   const finalData = [...filteredData, ...unfilteredData];
-
-
 
   return finalData.map((e, i) => {
     return (
       <Inner_Wrap key={i}>
+        <NavLink target="blank" link={e.link} to={e.link}>
         <Image bg_img={e.mobile} />
         <Card bg_color={e.bg_color}>
           <Card_Top_Wrap>
@@ -159,6 +173,9 @@ function GalleryView() {
           </Desc>
         </Card>
         <Option color={e.font_color}>{e.option}</Option>
+        {e.option === "Project" ? <Github style={{color: "white"}}>Link to GitHub</Github> : <Github>Link to GitHub</Github>}
+        
+      </NavLink>
       </Inner_Wrap>
     );
   });

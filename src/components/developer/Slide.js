@@ -18,6 +18,7 @@ import "swiper/css/navigation";
 //wowjs를 실행하기 위해서 아래 2개 import 해줘야함 , yarn add wowjs를 해줘야함(터미널에)
 import WOW from "wowjs";
 import "animate.css";
+import { NavLink } from "react-router-dom";
 
 const Wrap = styled.div`
   width: 100%;
@@ -41,7 +42,12 @@ const Inner_Wrap = styled.li`
   cursor: pointer;
   position: relative;
   /* -webkit-box-reflect: below 30px linear-gradient(transparent, rgba(0,0,0,0), rgba(0,0,0,0.3)); */
-
+  a{
+    text-decoration: none;
+    &:visited{
+      color: ${props => props.link === "Project" ? "white" : "black"}
+    }
+  }
   @media screen and (min-width: 768px) {
     width: 450px;
     height: 700px;
@@ -133,33 +139,12 @@ const Option = styled.p`
   font-weight: 300;
 `;
 
-function SlideView({ json, language }) {
-  return json.map((e, i) => {
-    return (
-      <Inner_Wrap key={i}>
-        <Image bg_img={e.mobile} />
-        <Card bg_color={e.bg_color}>
-          <Card_Top_Wrap>
-            <Title color={e.font_color}>
-              {" "}
-              {language === "ko" && e.ko_title}
-              {language === "en" && e.en_title}
-              {language === "ru" && e.ru_title}
-            </Title>
-            <Days color={e.font_color}>{e.days}</Days>
-          </Card_Top_Wrap>
-          <Skills color={e.font_color}>{e.skills}</Skills>
-          <Desc color={e.font_color}>
-            {language === "ko" && e.ko_desc}
-            {language === "en" && e.en_desc}
-            {language === "ru" && e.ru_desc}
-          </Desc>
-        </Card>
-        <Option color={e.font_color}>{e.option}</Option>
-      </Inner_Wrap>
-    );
-  });
-}
+const Github = styled.p`
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+  font-weight: 400;
+`;
 
 function Slide() {
   const language = useSelector((state) => state.language);
@@ -167,17 +152,17 @@ function Slide() {
   const data = useSelector((state) => state.data);
   let filteredData = [];
   let unfilteredData = [];
-  if (filter === 'All') {
+  if (filter === "All") {
     filteredData = data[0];
   } else {
-    filteredData = data[0].filter(e => e.option === filter);
-    unfilteredData = data[0].filter(e => e.option !== filter);
+    filteredData = data[0].filter((e) => e.option === filter);
+    unfilteredData = data[0].filter((e) => e.option !== filter);
   }
   const finalData = [...filteredData, ...unfilteredData];
 
   useEffect(() => {
     new WOW.WOW({
-      boxClass: "wow", 
+      boxClass: "wow",
       animateClass: "animate_animated",
       live: false,
       mobile: true,
@@ -203,7 +188,7 @@ function Slide() {
           centeredSlides={true}
           // pagination={{ clickable: true }}
           autoplay={{ delay: 3500, disableOnInteraction: false }}
-          breakpoints={{    
+          breakpoints={{
             768: {
               slidesPerView: 1.6,
             },
@@ -222,7 +207,13 @@ function Slide() {
           // grabCursor={true}
 
           navigation={{ clickable: true }}
-          modules={[EffectCoverflow, Pagination, Autoplay, Navigation, Mousewheel]}
+          modules={[
+            EffectCoverflow,
+            Pagination,
+            Autoplay,
+            Navigation,
+            Mousewheel,
+          ]}
           onSlideChange={() => {
             //wow는 스크롤에 반응함. 그리고 슬라이드 넘길때마다 animation 효과가 적용되야하므로 onSlideChange를 사용해야함
             new WOW.WOW({
@@ -235,24 +226,31 @@ function Slide() {
             return (
               <SwiperSlide key={i} style={{ overflow: "hidden" }}>
                 <Inner_Wrap>
-                  <Image bg_img={e.mobile} />
-                  <Card bg_color={e.bg_color}>
-                    <Card_Top_Wrap>
-                      <Title color={e.font_color}>
-                        {language === "ko" && e.ko_title}
-                        {language === "en" && e.en_title}
-                        {language === "ru" && e.ru_title}
-                      </Title>
-                      <Days color={e.font_color}>{e.days}</Days>
-                    </Card_Top_Wrap>
-                    <Skills color={e.font_color}>{e.skills}</Skills>
-                    <Desc color={e.font_color}>
-                      {language === "ko" && e.ko_desc}
-                      {language === "en" && e.en_desc}
-                      {language === "ru" && e.ru_desc}
-                    </Desc>
-                  </Card>
-                  <Option color={e.font_color}>{e.option}</Option>
+                  <NavLink target="blank" link={e.link} to={e.link}>
+                    <Image bg_img={e.mobile} />
+                    <Card bg_color={e.bg_color}>
+                      <Card_Top_Wrap>
+                        <Title color={e.font_color}>
+                          {language === "ko" && e.ko_title}
+                          {language === "en" && e.en_title}
+                          {language === "ru" && e.ru_title}
+                        </Title>
+                        <Days color={e.font_color}>{e.days}</Days>
+                      </Card_Top_Wrap>
+                      <Skills color={e.font_color}>{e.skills}</Skills>
+                      <Desc color={e.font_color}>
+                        {language === "ko" && e.ko_desc}
+                        {language === "en" && e.en_desc}
+                        {language === "ru" && e.ru_desc}
+                      </Desc>
+                    </Card>
+                    <Option color={e.font_color}>{e.option}</Option>
+                    {e.option === "Project" ? (
+                      <Github style={{ color: "white" }}>Link to GitHub</Github>
+                    ) : (
+                      <Github>Link to GitHub</Github>
+                    )}
+                  </NavLink>
                 </Inner_Wrap>
               </SwiperSlide>
             );
