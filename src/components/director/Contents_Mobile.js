@@ -1,15 +1,19 @@
 import React from "react";
 import styled from "styled-components";
 import SlidePoster from "./SlidePoster";
+import { NavLink } from "react-router-dom";
+import Theaters from "./Theaters";
+import { useSelector } from "react-redux";
 const Wrap = styled.div`
   display: flex;
-  margin: 100px 0;
+  margin: 100px 0 50px;
   width: 100%;
-  justify-content: ${(props) => props.justify};
+  justify-content: center;
 `;
 
 const CardWrap = styled.div`
   width: 400px;
+
   div {
     background-position: center;
     background-size: cover;
@@ -19,25 +23,6 @@ const CardWrap = styled.div`
   }
   @media screen and (min-width: 1024px) {
     width: 600px;
-  }
-  @media screen and (min-width: 1440px) {
-  }
-  @media screen and (min-width: 2200px) {
-  }
-`;
-
-
-const PosterWrap = styled.div`
-  width: 300px;
-  div {
-    background-position: center;
-    background-size: cover;
-  }
-  @media screen and (min-width: 768px) {
-    width: 400px;
-  }
-  @media screen and (min-width: 1024px) {
-    width: 500px;
   }
   @media screen and (min-width: 1440px) {
   }
@@ -63,11 +48,11 @@ const Title = styled.div`
 `;
 
 const Desc = styled.div`
-  margin-top: 5px;
+  margin-top: 10px;
   font-size: 13px;
   font-weight: 300;
   text-align: center;
-  color: #999999;
+  color: #888888;
   @media screen and (min-width: 768px) {
     font-size: 15px;
   }
@@ -80,63 +65,8 @@ const Desc = styled.div`
   }
 `;
 
-const Poster = styled.div`
-  background-image: url("../images/director/dont_go_poster_mobile.png");
-  width: 100%;
-  box-sizing: border-box;
-  height: 560px;
-  border: 1px solid #ccc;
-  @media screen and (min-width: 768px) {
-    height: 700px;
-  }
-  @media screen and (min-width: 1024px) {
-    height: 850px;
-  }
-`;
-
-const PosterCrocodile = styled.div`
-  background-image: url("../images/director/poster_crocodile_mobile.png");
-  width: 100%;
-  box-sizing: border-box;
-  height: 250px;
-  border: 1px solid #ccc;
-  @media screen and (min-width: 768px) {
-    height: 460px;
-  }
-  @media screen and (min-width: 1024px) {
-    height: 710px;
-  }
-`;
-
-const PosterSamurai = styled.div`
-  background-image: url("../images/director/poster_samurai_mobile.png");
-  width: 100%;
-  box-sizing: border-box;
-  height: 250px;
-  background-position: left;
-  @media screen and (min-width: 768px) {
-    height: 460px;
-  }
-  @media screen and (min-width: 1024px) {
-    height: 710px;
-  }
-`;
-
-const PosterSamurai2 = styled.div`
-  background-image: url("../images/director/poster_samurai2_mobile.png");
-  width: 100%;
-  box-sizing: border-box;
-  height: 250px;
-  background-position: left;
-  @media screen and (min-width: 768px) {
-    height: 460px;
-  }
-  @media screen and (min-width: 1024px) {
-    height: 710px;
-  }
-`;
-
 const JunWithCoWorkers = styled.div`
+  margin: 0 auto;
   background-image: url("../images/director/jun_with_co_workers_mobile.png");
   width: 400px;
   height: 250px;
@@ -158,7 +88,7 @@ const Cow = styled.div`
   background-image: url("../images/director/cow_mobile.png");
   width: 100%;
   height: 500px;
-  filter: saturate(0.75) contrast(0.9);
+  filter: saturate(0.65) contrast(0.9);
   @media screen and (min-width: 768px) {
     background-image: url("../images/director/cow_desktop.png");
     height: 800px;
@@ -169,9 +99,10 @@ const BoyPuppet = styled.div`
   background-image: url("../images/director/boy_puppet_mobile.png");
   width: 100%;
   height: 300px;
-  filter: saturate(0) contrast(0.9);
+  filter: saturate(0.8) contrast(0.9);
   @media screen and (min-width: 768px) {
     background-image: url("../images/director/boy_puppet_desktop.png");
+    width: 100%;
     height: 400px;
   }
 `;
@@ -200,8 +131,10 @@ const Draw = styled.div`
   background-image: url("../images/director/draw_mobile.png");
   background-position: center;
   background-size: cover;
+  border: 1px solid blakc;
   width: 100%;
   height: 500px;
+  filter: saturate(0.7) contrast(1.3);
   @media screen and (min-width: 768px) {
     background-image: url("../images/director/draw_desktop.png");
     height: 800px;
@@ -210,19 +143,19 @@ const Draw = styled.div`
 
 const Dog = styled.div`
   background-image: url("../images/director/dog_mobile.png");
-  width: 400px;
-  height: 400px;
+  margin: 0 auto;
+  width: 100%;
+  height: 500px;
   background-position: center;
   background-size: cover;
   filter: grayscale(0.3) contrast(0.9);
   @media screen and (min-width: 768px) {
     background-image: url("../images/director/dog_desktop.png");
-    width: 700px;
-    height: 440px;
+    width: 100%;
+    height: 800px;
   }
-  @media screen and (min-width: 1024px) {
-    width: 1000px;
-    height: 700px;
+  @media screen and (min-width: 1440px) {
+    height: 1000px;
   }
 `;
 
@@ -239,67 +172,95 @@ const Cute = styled.div`
   }
 `;
 
-function Contents_Mobile() {
+function ShowVideo() {
+  return (
+    <Wrap style={{ marginTop: "60px" }}>
+      <iframe
+        src="https://vk.com/video_ext.php?oid=-205978459&id=456239019&hd=2"
+        width="853"
+        height="480"
+        allow="autoplay; encrypted-media; fullscreen; picture-in-picture;"
+        frameborder="0"
+        allowFullScreen
+      ></iframe>
+    </Wrap>
+  );
+}
+
+function ShowTitleAndDesc({ title, desc }) {
   return (
     <>
-      <Wrap justify={"center"}>
-        <CardWrap>
-          <Title>Lorem, ipsum dolor.</Title>
-          <Desc>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, sint?
-            Tempore, enim?
-          </Desc>
-        </CardWrap>
-      </Wrap>
+      {title && <Title>{title}</Title>}
+      {desc && <Desc>{desc}</Desc>}
+    </>
+  );
+}
 
-      <Wrap style={{ marginBottom: "0" }} justify={"center"}>
-        <JunWithCoWorkers />
-      </Wrap>
-      <Wrap justify={"center"}>
+function Contents_Mobile() {
+  const language = useSelector((state) => state.language);
+  return (
+    <>
+      <Wrap>
         <CardWrap>
-          <Desc>Consectetur adipisicing elit. Ab, sint? Tempore, enim!</Desc>
+          <ShowTitleAndDesc
+            title={ language === "ko"
+            ? "함께 한다는 것"
+            : language === "en"
+            ? "Being together"
+            : language === "ru"
+            && "Быть вместе"
+            }
+            desc={language === "ko"
+            ? "슬로바키아에서 열린 Istropolitana 연극 축제에서, 동료들과"
+            : language === "en"
+            ? "At the Istropolitana theater festival in Slovakia, with colleagues"
+            : language === "ru"
+            && "На театральном фестивале Istropolitana в Словакии, с коллегами"}
+          />
         </CardWrap>
       </Wrap>
-
-      {/* <Wrap justify={"center"}>
+      <JunWithCoWorkers />
+      <Theaters />
+      <Wrap>
         <CardWrap>
-          <Title>Lorem, ipsum dolor.</Title>
-          <Desc>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, sint?
-            Tempore, enim?
-          </Desc>
-        </CardWrap>
-      </Wrap> */}
-      {/* <Wrap style={{ marginBottom: "0" }} justify={"center"}>
-        <CardWrap>
-          <Poster></Poster>
+          <ShowTitleAndDesc
+            title={language === "ko"
+            ? "편집 및 그래픽 작업"
+            : language === "en"
+            ? "Video editing and graphic design"
+            : language === "ru"
+            && "Монтаж и графический дизайн"}
+            desc={language === "ko"
+            ? "공연 홍보를 위한 영상과 포스터 제작"
+            : language === "en"
+            ? "Сreating videos and posters for promoting performances"
+            : language === "ru"
+            && "Создание трейлера и постеров для продвижения спектаклей"}
+          />
         </CardWrap>
       </Wrap>
-      <Wrap style={{ marginTop: "20px" }} justify={"center"}>
-        <PosterWrap style={{ marginRight: "20px" }}>
-          <PosterCrocodile></PosterCrocodile>
-        </PosterWrap>
-        <PosterWrap style={{ marginRight: "20px" }}>
-          <PosterSamurai2></PosterSamurai2>
-        </PosterWrap>
-        <PosterWrap>
-          <PosterSamurai ></PosterSamurai>
-        </PosterWrap>
-      </Wrap> */}
+      <ShowVideo />
       <SlidePoster />
-      <Wrap justify={"center"}>
+      <Wrap>
         <CardWrap>
-          <Title>Lorem, ipsum dolor.</Title>
-          <Desc>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, sint?
-            Tempore, enim?
-          </Desc>
+          <ShowTitleAndDesc
+            title={language === "ko"
+            ? "인형극 스페셜리스트"
+            : language === "en"
+            ? "Puppet theater specialist"
+            : language === "ru"
+            && "Специалист по кукольному театру"}
+            desc={language === "ko"
+            ? "연출가 및 테크니컬 엔지니어로 일하며 다양한 퍼펫들을 설계"
+            : language === "en"
+            ? "Worked as a director and technical engineer, designed various puppets"
+            : language === "ru"
+            && "Работал режиссером и техническим инженером, занимался разработкой различных кукол"}
+          />
         </CardWrap>
       </Wrap>
-      {/* <Wrap style={{marginTop: "30px"}} justify={"center"}>
-        <JunDirector  />
-      </Wrap> */}
-      <Wrap justify={"center"}>
+      
+      <Wrap>
         <CardWrap style={{ marginRight: "20px" }}>
           <Draw />
         </CardWrap>
@@ -307,6 +268,8 @@ function Contents_Mobile() {
           <Cow />
         </CardWrap>
       </Wrap>
+      {/* <Dog /> */}
+   
     </>
   );
 }
