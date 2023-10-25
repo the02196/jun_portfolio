@@ -153,15 +153,16 @@ const Policemans = styled.div`
 
 const Iran = styled.div`
   background-image: url("../images/photographer/iran_mobile.png");
-  background-position: center;
+  background-position: 40% center;
   background-size: cover;
   width: 600px;
   height: 500px;
   filter: grayscale(1) brightness(1.07);
   @media screen and (min-width: 1024px) {
+    background-position: center;
     background-image: url("../images/photographer/iran_desktop.png");
-    width: 800px;
-    height: 1000px;
+    width:  900px;
+    height: 800px;
   }
   @media screen and (min-width: 2200px) {
   }
@@ -284,15 +285,16 @@ const Love = styled.div`
 
 const Memorial = styled.div`
   background-image: url("../images/photographer/memorial_mobile.png");
-  background-position: center;
+  background-position: 40% center;
   background-size: cover;
   width: 600px;
   height: 500px;
   filter: grayscale(1) contrast(1.05) brightness(1.1);
   @media screen and (min-width: 1024px) {
+    background-position: center;
     background-image: url("../images/photographer/memorial_desktop.png");
-    width: 800px;
-    height: 1000px;
+    width: 900px;
+    height: 800px;
   }
   @media screen and (min-width: 2200px) {
   }
