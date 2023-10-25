@@ -388,11 +388,11 @@ function Contents_Mobile() {
         <ShowTitleAndDesc
            
             desc={language === "ko"
-            ? "무릎 꿇어야만 보이는 것들"
+            ? "낮아져야 보이는 것들"
             : language === "en"
-            ? "Things that can only be seen by kneeling down"
+            ? "Things that become visible only when lowering oneself"
             : language === "ru"
-            && "Вещи, видимые только при преклонении колен"}
+            && "Вещи, видимые только при понижении"}
           ></ShowTitleAndDesc>
         </CardWrap>
       </Wrap>
@@ -428,11 +428,11 @@ function Contents_Mobile() {
         <CardWrap>
         <ShowTitleAndDesc
             desc={language === "ko"
-            ? "몰입해야 보이는 것들"
+            ? "동화되어야 보이는 것들"
             : language === "en"
-            ? "Things that become visible only through immersion"
+            ? "Things seen only when assimilating"
             : language === "ru"
-            && "Вещи, которые видны только при погружении"}
+            && "Вещи, видимые только при ассимиляции чужих эмоций"}
           ></ShowTitleAndDesc>
         </CardWrap>
       </Wrap>
@@ -450,7 +450,7 @@ function Contents_Mobile() {
         <CardWrap>
         <ShowTitleAndDesc
             desc={language === "ko"
-            ? "고개를 들어야 보이는 것들"
+            ? "고개 들어야 보이는 것들"
             : language === "en"
             ? "Things that become visible only when looking up"
             : language === "ru"
