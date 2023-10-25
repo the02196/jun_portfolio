@@ -188,8 +188,8 @@ const OldMan = styled.div`
   background-image: url("../images/photographer/old_man_mobile.png");
   background-position: center;
   background-size: cover;
-  width: 600px;
-  height: 500px;
+  width: 100%;
+  height: 700px;
   @media screen and (min-width: 1024px) {
     background-image: url("../images/photographer/old_man_desktop.png");
     width: 1350px;
