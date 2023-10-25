@@ -301,8 +301,8 @@ const Police2 = styled.div`
   background-image: url("../images/photographer/police_2_mobile.png");
   background-position: center;
   background-size: cover;
-  width: 600px;
-  height: 500px;
+  width: 100%;
+  height: 560px;
   filter: grayscale(1) brightness(1.1) contrast(1.15);
   @media screen and (min-width: 1024px) {
     background-image: url("../images/photographer/police_2_desktop.png");
@@ -333,12 +333,12 @@ const Monks = styled.div`
   background-image: url("../images/photographer/monks_1.jpg");
   background-position: center;
   background-size: cover;
-  width: 600px;
-  height: 400px;
+  width: 100%;
+  height: 600px;
   filter: grayscale(1) brightness(1.1) contrast(1.2);
   @media screen and (min-width: 1024px) {
-    width: 1350px;
-    height: 800px;
+    width: 1450px;
+    height: 860px;
   }
   @media screen and (min-width: 2200px) {
   }
