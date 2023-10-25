@@ -317,8 +317,8 @@ const Together = styled.div`
   background-image: url("../images/photographer/together_mobile.png");
   background-position: center;
   background-size: cover;
-  width: 350px;
-  height: 500px;
+  width: 400px;
+  height: 600px;
   filter: grayscale(1) ;
   @media screen and (min-width: 1024px) {
     background-image: url("../images/photographer/together_desktop.png");
