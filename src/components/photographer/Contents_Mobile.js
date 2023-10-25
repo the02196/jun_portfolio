@@ -1,10 +1,12 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
 const Wrap = styled.div`
   display: flex;
   margin: 100px 0;
   width: 100%;
-  justify-content: ${(props) => props.justify};
+  justify-content:center;
+  
 `;
 
 const CardWrap = styled.div`
@@ -149,7 +151,6 @@ const Policemans = styled.div`
   }
 `;
 
-
 const Iran = styled.div`
   background-image: url("../images/photographer/iran_mobile.png");
   background-position: center;
@@ -159,7 +160,7 @@ const Iran = styled.div`
   filter: grayscale(1) brightness(1.07);
   @media screen and (min-width: 1024px) {
     background-image: url("../images/photographer/iran_desktop.png");
-    width: 1350px;
+    width: 800px;
     height: 1000px;
   }
   @media screen and (min-width: 2200px) {
@@ -281,27 +282,119 @@ const Love = styled.div`
   }
 `;
 
-function Contents_Mobile() {
+const Memorial = styled.div`
+  background-image: url("../images/photographer/memorial_mobile.png");
+  background-position: center;
+  background-size: cover;
+  width: 600px;
+  height: 500px;
+  filter: grayscale(1) contrast(1.05) brightness(1.1);
+  @media screen and (min-width: 1024px) {
+    background-image: url("../images/photographer/memorial_desktop.png");
+    width: 800px;
+    height: 1000px;
+  }
+  @media screen and (min-width: 2200px) {
+  }
+`;
+const Police2 = styled.div`
+  background-image: url("../images/photographer/police_2_mobile.png");
+  background-position: center;
+  background-size: cover;
+  width: 600px;
+  height: 500px;
+  filter: grayscale(1) brightness(1.1) contrast(1.15);
+  @media screen and (min-width: 1024px) {
+    background-image: url("../images/photographer/police_2_desktop.png");
+    width: 100%;
+    height: 1000px;
+  }
+  @media screen and (min-width: 2200px) {
+  }
+`;
+
+const Together = styled.div`
+  background-image: url("../images/photographer/together_mobile.png");
+  background-position: center;
+  background-size: cover;
+  width: 350px;
+  height: 500px;
+  filter: grayscale(1) ;
+  @media screen and (min-width: 1024px) {
+    background-image: url("../images/photographer/together_desktop.png");
+    width: 700px;
+    height: 850px;
+  }
+  @media screen and (min-width: 2200px) {
+  }
+`;
+
+const Monks = styled.div`
+  background-image: url("../images/photographer/monks_1.jpg");
+  background-position: center;
+  background-size: cover;
+  width: 600px;
+  height: 400px;
+  filter: grayscale(1) brightness(1.1) contrast(1.2);
+  @media screen and (min-width: 1024px) {
+    width: 1350px;
+    height: 800px;
+  }
+  @media screen and (min-width: 2200px) {
+  }
+`;
+
+function ShowTitleAndDesc({ title, desc }) {
   return (
     <>
-      <Wrap justify={"center"}>
+      {title && <Title>{title}</Title>}
+      {desc && <Desc>{desc}</Desc>}
+    </>
+  );
+}
+
+function Contents_Mobile() {
+  const language = useSelector((state) => state.language);
+  return (
+    <>
+      <Wrap >
         <CardWrap>
-          <Title>Lorem, ipsum dolor.</Title>
-          <Desc>Ipsum dolor sit amet consectetur.</Desc>
+          <ShowTitleAndDesc
+            title={language === "ko"
+            ? "시선"
+            : language === "en"
+            ? "Sight"
+            : language === "ru"
+            && "Взгляд"}
+            desc={language === "ko"
+            ? "가까이 있는 것들을 보기"
+            : language === "en"
+            ? "Observe things that are close"
+            : language === "ru"
+            && "Наблюдать за близкими вещами"}
+          ></ShowTitleAndDesc>
         </CardWrap>
       </Wrap>
       <Wrap>
         <Love />
       </Wrap>
-      <Wrap justify={"center"}>
+      <Wrap>
         <Dance />
       </Wrap>
-      <Wrap justify={"center"}>
+      <Wrap>
         <CardWrap>
-          <Desc>Consectetur adipisicing elit. Ab, sint? Tempore, enim?</Desc>
+        <ShowTitleAndDesc
+           
+            desc={language === "ko"
+            ? "무릎 꿇어야만 보이는 것들"
+            : language === "en"
+            ? "Things that can only be seen by kneeling down"
+            : language === "ru"
+            && "Вещи, видимые только при преклонении колен"}
+          ></ShowTitleAndDesc>
         </CardWrap>
       </Wrap>
-      <Wrap style={{ marginBottom: 0 }} justify={"center"}>
+      <Wrap style={{ marginBottom: 0 }}>
         <CardWrap style={{ marginRight: "30px" }}>
           <LittleBoy />
         </CardWrap>
@@ -309,62 +402,87 @@ function Contents_Mobile() {
           <LittleGirl />
         </CardWrap>
       </Wrap>
-      <Wrap justify={"center"}>
+      <Wrap>
         <CardWrap>
           <Pray />
         </CardWrap>
       </Wrap>
-      <Wrap justify={"center"}>
+      <Wrap>
         <CardWrap>
-          <Desc style={{ textAlign: "center" }}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
-            provident eum eaque.
-          </Desc>
+          <ShowTitleAndDesc
+            desc={language === "ko"
+            ? "기다려야 보이는 것들"
+            : language === "en"
+            ? "Things that are seen only by waiting"
+            : language === "ru"
+            && "Вещи, которые видны только при ожидании"}
+          ></ShowTitleAndDesc>
         </CardWrap>
       </Wrap>
-      <Wrap justify={"center"}>
+      <Wrap>
         <OldMan />
       </Wrap>
-      <Wrap justify={"center"}>
+      <Wrap>
         <CardWrap>
-          <Desc style={{ textAlign: "center" }}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
-            provident eum eaque.
-          </Desc>
+        <ShowTitleAndDesc
+            desc={language === "ko"
+            ? "몰입해야 보이는 것들"
+            : language === "en"
+            ? "Things that become visible only through immersion"
+            : language === "ru"
+            && "Вещи, которые видны только при погружении"}
+          ></ShowTitleAndDesc>
         </CardWrap>
       </Wrap>
-      <Wrap justify={"center"}>
+      <Wrap>
         <CardWrap>
           <Rain />
         </CardWrap>
       </Wrap>
-      <Wrap justify={"center"}>
+      <Wrap>
         <CardWrap>
           <Girl />
         </CardWrap>
       </Wrap>
-      <Wrap justify={"center"}>
+      <Wrap>
         <CardWrap>
-          <Title>Lorem, ipsum dolor.</Title>
-          <Desc>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, sint?
-            Tempore, enim?
-          </Desc>
+        <ShowTitleAndDesc
+            desc={language === "ko"
+            ? "고개를 들어야 보이는 것들"
+            : language === "en"
+            ? "Things that become visible only when looking up"
+            : language === "ru"
+            && "Вещи, которые видны только при взгляде вверх"}
+          ></ShowTitleAndDesc>
         </CardWrap>
       </Wrap>
-      <Wrap justify={"center"}>
+      <Wrap>
         <HappyAndSad />
       </Wrap>
-      <Wrap justify={"center"}>
+      <Wrap style={{marginBottom: "130px"}}>
         <CardWrap>
-          <Desc>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, sint?
-            Tempore, enim?
-          </Desc>
+        <ShowTitleAndDesc
+            desc={language === "ko"
+            ? "다가가야 보이는 것들"
+            : language === "en"
+            ? "Things seen only when getting closer"
+            : language === "ru"
+            && "Вещи, видимые только при приближении"}
+          ></ShowTitleAndDesc>
         </CardWrap>
       </Wrap>
-      <Wrap justify={"center"}>
+      <Wrap>
         <Iran />
+        <Memorial style={{marginLeft: "20px", marginTop: "100px"}} />
+      </Wrap>
+      <Wrap>
+        <Monks />
+      </Wrap>
+      <Wrap>
+        <Police2 />
+      </Wrap>
+      <Wrap>
+        <Together />
       </Wrap>
 
       {/* <Wrap>
