@@ -237,7 +237,7 @@
       "font_color": "black"
     },
     {
-      "link" : "https://github.com/the02196/Naver_Tech_Clone",
+      "link" : "https://github.com/the02196/10x19_Clone",
       "option" : "Clone Coding",
       "ko_title": "10x19",
       "en_title": "10x19",
@@ -255,7 +255,7 @@
       "font_color": "black"
     },
     {
-      "link" : "https://github.com/the02196/Naver_Tech_Clone",
+      "link" : "https://github.com/the02196/Zoo_Clone",
       "option" : "Clone Coding",
       "ko_title": "주(ZOO)",
       "en_title": "ZOO",
@@ -273,25 +273,7 @@
       "font_color": "black"
     },
     {
-      "link" : "https://github.com/the02196/Naver_Tech_Clone",
-      "option" : "Clone Coding",
-      "ko_title": "페인트 박스(Paint-box)",
-      "en_title": "Paint-box",
-      "ru_title": "Paint-box",
-      "skills": "Html5 | SCSS",
-      "ko_desc" : "Html과 SCSS 기초를 활용한 페인트 박스(Paint-box) 웹 사이트 클론 코딩입니다.",
-      "en_desc": "HTML and CSS basics for Paint-box clone coding.",
-      "ru_desc": "Основы HTML и SCSS для клонирования Paint-box.",
-      "days": "3 days",
-      "detail_days": "",
-      "mobile": "paint_box.png",
-      "list_bg_img" : "paint_box_list.png",
-      "tablet": "",
-      "bg_color": "white",
-      "font_color": "black"
-    },
-    {
-      "link" : "https://github.com/the02196/Naver_Tech_Clone",
+      "link" : "https://github.com/the02196/kokoa-clone-2020",
       "option" : "Clone Coding",
       "ko_title": "카카오톡",
       "en_title": "KakaoTalk",
