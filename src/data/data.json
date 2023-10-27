@@ -176,8 +176,8 @@
       "ru_desc": "Это Сервис поиска отправлений, использующий TypeScript и API Sweet-Tracker.",
       "days": "5 days",
       "detail_days": "2023.10.21 ~ 2023.10.26",
-      "mobile": "Placeholder.png",
-      "list_bg_img" : "Placeholder.png",
+      "mobile": "parcel.png",
+      "list_bg_img" : "parcel_list.png",
       "tablet": "",
       "bg_color": "white",
       "font_color": "black"
