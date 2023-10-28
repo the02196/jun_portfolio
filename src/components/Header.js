@@ -28,7 +28,7 @@ const Wrap = styled.div`
 
   background-color: black;
   color: white;
-  padding: 30px 20px;
+  padding: 40px 20px;
   box-sizing: border-box;
   /* display: flex; */
 `;

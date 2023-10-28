@@ -41,7 +41,7 @@ const Btn = styled.div`
   position: fixed;
   border-radius: 50%;
   top: 11px;
-  left: 60px;
+  left: 70px;
   z-index: 999;
   background-image: url("../images/about/jun.png");
   background-position: center;

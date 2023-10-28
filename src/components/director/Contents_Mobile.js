@@ -32,14 +32,14 @@ const CardWrap = styled.div`
 
 const Title = styled.div`
   margin-top: 10px;
-  font-size: 16px;
+  font-size: 19px;
   font-weight: 500;
   text-align: center;
   @media screen and (min-width: 768px) {
-    font-size: 18px;
+    font-size: 21px;
   }
   @media screen and (min-width: 1024px) {
-    font-size: 20px;
+    font-size: 24px;
   }
   @media screen and (min-width: 1440px) {
   }
@@ -52,7 +52,7 @@ const Desc = styled.div`
   font-size: 13px;
   font-weight: 300;
   text-align: center;
-  color: #888888;
+  color: #777777;
   @media screen and (min-width: 768px) {
     font-size: 15px;
   }

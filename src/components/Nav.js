@@ -16,7 +16,7 @@ background-color: white;
   z-index: 999;
   top: 0;
   height: 50px;
-  padding: 5px 15px;
+  padding: 5px 22px;
   display: flex;
   align-items: center;
   justify-content: space-between;

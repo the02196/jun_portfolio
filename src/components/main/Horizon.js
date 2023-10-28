@@ -139,14 +139,15 @@ function Horizon() {
                 >
                   <Years>{e.years}</Years>
                   <Title font_color={e.font_color}>
-                    {language === "ko" && e.ko_title}
-                    {language === "en" && e.en_title}
-                    {language === "ru" && e.ru_title}
-                  </Title>
-                  <Desc text_align={e.text_align}>
-                    {language === "ko" && e.ko_desc}
+                  {language === "ko" && e.ko_desc}
                     {language === "en" && e.en_desc}
                     {language === "ru" && e.ru_desc}
+                  </Title>
+                  <Desc text_align={e.text_align}>
+                  {language === "ko" && e.ko_title}
+                    {language === "en" && e.en_title}
+                    {language === "ru" && e.ru_title}
+                    
                   </Desc>
                 </Inner_Wrap>
               </Card>

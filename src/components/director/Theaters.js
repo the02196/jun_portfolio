@@ -4,14 +4,14 @@ import styled from "styled-components";
 
 const Title = styled.div`
   margin-top: 10px;
-  font-size: 16px;
+  font-size: 19px;
   font-weight: 500;
   text-align: center;
   @media screen and (min-width: 768px) {
-    font-size: 18px;
+    font-size: 21px;
   }
   @media screen and (min-width: 1024px) {
-    font-size: 20px;
+    font-size: 24px;
   }
   @media screen and (min-width: 1440px) {
   }

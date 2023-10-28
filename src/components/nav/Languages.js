@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { setLanguage, setSelectedLanguage } from "../../store";
 
 const Wrap = styled.div`
-  padding-right: 30px;
+  padding-right: 38px;
   display: flex;
   font-family: "Montserrat Alternates", sans-serif;
   font-size: 19px;
