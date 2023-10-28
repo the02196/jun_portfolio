@@ -6,14 +6,14 @@ import { hideTriangle, stopAnimation } from "../../store";
 
 const ClickMe = keyframes`
   0%{
-    transform: scale(3);
-    top: 7%;
-    left: 150px;
+    transform: scale(4);
+    top: 9%;
+    left: 170px;
   }
   50%{
-    transform: scale(3);
-    top: 7%;
-    left: 150px;
+    transform: scale(4);
+    top: 9%;
+    left: 170px;
   }
   70%{
     transform: scale(0.5);
@@ -50,7 +50,7 @@ const Btn = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: ${(props) => props.animation && css`${ClickMe} 1.5s forwards`};
+  animation: ${(props) => props.animation && css`${ClickMe} 2s forwards`};
   p {
     margin: 0;
     font-size: 16px;
