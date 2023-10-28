@@ -35,12 +35,12 @@ function Photographer() {
         }
         desc={
           language === "ko"
-            ? "이태원 일대에서 다양한 사건들을 마주하며 타인들의 삶과 시선, 살아내는 방식을 관찰하였습니다."
+            ? "이태원 일대에서 사건들을 마주하며, 다양한 이들의 삶과 시선, 살아내는 방식을 관찰하였습니다."
             : language === "en"
-            ? "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
+            ? "I encountered various events in the Itaewon area, and observed the lives, perspectives, and ways of living of diverse people."
             : language === "ru"
-            ? "Внезапно, ключевые особенности структуры проекта, инициированные исключительно синтетически."
-            : "고통이 고통이라는 이유로 그 자체를 사랑하고 소유하려는 자는 없다."
+            ? "Я столкнулся с различными событиями в районе Итаэвон и наблюдал за жизнью, точками зрения и способами существования разных людей."
+            : "이태원 일대에서 사건들을 마주하며, 다양한 이들의 삶과 시선, 살아내는 방식을 관찰하였습니다."
         }
         contrast={"contrast(1.01)"}
         background_position={"0 -35px"}
