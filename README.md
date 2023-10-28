@@ -3,10 +3,11 @@
 
 개발자라는 직업에 닿기까지의 여정을 담은 포트폴리오 입니다. 개발자 프로젝트에 대한 내용 뿐만 아니라, 이전에 가졌던 두 직업(다큐멘터리 포토그래퍼와 인형극 연출가)에 대한 정보, 그리고 당시 아카이빙 되었던 사진들도 함께 보실 수 있습니다. 
 
-링크 : jun-portfolio-two.vercel.app
-
-
 <img src="./public/images/portfolio_screen.png" />
+
+## 배포 링크 
+
+https://jun-portfolio-two.vercel.app
 
 ## 디자인을 하면서 중요하게 여긴 부분
 
