@@ -306,7 +306,7 @@
       "ru_academy" : "Обучение фронтенд-разработчиков с использованием React (разработка SPA-проектов), Академия Компьютерных Искусств Green",
       "ru_desc" : "Мастер научной фантастики Артур К. Кларк сказал: 'Любая достаточно развитая технология неотличима от магии.' Я хочу стать человеком, который программирует, как колдует.",
       "ko_age" : "TMI : 반갑게도 자바스크립트가 개발된 해에 태어났습니다.",
-      "skills" : "Skills : html5 / CSS / SCSS / TailwindCSS / Styled-components / JavaScript / TypeScript / Axios / React / Redux / Node.js / Firebase / MongoDB / npm / yarn / Git / GitHub / Vercel / Figma / Photoshop / Dragonframe / Korean / Russian / English",
+      "skills" : "Skills : html5 / CSS / SCSS / TailwindCSS / Styled-components / JavaScript / TypeScript / Axios / React / NextJS / Redux / Node.js / Firebase / MongoDB / npm / yarn / Git / GitHub / Vercel / Figma / Photoshop / Dragonframe / Korean / Russian / English",
       "email" : "Contact : the02196@gmail.com"
     },
     "comments": [
