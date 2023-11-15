@@ -109,6 +109,10 @@ const CopyEmailBtn = styled.button`
 `;
 
 function About() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const language = useSelector((state) => state.language);
   const [sources, setSources] = useState([]);
 
@@ -184,9 +188,15 @@ function About() {
               </CopyEmailBtn>
             </Email>
             <NavLink to={"/comments"}>
-              {language === "ko" && <GoToComments>다른 이들이 준에 대해 말하다 &gt; </GoToComments>}
-              {language === "en" && <GoToComments>Others talk about Jun &gt; </GoToComments>}
-              {language === "ru" && <GoToComments>Другие говорят о Джуне &gt; </GoToComments>}
+              {language === "ko" && (
+                <GoToComments>다른 이들이 준에 대해 말하다 &gt; </GoToComments>
+              )}
+              {language === "en" && (
+                <GoToComments>Others talk about Jun &gt; </GoToComments>
+              )}
+              {language === "ru" && (
+                <GoToComments>Другие говорят о Джуне &gt; </GoToComments>
+              )}
             </NavLink>
           </>
         </Wrap>
