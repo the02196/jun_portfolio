@@ -4,25 +4,6 @@ import styled from "styled-components";
 import data from "../data/data.json";
 import Nav from "../components/Nav";
 
-const ButtonWrap = styled.div`
-  width: 400px;
-  margin: 100px auto 0;
-  background-color: black;
-  @media screen and (min-width: 768px) {
-    width: 700px;
-  }
-  @media screen and (min-width: 1024px) {
-    width: 900px;
-  }
-`;
-
-const Button = styled.div`
-  padding: 5px 10px;
-  border: 1px solid white;
-  color: white;
-  cursor: pointer;
-`;
-
 const Wrap = styled.div`
   width: 100%;
   margin: 100px 0;
