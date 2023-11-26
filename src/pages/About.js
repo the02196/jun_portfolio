@@ -46,10 +46,10 @@ const Photo = styled.div`
   height: 300px;
   background-size: cover;
   background-position: center;
-  filter: contrast(2) brightness(0.85) grayscale(1);
-  background-image: url("../images/about/magic_mobile.png");
+  /* filter: contrast(1) brightness(1) grayscale(1); */
+  background-image: url("../images/about/jun_snow.jpeg");
   @media screen and (min-width: 768px) {
-    background-image: url("../images/about/magic_desktop.png");
+    background-image: url("../images/about/jun_snow.jpeg");
     height: 500px;
   }
 `;
