@@ -187,7 +187,8 @@ function About() {
                 copy e-mail
               </CopyEmailBtn>
             </Email>
-            <NavLink to={"/comments"}>
+            <div style={{height: "80px"}}></div>
+            {/* <NavLink to={"/comments"}>
               {language === "ko" && (
                 <GoToComments>다른 이들이 준에 대해 말하다 &gt; </GoToComments>
               )}
@@ -197,7 +198,7 @@ function About() {
               {language === "ru" && (
                 <GoToComments>Другие говорят о Джуне &gt; </GoToComments>
               )}
-            </NavLink>
+            </NavLink> */}
           </>
         </Wrap>
       </div>

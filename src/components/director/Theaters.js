@@ -134,7 +134,7 @@ function Theaters() {
       <Wrap style={{ marginBottom: "0" }} justify={"center"}>
         <Title>
           {language === "ko"
-            ? "주로 일한 곳들"
+            ? "연출가 시절, 몸 담았던 곳"
             : language === "en"
             ? "The Places Mainly I Worked"
             : language === "ru" && "Места, где я в основном работал"}
