@@ -34,7 +34,6 @@ const Poster = styled.div`
 `;
 
 const FlexWrap = styled.ul`
-  display: flex;
   max-width: 100%;
   margin: 110px auto 150px;
 `;

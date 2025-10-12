@@ -28,7 +28,6 @@ const StyledSlide = styled(SwiperSlide)`
   /* margin-left: -30px; */
 `;
 const FlexWrap = styled.ul`
-  display: flex;
   flex-wrap: wrap;
   max-width: 100%;
   margin: 110px auto 110px;
