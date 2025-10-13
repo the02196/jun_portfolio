@@ -69,14 +69,14 @@ const Desc = styled.p`
 const Age = styled.p`
   margin: 0 0 20px;
   font-size: 14px;
-  font-weight: 300;
+  font-weight: 400;
   color: #222222;
 `;
 
 const Skills = styled.p`
   margin: 0 0 20px;
   font-size: 14px;
-  font-weight: 300;
+  font-weight: 400;
   color: #222222;
   line-height: 20px;
   /* text-align: justify; */
@@ -91,7 +91,15 @@ const Email = styled.p`
   color: #222222;
 `;
 
-const Diploma = styled.p`
+const CareerBold = styled.p`
+  margin: 0 0 20px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #222222;
+`;
+
+const Career = styled.p`
   margin: 0 0 20px;
   font-size: 14px;
   font-weight: 200;
@@ -165,18 +173,28 @@ function About() {
             {language === "ru" && (
               <Desc className="desc">{sources.ru_desc}</Desc>
             )}
-            {/* age */}
-            {language === "ko" && <Age className="age">{sources.ko_age}</Age>}
             {/* skill */}
             <Skills>{sources.skills}</Skills>
-            {/* academy */}
-            {language === "ko" && <Diploma>{sources.ko_academy}</Diploma>}
-            {language === "en" && <Diploma>{sources.en_academy}</Diploma>}
-            {language === "ru" && <Diploma>{sources.ru_academy}</Diploma>}
+            {/* company */}
+            {language === "ko" && <CareerBold>{sources.ko_company}</CareerBold>}
+            {language === "en" && <CareerBold>{sources.en_company}</CareerBold>}
+            {language === "ru" && <CareerBold>{sources.ru_company}</CareerBold>}
+            {/* theatre1 */}
+            {language === "ko" && <Career>{sources.ko_theatre1}</Career>}
+            {language === "en" && <Career>{sources.en_theatre1}</Career>}
+            {language === "ru" && <Career>{sources.ru_theatre1}</Career>}
+            {/* theatre2 */}
+            {language === "ko" && <Career>{sources.ko_theatre2}</Career>}
+            {language === "en" && <Career>{sources.en_theatre2}</Career>}
+            {language === "ru" && <Career>{sources.ru_theatre2}</Career>}
+            {/* theatre3 */}
+            {language === "ko" && <Career>{sources.ko_theatre3}</Career>}
+            {language === "en" && <Career>{sources.en_theatre3}</Career>}
+            {language === "ru" && <Career>{sources.ru_theatre3}</Career>}
             {/* diploma */}
-            {language === "ko" && <Diploma>{sources.ko_diploma}</Diploma>}
-            {language === "en" && <Diploma>{sources.en_diploma}</Diploma>}
-            {language === "ru" && <Diploma>{sources.ru_diploma}</Diploma>}
+            {language === "ko" && <Career>{sources.ko_diploma}</Career>}
+            {language === "en" && <Career>{sources.en_diploma}</Career>}
+            {language === "ru" && <Career>{sources.ru_diploma}</Career>}
             <Email>
               {sources.email}
               <CopyEmailBtn
