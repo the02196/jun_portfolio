@@ -41,7 +41,7 @@ function Footer() {
     <>
       <Wrap>
         <CopyRight>
-          <C>©</C> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Copyright 2023. Jun Choi
+          <C>©</C> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Copyright 2025. Jun Choi
           Portfolio. All rights reserved.
         </CopyRight>
       </Wrap>
